@@ -14,7 +14,6 @@ Zur Entfernung von Hirntumoren oder Metastasen werden in der Klinik für Neuroch
 
 ## Zielgruppen der App
 
-## Authors
 Primär ist die Anwendung für die folgenden Zielgruppen ausgelegt:
 
 * **Chirurgen und Ärzte** - *leiten die Untersuchungstests und halten die gegebenen Antworten fest* 
