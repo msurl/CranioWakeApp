@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="Nexus 9" />
+        <device id="pixel" />
+        <device id="Nexus 10" />
+        <device id="pixel_3" />
+        <device id="Nexus 5X" />
+        <device id="pixel_3a_xl" />
+        <device id="Nexus 7" />
+        <device id="Nexus 7 2013" />
+        <device id="pixel_4_xl" />
+        <device id="pixel_3_xl" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="94e3f95d-2375-49fa-85e4-6ce8a4d9b712" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/LineBisectionDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/PatientDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/TrailMakingDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/Patient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/CalculusGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/TrailMakingRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/stimulation/TreshholdTestActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/stimulation/VerificationTestActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/TrailMakingViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/render.experimental.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/androidTest/java/com/app/craniowake/ExampleInstrumentedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/androidTest/java/com/app/craniowake/ExampleInstrumentedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/OperationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/OperationActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/displayResults/BaseResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/displayResults/BaseResultActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/displayResults/FourSquareResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/displayResults/FourSquareResultActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/displayResults/ModiBaseResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/displayResults/ModiBaseResultActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/displayResults/ReactionResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/displayResults/ReactionResultActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/displayResults/ReadResultActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/displayResults/ReadResultActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/events/StimulatorSeekbar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/events/StromTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/CalcActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/CalculusActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/DigitalSpanMemoryActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/DigitalSpanMemoryActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/FourSquareActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/FourSquareActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/LineDissectionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/LineBisectionActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/PictureActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/PictureActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/PpttActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/PpttActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/ReactionActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/ReactionActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/ReadActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/ReadActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/StroopActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/StroopActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/TokenActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/TokenActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/games/TrailwayActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/games/TrailMakingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/patient/AddProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/patient/AddPatientActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/patient/PatientListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/patient/PatientListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/activities/patient/PatientProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/patient/PatientActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/customUtils/DialogAddedPatient.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/activityHelper/customUtils/DialogAddedPatient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/customUtils/DialogEmergency.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/activityHelper/customUtils/DialogEmergency.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/CalculatingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/CalculatingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/ComplicationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/ComplicationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/DigitalSpanMemoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/DigitalSpanMemoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/FourSquareDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/FourSquareDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/LineDissectionDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/OperationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/OperationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/PatientDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/PictureDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/PictureDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/PpttDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/PpttDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/ReactionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/ReactionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/ReadDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/ReadDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/StroopDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/StroopDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/TokenDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/dao/TokenDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/dao/TrailwayDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/databaseExport/FileUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/databaseExport/FileUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/databaseExport/SqliteExporter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/databaseExport/SqliteExporter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/db/CraniowakeDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/db/CraniowakeDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/helper/BirthdayPicker.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/activityHelper/BirthdayPicker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/helper/CheckBoxAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/helper/DateTypeConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/helper/IntentHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/activityHelper/IntentHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/helper/PatientListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/activityHelper/PatientListAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/helper/StateVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/helper/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/activityHelper/StopWatch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/Complication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/Complication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/Operation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/Operation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/Patient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/CalculatingGame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/DigitalSpanMemoryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/DigitalSpanMemoryGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/FourSquareGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/FourSquareGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/LineDissectionGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/LineBisectionGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/PictureGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/PictureGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/PpttGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/PpttGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/ReactionGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/ReactionGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/ReadGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/ReadGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/StroopGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/StroopGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/TokenGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/TokenGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/gameModels/TrailwayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/gameModels/TrailMakingGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasCalculatingGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasCalculatingGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasComplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasComplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasDigitalSpanMemoryGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasDigitalSpanMemoryGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasFourSquareGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasFourSquareGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasLineDissectionGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasLineBisectionGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasPictureGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasPictureGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasPpttGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasPpttGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasReactionGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasReactionGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasReadGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasReadGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasStroopGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasStroopGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasTokenGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasTokenGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/OperationHasTrailwayGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/OperationHasTrailwayGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/PatientHasOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/model/relationships/PatientHasOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/model/relationships/PatientHasOperationEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/CalculatingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/CalculatingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/ComplicationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/ComplicationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/DigitalSpanMemoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/DigitalSpanMemoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/FourSquareRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/FourSquareRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/LineDissectionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/LineBisectionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/OperationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/OperationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/PatientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/PatientRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/PictureRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/PictureRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/PpttRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/PpttRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/ReactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/ReactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/ReadRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/ReadRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/StroopRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/StroopRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/TokenRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/data/repositories/TokenRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/repositories/TrailwayRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/CalculatingViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/CalculatingViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/ComplicationViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/ComplicationViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/DigitalSpanMemoryViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/DigitalSpanMemoryViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/FourSquareViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/FourSquareViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/LineDissectionViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/LineBisectionViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/OperationViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/OperationViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/PatientViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/PatientViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/PictureViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/PictureViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/PpttViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/PpttViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/ReactionViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/ReactionViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/ReadViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/ReadViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/StroopViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/StroopViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/TokenViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/view/viewModel/TokenViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/app/craniowake/viewModel/TrailwayViewModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/color_gradient_green_blue.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/color_gradient_pink_yellow.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/round_button.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/round_button_blue.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/round_button_red.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/avd_done.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/dialog_cross.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/hirn_ansicht.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_add_user_icon.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_badge_profile.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_build_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_flutter_dash_24.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_birdie.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_current_user_icon.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_edit_user_icon.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_picture_collection_icon.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_statistics.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/menu_flutter.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/menu_game.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/menu_person_main_icon.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_geschenk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_gluehbirne.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_hase.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_haus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_katze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_kerze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_koch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_kuchen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_kuh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_leuchtturm.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_lkw.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_loewe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_pc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_pferd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_puzzle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_roller.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_schiff.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_schloss.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_schwan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_sessel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_smily.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_smilyhappy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_smilylove.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_smilynormal.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_spritze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_staaten.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_stift.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_strand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_stuhl.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_tisch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_traktor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/p_wolke.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pc2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_jaoachimgauck.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_johnfkennedy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_marilynmonroe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_mozart.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_mrbean.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_obama.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_oliverkahn.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_sissi.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_steffigraf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_thomasgotschalk.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pf_totenhosen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_filmkamera_fotokamera_tacker.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_finger_ring_daumen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_flugzeug_zug_auto.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_guarde_medallie_inuit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_haende_weg_fuesse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_hammer_baumstamm_saege.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_handschuhe_haende_schuhe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_handy_pc_siftpapier.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_hase_kaese_maus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_huhn_eier_schwan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_hund_hundehuette_katze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_hund_katze_schlange.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_hund_maus_katze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_hunde_wolle_schaafe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_iglo_inuit_haus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_kaefig_maus_hundehuette.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_kaktus_gaensebluemchen_tulpe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_katze_fisch_hund.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_kind_stecknadel_baby.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_kirche_kreuz_burg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_kirche_nonne_haus.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_kuh_milch_bulle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_lagerfeuer_luftpumpe_kerze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_lagerfeuer_zelt_heizung.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_lampe_batterie_taschenlampe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_lampe_streichholz_kerze.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_maus_fliege_schmetterling.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_maus_schaefer_schaafe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_mond_globus_sonne.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_muetze_schal_scheere.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_nadel_fingerhut_faden.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_nagel_bohrmaschine_nadel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_palme_pyramide_tannenbaum.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_schloss_waechter_burg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_schmetterling_raupe_liebelle.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_spritze_pflaster_einstein.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_stern_rakete_nachthimmel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_stiefel_sessel_hausschuhe.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_stift_tint_fueller.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_stuhl_tisch_auto.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_tannenbaum_sonnenbrille_strand.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_tee_wasser_burger.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_telefon_stift_papier.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_tisch_tafel_pult.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_tor_fussball_basketball.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_tuer_gardine_fenster.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_turm_auto_strasse.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_wolken_regen_sonne.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_wurm_hahn_schlange.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_wurst_banane_apfel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_ziege_moehre_esel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_ziege_sattel_pferd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_zunge_stethoskop_herz.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/pptt_zwiebel_wald_apfel.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/text_fortunadd_eng.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_digital_span_memory_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_digital_span_memory_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_stroop_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_stroop_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/act_trailway_test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/act_trailway_test.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/container_fragment_stimulation_tests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/event_critical_verification_test_stimulation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/event_critical_verification_test_stimulation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/event_treshhold_test_stimulation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/event_treshhold_test_stimulation.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/result_reaction.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/result_reaction.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_seekbar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/toolbar_seekbar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_spinner_dropdown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/view_spinner_item.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_drawer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_drawer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_calc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_calc_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_four_square_test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_four_square_test_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_person_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_person_main_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_picture_test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_picture_test_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_span.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_span_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_stroop.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_stroop_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_trail.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_trail_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_trailway.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/menu_trailway_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_calc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_calc_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_four_square_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_four_square_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_person_main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_person_main_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_picture_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_picture_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_span.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_span_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_stroop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_stroop_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_trail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_trail_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_trailway.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/menu_trailway_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_calc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_calc_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_four_square_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_four_square_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_person_main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_person_main_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_picture_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_picture_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_span.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_span_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_stroop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_stroop_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_trail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_trail_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_trailway.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/menu_trailway_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_calc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_calc_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_four_square_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_four_square_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_person_main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_person_main_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_picture_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_picture_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_span.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_span_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_stroop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_stroop_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_trail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_trail_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_trailway.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/menu_trailway_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_calc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_calc_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_four_square_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_four_square_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_person_main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_person_main_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_picture_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_picture_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_span.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_span_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_stroop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_stroop_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_trail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_trail_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_trailway.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/menu_trailway_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_calc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_calc_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_four_square_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_four_square_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_person_main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_person_main_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_picture_test.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_picture_test_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_span.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_span_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_stroop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_stroop_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_trail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_trail_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_trailway.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/menu_trailway_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-de-rDE/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-de-rDE/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/menu_calc_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/menu_calc_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/menu_four_square_test_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/menu_four_square_test_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/menu_person_main_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/menu_person_main_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/menu_picture_test_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/menu_picture_test_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/menu_span_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/menu_span_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/menu_stroop_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/menu_stroop_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/menu_trail_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/menu_trail_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/menu_trailway_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/menu_trailway_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/token_shapes_colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/token_shapes_colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/test/java/com/app/craniowake/ExampleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/com/app/craniowake/ExampleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="PARALLEL_COMPILATION" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="valueResourceFile" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="layoutResourceFile" />
+        <option value="Interface" />
+        <option value="resourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1jrxLF4EjBiBhCXIJVaqz0PLJ6y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="CranioWake.app" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_7_API_30" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-12-25T16:31:04.754Z" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android-custom-viewC:/Users/Momo/AndroidStudioProjects/CranioWake/app/src/main/java/com/app/craniowake/Activities/ConnectDotsView.java_SELECTED" value="ConnectDotsView" />
+    <property name="android-custom-viewC:/Users/Momo/AndroidStudioProjects/CranioWake/app/src/main/java/com/app/craniowake/DrawView.java_SELECTED" value="DrawView" />
+    <property name="android-custom-viewC:/Users/Momo/AndroidStudioProjects/CranioWake/app/src/main/java/com/app/craniowake/Helper/ConnectDotsView.java_SELECTED" value="ConnectPointsView" />
+    <property name="android-custom-viewC:/Users/Momo/AndroidStudioProjects/CranioWake/app/src/main/java/com/app/craniowake/Helper/ConnectPointsView.java_SELECTED" value="ConnectPointsView" />
+    <property name="android-custom-viewC:/Users/Momo/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_SELECTED" value="View" />
+    <property name="android-custom-viewC:/Users/Momo/AppData/Local/Android/Sdk/sources/android-30/android/widget/Spinner.java_SELECTED" value="Spinner" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../reaction-test-master/ReactionTest/app/build.gradle" />
+    <property name="multi-representation-previewC:/Users/Momo/AndroidStudioProjects/CranioWake/app/src/main/java/com/app/craniowake/Activities/ConnectDotsView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Momo/AndroidStudioProjects/CranioWake/app/src/main/java/com/app/craniowake/DrawView.java_selected" value="" />
+    <property name="multi-representation-previewC:/Users/Momo/AndroidStudioProjects/CranioWake/app/src/main/java/com/app/craniowake/Helper/ConnectDotsView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Momo/AndroidStudioProjects/CranioWake/app/src/main/java/com/app/craniowake/Helper/ConnectPointsView.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Momo/AppData/Local/Android/Sdk/sources/android-30/android/view/View.java_selected" value="Custom views" />
+    <property name="multi-representation-previewC:/Users/Momo/AppData/Local/Android/Sdk/sources/android-30/android/widget/Spinner.java_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Default Config" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Momo\AndroidStudioProjects\CranioWake\app\src\main\res\drawable" />
+      <recent name="C:\Users\Momo\AndroidStudioProjects\CranioWake\app\src\main\res\layout" />
+      <recent name="C:\Users\Momo\AndroidStudioProjects\CranioWake\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\Momo\AndroidStudioProjects\CranioWake\app\src\main\res\drawable\pptt" />
+      <recent name="C:\Users\Momo\AndroidStudioProjects\CranioWake\app\src\main\res\drawable\fourSquareFiles" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.app.craniowake.data" />
+      <recent name="com.app.craniowake" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.app.craniowake.Activities.Fagments" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Momo\AndroidStudioProjects\CranioWake\app\src\main\res\layout" />
+      <recent name="C:\Users\Momo\AndroidStudioProjects\CranioWake\app\src\main\res\drawable-v24" />
+      <recent name="C:\Users\Momo\AndroidStudioProjects\CranioWake\app\src\main\res\drawable" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration name="All in CranioWake.app" type="AndroidJUnit" factoryName="Android JUnit" nameIsGenerated="true">
+      <module name="CranioWake.app" />
+      <useClassPathOnly />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="CranioWake.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\Momo\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94e3f95d-2375-49fa-85e4-6ce8a4d9b712" name="Default Changelist" comment="" />
+      <created>1604575953520</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604575953520</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="563" y="120" key="#All_in_CranioWake.app" timestamp="1614097975761">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="563" y="120" key="#All_in_CranioWake.app/0.0.1920.1040@0.0.1920.1040" timestamp="1614097975761" />
+    <state x="586" y="198" key="#Inspections" timestamp="1609509617570">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="586" y="198" key="#Inspections/0.0.1920.1040@0.0.1920.1040" timestamp="1609509617570" />
+    <state x="477" y="266" key="#PSD" timestamp="1614958227115">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="477" y="266" key="#PSD/0.0.1920.1040@0.0.1920.1040" timestamp="1614958227115" />
+    <state x="769" y="386" key="#Updates" timestamp="1611861776166">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="769" y="386" key="#Updates/0.0.1920.1040@0.0.1920.1040" timestamp="1611861776166" />
+    <state x="766" y="120" key="#app" timestamp="1608828960460">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="766" y="120" key="#app/0.0.1920.1040@0.0.1920.1040" timestamp="1608828960460" />
+    <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1613771371009">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613771371009" />
+    <state x="700" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1613320090942">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="700" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1613320090942" />
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser" timestamp="1613771380249">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="226" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1613771380249" />
+    <state x="789" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1611580679270">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="789" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1611580679270" />
+    <state x="544" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1614912146341">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="544" y="444" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614912146341" />
+    <state x="737" y="389" width="451" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1615842641811">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="737" y="389" width="451" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1615842641811" />
+    <state x="756" y="401" width="500" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1614293584483">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="756" y="401" width="500" height="237" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1920.1040@0.0.1920.1040" timestamp="1614293584483" />
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1615851221692">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1615851221692" />
+    <state x="785" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1614098283338">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="785" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614098283338" />
+    <state x="690" y="267" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1613507642911">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613507642911" />
+    <state x="640" y="176" key="#com.intellij.unscramble.UnscrambleDialog" timestamp="1614098065194">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="176" key="#com.intellij.unscramble.UnscrambleDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614098065194" />
+    <state x="707" y="354" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1614350232202">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="707" y="354" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1614350232202" />
+    <state x="141" y="219" width="1736" height="856" key="AVDManager" timestamp="1611047205648">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="141" y="219" width="1736" height="856" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1611047205648" />
+    <state x="540" y="275" key="AndroidCreateResourceDirectoryDialog" timestamp="1613687185443">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="275" key="AndroidCreateResourceDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613687185443" />
+    <state x="540" y="275" key="AndroidCreateResourceFileDialog" timestamp="1612224325518">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="540" y="275" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1612224325518" />
+    <state x="819" y="350" key="AndroidCreateXmlResourceDialog" timestamp="1614000094995">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="819" y="350" key="AndroidCreateXmlResourceDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614000094995" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1613319951263">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1613319951263" />
+    <state width="1876" height="84" key="GridCell.Tab.0.bottom" timestamp="1615858536953">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="84" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1615858536953" />
+    <state width="1876" height="84" key="GridCell.Tab.0.center" timestamp="1615858536953">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="84" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1615858536953" />
+    <state width="1876" height="84" key="GridCell.Tab.0.left" timestamp="1615858536952">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="84" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1615858536952" />
+    <state width="1876" height="84" key="GridCell.Tab.0.right" timestamp="1615858536953">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="84" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1615858536953" />
+    <state x="674" y="222" key="RollbackChangesDialog" timestamp="1609843750997">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="674" y="222" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609843750997" />
+    <state x="740" y="209" key="SettingsEditor" timestamp="1614958121853">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="209" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1614958121853" />
+    <state x="776" y="298" key="chooseDestDirectoryDialog" timestamp="1613699944458">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="776" y="298" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613699944458" />
+  </component>
+</project>

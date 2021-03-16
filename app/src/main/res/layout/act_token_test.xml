@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/find_the_right_token"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Button
+                android:id="@+id/finish_token_game"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/dirtyLightBlue"
+                android:onClick="finishTokenGame"
+                android:text="@string/finish_game"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FFFFFF" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/findTheToken"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/big_black_circle"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+            android:textColor="#000000" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/bigWhiteCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_white_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken"
+                    android:textColor="#FFFFFF" />
+
+                <ImageButton
+                    android:id="@+id/smallYellowCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_yellow_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/bigBlackSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_back_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallBlueSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_blue_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/bigRedCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_red_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallBlackCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_black_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/bigGreenSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_green_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallPinkSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_pink_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/bigYellowCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_yellow_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken"
+                    android:scaleType="fitCenter" />
+
+                <ImageButton
+                    android:id="@+id/smallGreenCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_green_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken"
+                    android:scaleType="fitCenter" />
+
+                <ImageButton
+                    android:id="@+id/bigWhiteSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_white_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallYellowSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_yellow_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/bigBlackCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_black_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallRedCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_red_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/bigYellowSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_yellow_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallGreenSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_green_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/bigGreenCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_green_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallWhiteCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_white_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/bigRedSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_red_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallBlackSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_black_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/bigPinkCircle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_pink_circle"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallWhiteSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_white_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/bigBlueSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/big_blue_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+
+                <ImageButton
+                    android:id="@+id/smallRedSquare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/small_red_square"
+                    android:contentDescription="@string/todo"
+                    android:onClick="clickOnToken" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/touch_me_again"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/toolbar_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/change_mode_trailway_game"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:backgroundTint="@color/dirtyLightBlue"
+                android:onClick="setTrailwayGameMode"
+                android:text="@string/change_mode"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/design_default_color_background" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/connect_the_right_numbers"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <Button
+                android:id="@+id/finish_trailway_game"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/dirtyLightBlue"
+                android:onClick="finishTrailwayGame"
+                android:text="@string/finish_game"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/design_default_color_background" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_connect"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/dirtyLightBlue"
+                android:onClick="restartLines"
+                android:text="@string/restart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/design_default_color_background" />
+
+            <Button
+                android:id="@+id/next_set_dots"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/dirtyLightBlue"
+                android:text="@string/next"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/design_default_color_background" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

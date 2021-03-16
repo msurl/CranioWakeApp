@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="colorNames">
+        <item> @string/red </item>
+        <item> @string/_green </item>
+        <item> @string/blue </item>
+        <item> @string/yellow </item>
+        <item> @string/orange </item>
+        <item> @string/black </item>
+        <item> @string/brown </item>
+    </string-array>
+
+    <color name="red">#FF0000</color>
+    <color name="orange">#FF7F00</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#00FF00</color>
+    <color name="blue">#0000FF</color>
+    <color name="brown">#a0522d</color>
+    <color name="black">#000000</color>
+
+    <array name="rainbow">
+        <item>@color/red</item>
+        <item>@color/green</item>
+        <item>@color/blue</item>
+        <item>@color/yellow</item>
+        <item>@color/orange</item>
+        <item>@color/black</item>
+        <item>@color/brown</item>
+    </array>
+
+    <string-array name="token">
+        <item> bigWhiteCircle </item>
+        <item> smallWhiteCircle </item>
+        <item> bigWhiteSquare </item>
+        <item> smallWhiteSquare </item>
+        <item> bigRedCircle </item>
+        <item> smallRedCircle </item>
+        <item> bigRedSquare </item>
+        <item> smallRedSquare </item>
+        <item> bigGreenCircle </item>
+        <item> smallGreenCircle </item>
+        <item> bigGreenSquare </item>
+        <item> smallGreenSquare </item>
+        <item> bigYellowCircle </item>
+        <item> smallYellowCircle </item>
+        <item> bigYellowSquare </item>
+        <item> smallYellowSquare </item>
+        <item> bigBlackCircle </item>
+        <item> smallBlackCircle </item>
+        <item> bigBlackSquare </item>
+        <item> smallBlackSquare </item>
+        <item> smallBlueSquare </item>
+        <item> smallpinkSquare </item>
+        <item> bigBlueSquare </item>
+        <item> bigPinkCircle </item>
+    </string-array>
+
+    <string-array name="tokenView">
+        <item> @string/big_white_circle </item>
+        <item> @string/small_white_circle </item>
+        <item> @string/big_white_square </item>
+        <item> @string/small_white_square </item>
+
+        <item> @string/big_red_circle </item>
+        <item> @string/small_red_circle </item>
+        <item> @string/big_red_square </item>
+        <item> @string/small_red_square </item>
+
+        <item> @string/big_green_circle </item>
+        <item> @string/small_green_circle </item>
+        <item> @string/big_green_square </item>
+        <item> @string/small_green_square </item>
+
+        <item> @string/big_yellow_circle </item>
+        <item> @string/small_yellow_circle </item>
+        <item> @string/big_yellow_square </item>
+        <item> @string/small_yellow_square </item>
+
+        <item> @string/big_black_circle </item>
+        <item> @string/small_black_circle </item>
+        <item> @string/big_black_square </item>
+        <item> @string/small_black_square </item>
+
+        <item> @string/small_pink_square </item>
+        <item> @string/small_blue_square </item>
+        <item> @string/big_blue_square </item>
+        <item> @string/big_pink_circle </item>
+    </string-array>
+
+    <string-array name="calcOperation">
+        <item> + </item>
+        <item> - </item>
+        <item> * </item>
+    </string-array>
+
+    <string-array name="game_modes">
+        <item> Trial </item>
+        <item> prä Op </item>
+        <item> intra Op </item>
+        <item> post Op </item>
+        <item> Follow Up 3M </item>
+        <item> Follow Up 6M </item>
+        <item> Follow Up 12M </item>
+    </string-array>
+
+    <string-array name="muscles">
+        <item> mentalis </item>
+        <item> orbicularis oris </item>
+        <item> biceps </item>
+        <item> abductor pollicis brevis </item>
+        <item> abductor digiti minimi </item>
+        <item> quadriceps </item>
+        <item> tibialis anterior </item>
+        <item> abductor hallucis </item>
+    </string-array>
+
+    <string-array name="brainAreas">
+        <item> Frontal </item>
+        <item> Occipital </item>
+        <item> Parietal </item>
+        <item> Temporal Proximal </item>
+        <item> Temporal Distal </item>
+        <item> Language </item>
+        <item> Other </item>
+    </string-array>
+
+    <string-array name="numbers">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+        <item> 10 </item>
+    </string-array>
+
+    <string-array name="numbers_letters">
+        <item> 1 </item>
+        <item> A </item>
+        <item> 2 </item>
+        <item> B </item>
+        <item> 3 </item>
+        <item> C </item>
+        <item> 4 </item>
+        <item> D </item>
+        <item> 5 </item>
+        <item> E </item>
+    </string-array>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#217A85</color>
+    <color name="colorPrimaryDark">#150A23</color>
+
+    <color name="dirtyLightBlue">#769A92</color>
+    <color name="mediumBlue">#217A85</color>
+
+
+</resources>
