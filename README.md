@@ -43,4 +43,6 @@ Das generierte CSV File befindet sich nach Abschluss des erfolgreichen Exports u
 ```
 Android/data/data/com.app.craniowake/files/Craniowake/backup
 ``` 
+## Deployment
 
+Die App befindet sich noch in ihrer ersten Version. Mit CranioWake 2.0 ist die Ergänzung zur Aufnahme von Stimulationen geplant. Codestücke und Layouts sind bereits in der Anwendung zu finden und wurden entsprechend markiert.
