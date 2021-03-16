@@ -18,5 +18,8 @@ Zur Entfernung von Hirntumoren oder Metastasen werden in der Klinik für Neuroch
 
 ## Datenbankexport
 
-Die generierte Datei befindet sich nach Abschluss des Exports unter dem Pfad: Android/data/data/com.app.craniowake/files/Craniowake/backup im internen Speicher der eigenen Dateien auf dem Android Endgerät.
+Die generierte Datei befindet sich nach Abschluss des Exports unter dem folgenden Pfad im internen Speicher der eigenen Dateien auf dem Android Endgerät.
+```
+Android/data/data/com.app.craniowake/files/Craniowake/backup
+``` 
 
