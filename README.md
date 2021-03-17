@@ -25,19 +25,19 @@ Primär ist die Anwendung für die folgenden Zielgruppen ausgelegt:
 
 ## Übersicht der Tests
 
-In der App sind die folgenden Untersuchungstests implementiert
+In der App sind die folgenden Untersuchungstests unter view/games implementiert
 
-* **Stroop Test** - *Die richtige Einfärbung des Wortes muss erkannt werden* 
-* **Digital Span Memory Test** - *Drei Zahlen müssen in der richtigen Reihenfolge eingeprägt werden* 
-* **PPT Test** - *Zwei von drei Bildern stehen in einer Relation*
-* **Calculus Test** - *Eine leichte Rechenaufgabe wird berechnet*
-* **Line Bisection Test** - *Der Mittelpunkt einer Linie muss lokalisiert werden*
-* **Vier Quadranten Test** - *Erkenne vier Bilder ohne dabei den Blick von einem mittig platzierten Punkt zu nehmen*
-* **Bilder Test** - *Bilder müssen erkannt werden*
-* **Token Test** - *Token in verschiedenen Farben, Formen und Größen müssen gefunden werden*
-* **Trail Making Test** - *Verbinde 10 Punkte in aufteigender Reihenfolge*
-* **Lese Test** - *Ein Text wird vorgelesen*
-* **Reaction Test** - *Reactionszeit wird gemessen*
+* **Stroop Test** - *StroopActivity - Die richtige Einfärbung des Wortes muss erkannt werden* 
+* **Digital Span Memory Test** - *DigitalSpanMemoryActivity - Drei Zahlen müssen in der richtigen Reihenfolge eingeprägt werden* 
+* **PPT Test** - *PpttActivity - Zwei von drei Bildern stehen in einer Relation*
+* **Calculus Test** - *CalculusActivity - Eine leichte Rechenaufgabe wird berechnet*
+* **Line Bisection Test** - *LineBisectionActivity - Der Mittelpunkt einer Linie muss lokalisiert werden*
+* **Vier Quadranten Test** - *FourSquareActivity - Erkenne vier Bilder ohne dabei den Blick von einem mittig platzierten Punkt zu nehmen*
+* **Bilder Test** - *PictureActivity - Bilder müssen erkannt werden*
+* **Token Test** - *TokenActivity - Token in verschiedenen Farben, Formen und Größen müssen gefunden werden*
+* **Trail Making Test** - *TrailMakingActivity - Verbinde 10 Punkte in aufteigender Reihenfolge*
+* **Lese Test** - *ReadActivity - Ein Text wird vorgelesen*
+* **Reaction Test** - *ReactionActivity - Reactionszeit wird gemessen*
 
 ## Datenbankexport
 
