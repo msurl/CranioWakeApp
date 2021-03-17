@@ -43,7 +43,7 @@ In der App sind die folgenden Untersuchungstests in [view/games](https://github.
 
 Aus der Abbildung kann entnommen werden, welche Activities in Kontakt stehen. Die Pfeile zeigen, welche Activity die Parent-Activity ist
 
-![Activities](https://github.com/macrimo/CranioWakeApp/blob/master/activities.pdf)
+![Activities](https://raw.githubusercontent.com/macrimo/CranioWakeApp/master/activities.bmp)
 
 ## Datenbankexport
 
