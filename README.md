@@ -25,7 +25,7 @@ Primär ist die Anwendung für die folgenden Zielgruppen ausgelegt:
 
 ## Übersicht der Tests
 
-In der App sind die folgenden Untersuchungstests unter view/games implementiert
+In der App sind die folgenden Untersuchungstests in [view/games](https://github.com/macrimo/CranioWakeApp/tree/master/app/src/main/java/com/app/craniowake/view) implementiert
 
 * **Stroop Test** - *StroopActivity - Die richtige Einfärbung des Wortes muss erkannt werden* 
 * **Digital Span Memory Test** - *DigitalSpanMemoryActivity - Drei Zahlen müssen in der richtigen Reihenfolge eingeprägt werden* 
