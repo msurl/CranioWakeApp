@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 CraniowakeDatabase craniowakeDatabase = CraniowakeDatabase.getInstance(this);
                 if (!SqliteExporter.DB_GENERATING_CSV) {
                     SqliteExporter.export(craniowakeDatabase.getOpenHelper().getReadableDatabase(), this);
+                    setTextOnDialoge();
                     displayNoteOfDbExport();
                     item.setEnabled(false);
                 }
@@ -185,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     protected void initializeNawigationDrawer() {
         Toolbar toolbar = findViewById(R.id.toolbar);
-        DrawerLayout drawerLayout = findViewById(R.id.menu_drawer_layout);
+        DrawerLayout drawerLayout = findViewById(R.id.menu_operation);
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -216,6 +217,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         builder.setView(v);
         TextView dialog_info = v.findViewById(R.id.text_dialog_information);
         dialog_info.setText(R.string.file_export);
+
     }
 
     /**

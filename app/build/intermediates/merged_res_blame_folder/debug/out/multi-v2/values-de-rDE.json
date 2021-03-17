@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Momo\\AndroidStudioProjects\\CranioWake\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de-rDE\\values-de-rDE.xml",
+            "outputFile": "C:\\Users\\Momo\\Desktop\\CranioWake\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-de-rDE\\values-de-rDE.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Momo\\AndroidStudioProjects\\CranioWake\\app\\src\\main\\res\\values-de-rDE\\strings.xml",
+                    "source": "C:\\Users\\Momo\\Desktop\\CranioWake\\app\\src\\main\\res\\values-de-rDE\\strings.xml",
                     "from": {
                         "startLines": "38,30,76,75,5,7,77,12,112,74,11,108,35,89,149,8,2,62,44,139,141,146,129,131,147,124,126,119,121,134,136,160,92,116,113,117,3,19,13,15,47,42,161,99,84,83,148,64,167,164,53,78,81,88,154,46,4,85,14,27,40,52,105,107,86,94,87,67,26,36,37,151,150,152,153,66,159,158,79,45,98,9,90,54,73,102,6,115,80,97,165,91,51,65,22,34,18,28,21,111,10,49,39,96,60,61,95,68,69,70,71,72,41,17,157,100,93,140,142,145,130,132,144,125,127,120,122,135,137,24,55,57,56,58,31,101,163,48,20,162,82,29,109,106,16,23,43,59,63,25,104,166,103,32,33,50,114",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

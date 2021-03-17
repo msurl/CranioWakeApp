@@ -82,7 +82,7 @@ public final class CraniowakeDatabase_Impl extends CraniowakeDatabase {
 
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
-    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
+    final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(2) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `patient_table` (`patientId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `caseNumber` INTEGER NOT NULL, `lastname` TEXT, `firstname` TEXT, `birthDate` TEXT, `dateTime` TEXT, `sex` TEXT)");

@@ -1948,6 +1948,7 @@ id btn_dialog
 id buttonPanel
 id cache_measures
 id calcAnswer
+id calc_act_id
 id calc_button
 id cancel_action
 id cancel_button
@@ -2007,6 +2008,7 @@ id design_navigation_view
 id dialog_button
 id digSpanFalseButton
 id digSpanTrueButton
+id dig_act_id
 id dig_span_num
 id digital_span_button
 id dimensions
@@ -2069,6 +2071,7 @@ id fourthPicFourSquareButton
 id fourthSquare
 id fragment_container_view_tag
 id frame_connect
+id fs_act_id
 id ghost_view
 id ghost_view_holder
 id gone
@@ -2147,8 +2150,10 @@ id material_timepicker_ok_button
 id material_timepicker_view
 id material_value_index
 id media_actions
-id menu_drawer_layout
 id menu_layout_container
+id menu_nav_drawer
+id menu_operation
+id menu_start_screen
 id message
 id middle
 id middle_of_line_area
@@ -2157,6 +2162,7 @@ id middle_of_line_yellow_line
 id mini
 id mistakeCounterTextInput
 id modeTextview
+id mol_act_id
 id monoploar
 id month_grid
 id month_navigation_bar
@@ -2226,11 +2232,13 @@ id percent
 id percentage
 id pictureFalseButton
 id pictureTrueButton
+id picture_act_id
 id picture_button
 id picture_test_view
 id pin
 id position
 id postLayout
+id ppt_act_id
 id ppttFalseButton
 id ppttTrueButton
 id pptt_button
@@ -2242,6 +2250,7 @@ id radiogroup_cortical_subcortical
 id radiogroup_cortical_subcortical_speech
 id radiogroup_monopoloar_bipolar
 id ratio
+id react_act_id
 id reaction_background_color_id
 id reaction_button
 id reaction_inputRound1
@@ -2256,6 +2265,7 @@ id reactionr2
 id reactionr3
 id reactionr4
 id reactionr5
+id read_act_id
 id read_button
 id read_test_view
 id rectangles
@@ -2294,7 +2304,9 @@ id search_voice_btn
 id secondNumberView
 id secondPicFourSquareButton
 id secondSquare
+id select_BrainArea_Text_id
 id select_dialog_listview
+id select_opMode_Text_id
 id selected
 id selection_type
 id shortcut
@@ -2341,6 +2353,7 @@ id start
 id startHorizontal
 id startToEnd
 id startVertical
+id start_operation_button
 id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
@@ -2349,6 +2362,7 @@ id stretch
 id stromTestId
 id stroopFalseButton
 id stroopTrueButton
+id stroop_act_id
 id stroop_button
 id stroopink
 id subMistakeButton
@@ -2405,6 +2419,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id token_act_id
 id token_button
 id toolbar
 id toolbar_seekbar
@@ -2423,15 +2438,18 @@ id transition_scene_layoutid_cache
 id transition_transform
 id treshhold_test
 id triangle
+id tw_act_id
 id unchecked
 id uniform
 id unlabeled
 id up
 id useLogo
+id user_add_patient_id
 id user_birthday_id
 id user_input_caseNumber_id
 id user_input_firstname_id
 id user_input_lastname_id
+id user_patient_overview
 id verification_test
 id vertical
 id view_offset_helper

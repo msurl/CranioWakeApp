@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Momo\\AndroidStudioProjects\\CranioWake\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
+            "outputFile": "C:\\Users\\Momo\\Desktop\\CranioWake\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Momo\\.gradle\\caches\\transforms-2\\files-2.1\\9892df923b1360176da4e51ebb8d1da9\\appcompat-1.2.0\\res\\values-v22\\values-v22.xml",

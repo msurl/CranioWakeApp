@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Momo\\AndroidStudioProjects\\CranioWake\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rXC\\values-en-rXC.xml",
+            "outputFile": "C:\\Users\\Momo\\Desktop\\CranioWake\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rXC\\values-en-rXC.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Momo\\.gradle\\caches\\transforms-2\\files-2.1\\55a4c36e3d4a9cf6e01d0c3eac828386\\core-1.3.1\\res\\values-en-rXC\\values-en-rXC.xml",
