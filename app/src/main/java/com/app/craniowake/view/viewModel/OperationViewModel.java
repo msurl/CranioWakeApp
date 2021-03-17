@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 
 import com.app.craniowake.data.model.Operation;
 import com.app.craniowake.data.repositories.OperationRepository;
+
 /**
  * stores and manages UI-related data of the OperationActivity and is used as an abstraction Layer
  */
@@ -22,6 +23,7 @@ public class OperationViewModel extends AndroidViewModel {
 
     /**
      * send current Operation as a LiveData object to Activity
+     *
      * @param date identifier of which Operation to retrieve
      */
     public LiveData<Operation> getOperationByDate(String date) {
@@ -30,6 +32,7 @@ public class OperationViewModel extends AndroidViewModel {
 
     /**
      * passes the object to be saved in database to underlying repository
+     *
      * @param operation is generated in MainActivity and send to be saved to db
      */
     public void addOperation(Operation operation) {

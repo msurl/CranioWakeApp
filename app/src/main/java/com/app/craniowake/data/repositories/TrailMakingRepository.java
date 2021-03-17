@@ -22,6 +22,7 @@ public class TrailMakingRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param trailMakingGame objekt to be saved in database
      */
     public void insert(TrailMakingGame trailMakingGame) {

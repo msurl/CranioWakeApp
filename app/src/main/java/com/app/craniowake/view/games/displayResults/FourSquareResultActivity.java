@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.app.craniowake.R;
 import com.app.craniowake.view.activityHelper.IntentHolder;
+
 /**
  * Results of the following Tests are Displayed: FourSquareActivity
  */
@@ -42,7 +43,8 @@ public class FourSquareResultActivity extends BaseResultActivity {
 
     /**
      * displays only the results from object mode
-     *  @param view method is triggered when clicked
+     *
+     * @param view method is triggered when clicked
      */
     public void setResultMode1FourSquare(View view) {
         Intent intent = getIntent();
@@ -62,7 +64,8 @@ public class FourSquareResultActivity extends BaseResultActivity {
 
     /**
      * displays only the results from faces mode
-     *  @param view method is triggered when clicked
+     *
+     * @param view method is triggered when clicked
      */
     public void setResultMode2FourSquare(View view) {
         Intent intent = getIntent();
@@ -82,10 +85,11 @@ public class FourSquareResultActivity extends BaseResultActivity {
 
     /**
      * displays results from entire Test
-     *  @param square1 correct Answers made in this particular square
-     *  @param square2 correct Answers made in this particular square
-     *  @param square3 correct Answers made in this particular square
-     *  @param square4 correct Answers made in this particular square
+     *
+     * @param square1 correct Answers made in this particular square
+     * @param square2 correct Answers made in this particular square
+     * @param square3 correct Answers made in this particular square
+     * @param square4 correct Answers made in this particular square
      */
     @SuppressLint("SetTextI18n")
     void displayFourSquareResult(String gameName, int runs, int correctAnsw, int wrongAnsw, int square1, int square2, int square3, int square4) {

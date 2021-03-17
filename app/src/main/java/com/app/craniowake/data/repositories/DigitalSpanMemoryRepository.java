@@ -22,6 +22,7 @@ public class DigitalSpanMemoryRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param digitalSpanMemoryGame objekt to be saved in database
      */
     public void insert(DigitalSpanMemoryGame digitalSpanMemoryGame) {

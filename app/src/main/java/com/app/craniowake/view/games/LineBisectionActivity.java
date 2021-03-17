@@ -22,6 +22,7 @@ import com.app.craniowake.view.activityHelper.StopWatch;
 import com.app.craniowake.view.games.displayResults.BaseResultActivity;
 import com.app.craniowake.view.viewModel.LineBisectionViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
+
 /**
  * Implementation of the Line Bisection Test
  */
@@ -91,6 +92,7 @@ public class LineBisectionActivity extends OperationActivity {
 
     /**
      * starts timer of Line Bisection Test
+     *
      * @param view method called when "start" button is clicked
      */
     @SuppressLint("ClickableViewAccessibility")
@@ -108,6 +110,7 @@ public class LineBisectionActivity extends OperationActivity {
 
     /**
      * stops timer of Line Bisection Test
+     *
      * @param view method called when "stop" button is clicked
      */
     public void touchField(View view) {
@@ -119,7 +122,8 @@ public class LineBisectionActivity extends OperationActivity {
 
     /**
      * distance always positive
-     * @param touchPoint point touched by patient
+     *
+     * @param touchPoint  point touched by patient
      * @param middlePoint point in the middle of the line
      */
     private float calcOnTouchScreenDistance(float touchPoint, float middlePoint) {
@@ -166,6 +170,7 @@ public class LineBisectionActivity extends OperationActivity {
 
     /**
      * value needs to be saved in mm to db so it needs to be converted from dpi to mm
+     *
      * @param dpiDistance the total distance calculated in dpi
      */
     private float convertFromDpiToMm(float dpiDistance) {
@@ -193,9 +198,9 @@ public class LineBisectionActivity extends OperationActivity {
 
     /**
      * creates object of LineBisectionGame and saves the answer to the database. Object is processed by the LineBisectionViewModel
-     * @param distance from touchpoint to middlepoint
-     * @param miliseconds time needed to touch screen
      *
+     * @param distance    from touchpoint to middlepoint
+     * @param miliseconds time needed to touch screen
      */
     private void saveLineDissectionGame(float distance, int miliseconds) {
         lineBisectionViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(LineBisectionViewModel.class);
@@ -221,6 +226,7 @@ public class LineBisectionActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new BaseResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishMoLGame(View view) {

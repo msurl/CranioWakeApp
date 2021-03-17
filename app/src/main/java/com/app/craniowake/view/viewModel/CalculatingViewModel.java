@@ -22,7 +22,8 @@ public class CalculatingViewModel extends AndroidViewModel {
 
     /**
      * passes the object to be saved in database to underlying repository
-     *  @param calculusGame is generated in CalculusActivity and send to be saved to db
+     *
+     * @param calculusGame is generated in CalculusActivity and send to be saved to db
      */
     public void addCalculatingGame(CalculusGame calculusGame) {
         calculatingRepository.insert(calculusGame);

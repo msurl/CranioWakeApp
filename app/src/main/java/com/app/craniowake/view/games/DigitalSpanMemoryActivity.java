@@ -18,6 +18,7 @@ import com.app.craniowake.view.viewModel.DigitalSpanMemoryViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 
 import java.util.Random;
+
 /**
  * Implementation of the Digital Span Memory Test
  */
@@ -42,6 +43,7 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
 
     /**
      * starts to show a new set of animation with three numbers
+     *
      * @param view method is called when middle area of the screen is clicked
      */
     public void startNextSetOfNumbers(View view) {
@@ -56,6 +58,7 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new BaseResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "true" or "false" is clicked
      */
     public void setAnswer(View view) {
@@ -66,6 +69,7 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
 
     /**
      * creates object of DigitalSpanMemoryGame and saves the answer to the database. Object is processed by the DigitalSpanMemoryViewModel
+     *
      * @param answer answer given by patient
      */
     private void saveDigitalSpanMemoryAnswer(boolean answer) {
@@ -83,6 +87,7 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
 
     /**
      * evaluates answer given by the id of the button which was clicked. Also increases general counter of correct or wrong answers
+     *
      * @param id of button "true" or "false"
      */
     @SuppressLint("NonConstantResourceId")
@@ -144,6 +149,7 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
 
     /**
      * creates thread to simulate and animation of the numbers appearing and disappearing on screen
+     *
      * @param textView view on which the changing numbers are displayed
      * @param mHandler allows to send and process message and runnable objects associated with a thread's MessageQueue
      */
@@ -175,6 +181,7 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new BaseResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishSpanMemoryGame(View view) {

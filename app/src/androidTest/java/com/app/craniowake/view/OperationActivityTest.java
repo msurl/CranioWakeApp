@@ -63,74 +63,77 @@ public class OperationActivityTest {
     }
 
     @Test
-    public void openPpttActivity(){
+    public void openPpttActivity() {
         onView(withId(R.id.pptt_button)).perform(click());
         onView(withId(R.id.ppt_act_id))
                 .check(matches(isDisplayed()));
     }
 
     @Test
-    public void openCalcActivity(){
+    public void openCalcActivity() {
         onView(withId(R.id.calc_button)).perform(click());
         onView(withId(R.id.calc_act_id))
                 .check(matches(isDisplayed()));
     }
+
     @Test
-    public void openStroopActivity(){
+    public void openStroopActivity() {
         onView(withId(R.id.stroop_button)).perform(click());
         onView(withId(R.id.stroop_act_id))
                 .check(matches(isDisplayed()));
     }
+
     @Test
-    public void openReadActivity(){
+    public void openReadActivity() {
         onView(withId(R.id.read_button)).perform(click());
         onView(withId(R.id.read_act_id))
                 .check(matches(isDisplayed()));
     }
+
     @Test
-    public void openPictureActivity(){
+    public void openPictureActivity() {
         onView(withId(R.id.picture_button)).perform(click());
         onView(withId(R.id.picture_act_id))
                 .check(matches(isDisplayed()));
     }
 
     @Test
-    public void openTokenActivity(){
+    public void openTokenActivity() {
         onView(withId(R.id.token_button)).perform(click());
         onView(withId(R.id.token_act_id))
                 .check(matches(isDisplayed()));
     }
 
     @Test
-    public void openMoLActivity(){
+    public void openMoLActivity() {
         onView(withId(R.id.middle_of_line_button)).perform(click());
         onView(withId(R.id.mol_act_id))
                 .check(matches(isDisplayed()));
     }
 
     @Test
-    public void openDigitSpanActivity(){
+    public void openDigitSpanActivity() {
         onView(withId(R.id.digital_span_button)).perform(click());
         onView(withId(R.id.dig_act_id))
                 .check(matches(isDisplayed()));
     }
 
     @Test
-    public void openTrailWayActivity(){
+    public void openTrailWayActivity() {
         onView(withId(R.id.trailway_button)).perform(click());
         onView(withId(R.id.tw_act_id))
                 .check(matches(isDisplayed()));
     }
 
     @Test
-    public void openFourSquareActivity(){
+    public void openFourSquareActivity() {
         onView(withId(R.id.four_square_button)).perform(click());
         onView(withId(R.id.fs_act_id))
                 .check(matches(isDisplayed()));
     }
 
     @Test
-    public void openReactionActivity(){
+    public void openReactionActivity() {
         onView(withId(R.id.reaction_button)).perform(click());
         onView(withId(R.id.react_act_id))
                 .check(matches(isDisplayed()));

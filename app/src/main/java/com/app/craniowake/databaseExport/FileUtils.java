@@ -15,6 +15,7 @@ public class FileUtils {
 
     /**
      * Returns the path to files folder inside Android/data/data/cranioWake/ on the SD card
+     *
      * @param context tells the compiler to which context activity or application the current belongs
      */
     public static String getAppDir(Context context) {
@@ -23,6 +24,7 @@ public class FileUtils {
 
     /**
      * Creates directory if not exists yet
+     *
      * @param path path to files folder on the SD card
      */
     public static File createDirIfNotExist(String path) {

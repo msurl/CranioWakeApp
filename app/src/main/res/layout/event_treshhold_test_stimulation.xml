@@ -150,10 +150,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:padding="20dp"
                     android:autofillHints="0.0"
                     android:hint="0.0"
                     android:inputType="numberDecimal"
+                    android:padding="20dp"
                     android:textSize="26sp" />
 
 
@@ -200,10 +200,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:padding="20dp"
                     android:autofillHints="0.0"
                     android:hint="0.0"
                     android:inputType="numberDecimal"
+                    android:padding="20dp"
                     android:textSize="26sp" />
 
             </LinearLayout>

@@ -22,6 +22,7 @@ public class StroopRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param stroopGame objekt to be saved in database
      */
     public void insert(StroopGame stroopGame) {

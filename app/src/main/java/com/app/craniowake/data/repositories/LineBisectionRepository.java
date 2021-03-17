@@ -22,6 +22,7 @@ public class LineBisectionRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param lineBisectionGame objekt to be saved in database
      */
     public void insert(LineBisectionGame lineBisectionGame) {

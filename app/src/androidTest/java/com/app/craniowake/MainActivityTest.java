@@ -95,7 +95,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void clickOnYourNavigationItem_ShowsYourScreen() throws InterruptedException{
+    public void clickOnYourNavigationItem_ShowsYourScreen() throws InterruptedException {
 
         onView(withId(R.id.nav_view))
                 .check(matches(isClosed(Gravity.START)))

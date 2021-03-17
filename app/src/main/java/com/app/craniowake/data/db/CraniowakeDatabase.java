@@ -76,6 +76,7 @@ public abstract class CraniowakeDatabase extends RoomDatabase {
 
     /**
      * Creates an instance of the database
+     *
      * @param context Instance of the ApplicationContext (Activity) in which the Method will be called.
      */
     public static synchronized CraniowakeDatabase getInstance(Context context) {

@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.craniowake.R;
 import com.app.craniowake.view.activityHelper.IntentHolder;
+
 /**
  * Results of the following Tests are Displayed: DigitalSpanMemoryActivity, CalculusActivity, LineBisectionActivity, StroopActivity, PpttActivity and Token Activity
  * Is superclass to the other ResultActivities
@@ -26,10 +27,11 @@ public class BaseResultActivity extends AppCompatActivity {
 
     /**
      * sets TextViews to display results
-     * @param gameName name of the performed test
-     * @param runs how many runs of the test have been made
+     *
+     * @param gameName    name of the performed test
+     * @param runs        how many runs of the test have been made
      * @param correctAnsw total amount of correct answers for all rounds
-     * @param wrongAnsw total amount of wrong answers for all rounds
+     * @param wrongAnsw   total amount of wrong answers for all rounds
      */
     @SuppressLint("SetTextI18n")
     void displayBaseResults(String gameName, int runs, int correctAnsw, int wrongAnsw) {
@@ -63,8 +65,9 @@ public class BaseResultActivity extends AppCompatActivity {
 
     /**
      * calculates the percentage of correct answers for the entire Test
+     *
      * @param correctAnswers total amount of correct answers for all rounds
-     * @param runs how many runs of the test have been made
+     * @param runs           how many runs of the test have been made
      */
     int calcPercent(int correctAnswers, int runs) {
         double percent = (double) correctAnswers / runs;
@@ -74,6 +77,7 @@ public class BaseResultActivity extends AppCompatActivity {
 
     /**
      * destroys activity from back stack and returns user to OperationActivity
+     *
      * @param view method is triggered when clicked
      */
     public void backToMenu(View view) {

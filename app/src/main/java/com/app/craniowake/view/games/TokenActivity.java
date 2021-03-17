@@ -18,6 +18,7 @@ import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.TokenViewModel;
 
 import java.util.Random;
+
 /**
  * Implementation of the Token Test
  */
@@ -42,6 +43,7 @@ public class TokenActivity extends OperationActivity {
 
     /**
      * compares tokenId to string buttonTokenId
+     *
      * @return true or false depending if token was recognized or not
      */
     private boolean compareTokenToButton(String buttonToken) {
@@ -56,8 +58,9 @@ public class TokenActivity extends OperationActivity {
 
     /**
      * creates object of TokenGame and saves the answer to the database. Object is processed by the TokenViewModel
+     *
      * @param answer of patient if recognized token
-     * @param token to be recognized
+     * @param token  to be recognized
      */
     private void saveTokenGame(boolean answer, String token) {
         tokenViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(TokenViewModel.class);
@@ -114,6 +117,7 @@ public class TokenActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new BaseResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishTokenGame(View view) {

@@ -15,6 +15,7 @@ import com.app.craniowake.view.MainActivity;
 import com.app.craniowake.view.activityHelper.IntentHolder;
 import com.app.craniowake.view.activityHelper.PatientListAdapter;
 import com.app.craniowake.view.viewModel.PatientViewModel;
+
 /**
  * Activity to display all existing patients in database
  */

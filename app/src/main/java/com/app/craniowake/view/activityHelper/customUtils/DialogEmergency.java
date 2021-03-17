@@ -14,6 +14,7 @@ public class DialogEmergency {
 
     /**
      * Method to call dialog
+     *
      * @param activity shows dialog on this activity
      */
     public void showDialog(Activity activity) {

@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      * if patient has been selected the name will be displayed
      * otherwise it will inform the user that no patient has been selected yet
      */
-    private void displayNameOfCurrentPatient(){
+    private void displayNameOfCurrentPatient() {
         final TextView currentPatientTextView = findViewById(R.id.current_patient_id);
-        if(getPatientName() != null){
+        if (getPatientName() != null) {
             currentPatientTextView.setText(getPatientName());
         } else {
             currentPatientTextView.setText(R.string.no_patient_selected);
@@ -73,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     /**
      * get selected patient  Id
+     *
      * @return id of patient
      */
     private int getById() {
@@ -82,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     /**
      * get selected patient name
+     *
      * @return name of patient
      */
     private String getPatientName() {
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     /**
      * navigate from Menu to a new Activity (atientListActivity, AddPatientActivity) or start a databaseExport
+     *
      * @param item selected choice how to proceed further
      */
     @SneakyThrows
@@ -131,8 +134,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      * creates object of Operation and saves the new Operation, connected to the Patient to the database. Object is processed by the OperationViewModel.
      * following the OperationActivity starts
      * Intents to be send to OperationActivity
+     *
      * @param selectedBrainArea area were tumor most likely is located
-     * @param selectedGameMode moment of testing(prä, intra, post, followup)
+     * @param selectedGameMode  moment of testing(prä, intra, post, followup)
      */
     private void saveOperation(String selectedGameMode, String selectedBrainArea) {
         final Intent intent = new Intent(this, OperationActivity.class);

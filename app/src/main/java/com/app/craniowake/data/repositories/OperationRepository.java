@@ -24,6 +24,7 @@ public class OperationRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param newOperation objekt to be saved in database
      */
     public void insert(Operation newOperation) {
@@ -32,6 +33,7 @@ public class OperationRepository {
 
     /**
      * returns LiveData of the given operation by date
+     *
      * @param date is used as an identifier for operations
      */
     public LiveData<Operation> getOperationByDate(String date) {

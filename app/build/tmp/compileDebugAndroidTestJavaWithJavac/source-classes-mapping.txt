@@ -1,6 +1,0 @@
-com/app/craniowake/test/BuildConfig.java
- com.app.craniowake.test.BuildConfig
-com/app/craniowake/view/OperationActivityTest.java
- com.app.craniowake.view.OperationActivityTest
-com/app/craniowake/MainActivityTest.java
- com.app.craniowake.MainActivityTest

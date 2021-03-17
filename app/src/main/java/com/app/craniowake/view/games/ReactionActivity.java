@@ -20,6 +20,7 @@ import com.app.craniowake.view.activityHelper.StopWatch;
 import com.app.craniowake.view.games.displayResults.ReactionResultActivity;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.ReactionViewModel;
+
 /**
  * Implementation of the Reaction Test
  */
@@ -109,6 +110,7 @@ public class ReactionActivity extends OperationActivity {
 
     /**
      * generates delaytime between red and blue screen
+     *
      * @return random delaytime between 2000 and 4000 ms
      */
     private long generateRandomTime() {
@@ -119,6 +121,7 @@ public class ReactionActivity extends OperationActivity {
 
     /**
      * creates object of ReactionGame and saves the answer to the database. Object is processed by the ReactionViewModel
+     *
      * @param milliSeconds reaction time of patient
      */
     private void saveReactionGame(int milliSeconds) {
@@ -145,6 +148,7 @@ public class ReactionActivity extends OperationActivity {
 
     /**
      * creates thread to simulate and animation of the changing screen color
+     *
      * @param textView view on which the changing screen is displayed
      * @param mHandler allows to send and process message and runnable objects associated with a thread's MessageQueue
      */
@@ -193,6 +197,7 @@ public class ReactionActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new ReactionResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishReactionGame(View view) {

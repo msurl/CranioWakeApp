@@ -6,6 +6,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.app.craniowake.R;
+
 /**
  * custom designed dialog Pop-Up for basic information like added patient or successful db export.
  */
@@ -13,6 +14,7 @@ public class DialogAddedPatient {
 
     /**
      * Method to call dialog
+     *
      * @param activity shows dialog on this activity
      */
     public void showDialog(Activity activity) {

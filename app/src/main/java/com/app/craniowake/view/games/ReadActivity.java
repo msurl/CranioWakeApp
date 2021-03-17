@@ -18,6 +18,7 @@ import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.ReadViewModel;
 
 import java.util.Random;
+
 /**
  * Implementation of the Read Test (Lese Test)
  */
@@ -42,6 +43,7 @@ public class ReadActivity extends OperationActivity {
 
     /**
      * sets second text
+     *
      * @param view method called when clicked on text
      */
     public void setNextText(View view) {
@@ -90,6 +92,7 @@ public class ReadActivity extends OperationActivity {
 
     /**
      * creates object of ReadGame and saves the answer to the database. Object is processed by the ReadViewModel
+     *
      * @param mistakeCounter amount of reading mistakes made by patient
      */
     private void saveReadGame(int mistakeCounter) {
@@ -116,6 +119,7 @@ public class ReadActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new ReadResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishReadGame(View view) {

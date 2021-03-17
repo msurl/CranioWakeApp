@@ -49,6 +49,7 @@ public class ReadGame {
 
     /**
      * Entity of the Calculus Test
+     *
      * @param localDateTime formats generated datetime to: JJJJ-MM-DDT00:00:00.000
      */
     private String formatDateTime(LocalDateTime localDateTime) {

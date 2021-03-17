@@ -9,6 +9,7 @@ import android.widget.EditText;
 
 import java.util.Calendar;
 import java.util.TimeZone;
+
 /**
  * Creates visual pop up calendar to select a date by year, month and day
  */
@@ -36,6 +37,7 @@ public class BirthdayPicker implements View.OnClickListener, DatePickerDialog.On
 
     /**
      * calendar is set to default Timezone and starts 50 years in the past.
+     *
      * @param v when clicked the calendar opens
      */
     @Override

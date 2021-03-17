@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 
 import com.app.craniowake.data.model.gameModels.PictureGame;
 import com.app.craniowake.data.repositories.PictureRepository;
+
 /**
  * stores and manages UI-related data of the PictureActivity and is used as an abstraction Layer
  */
@@ -20,6 +21,7 @@ public class PictureViewModel extends AndroidViewModel {
 
     /**
      * passes the object to be saved in database to underlying repository
+     *
      * @param pictureGame is generated in PictureActivity and send to be saved to db
      */
     public void addPictureGame(PictureGame pictureGame) {

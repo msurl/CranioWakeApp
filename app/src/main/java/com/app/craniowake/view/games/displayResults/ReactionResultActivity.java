@@ -2,13 +2,11 @@ package com.app.craniowake.view.games.displayResults;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.craniowake.R;
 import com.app.craniowake.view.activityHelper.IntentHolder;
+
 /**
  * Results of the following Tests are Displayed: ReactionActivity
  */
@@ -40,6 +38,7 @@ public class ReactionResultActivity extends BaseResultActivity {
 
     /**
      * displays results of Reaction Test for five rounds.
+     *
      * @param round1 time needed to react in 00:00.000
      *               round2-round5 analogue
      */

@@ -17,6 +17,7 @@ import com.app.craniowake.data.model.Patient;
 import com.app.craniowake.view.activityHelper.BirthdayPicker;
 import com.app.craniowake.view.activityHelper.customUtils.DialogAddedPatient;
 import com.app.craniowake.view.viewModel.PatientViewModel;
+
 /**
  * Activity to add patients to database
  */
@@ -71,6 +72,7 @@ public class AddPatientActivity extends PatientActivity {
 
     /**
      * checks which radiobutton has been clicked
+     *
      * @return sex of patient
      */
     private String checkPatientGender() {
@@ -87,6 +89,7 @@ public class AddPatientActivity extends PatientActivity {
 
     /**
      * checks if one of the fields has been left empty. Saving is denied until every field is filled
+     *
      * @return if a field is emtpy or not
      */
     private boolean checkIfInputEmpty() {

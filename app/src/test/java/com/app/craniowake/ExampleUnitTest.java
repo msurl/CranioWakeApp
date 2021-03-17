@@ -1,9 +1,5 @@
 package com.app.craniowake;
 
-import android.os.Handler;
-
-import com.app.craniowake.view.activityHelper.StopWatch;
-
 import org.junit.Test;
 
 /**

@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.app.craniowake.R;
 import com.app.craniowake.view.activityHelper.IntentHolder;
+
 /**
  * Results of the following Tests are Displayed: PictureActivity and TrailMakingActivity
  */
@@ -31,7 +32,8 @@ public class ModiBaseResultActivity extends BaseResultActivity {
 
     /**
      * displays only the results from object or numbers mode
-     *  @param view method is triggered when clicked
+     *
+     * @param view method is triggered when clicked
      */
     public void setResultMode1(View view) {
         Intent intent = getIntent();
@@ -47,7 +49,8 @@ public class ModiBaseResultActivity extends BaseResultActivity {
 
     /**
      * displays only the results from faces or numbers+alphabet mode
-     *  @param view method is triggered when clicked
+     *
+     * @param view method is triggered when clicked
      */
     public void setResultMode2(View view) {
         Intent intent = getIntent();
@@ -63,8 +66,9 @@ public class ModiBaseResultActivity extends BaseResultActivity {
 
     /**
      * displays correct gameMode depending on which Test is performed
-     * @param gameName Test which is performed
-     * @param firstMode name of mode of Picture Test
+     *
+     * @param gameName   Test which is performed
+     * @param firstMode  name of mode of Picture Test
      * @param secondMode name of mode of Trail Making Test
      */
     private void setGameMode(String gameName, String firstMode, String secondMode) {
@@ -79,7 +83,8 @@ public class ModiBaseResultActivity extends BaseResultActivity {
 
     /**
      * displays results from entire test
-     *  @param view method is triggered when clicked
+     *
+     * @param view method is triggered when clicked
      */
     public void goToBaseResult(View view) {
         setResultBase();

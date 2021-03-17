@@ -22,6 +22,7 @@ public class ReadRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param readGame objekt to be saved in database
      */
     public void insert(ReadGame readGame) {

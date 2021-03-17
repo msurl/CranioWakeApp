@@ -10,6 +10,7 @@ import com.app.craniowake.R;
 import com.app.craniowake.view.MainActivity;
 
 import static com.app.craniowake.view.activityHelper.IntentHolder.PATIENT_ID;
+
 /**
  * Baseclass for UserManagement
  */
@@ -34,6 +35,7 @@ public class PatientActivity extends MainActivity {
     /**
      * allows navigating in navigationBar for both subclasses
      * if clicked, current activity is destroyed
+     *
      * @param item menuItem clicked in navigationDrawer
      */
     @Override

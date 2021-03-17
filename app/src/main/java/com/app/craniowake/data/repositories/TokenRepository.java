@@ -22,6 +22,7 @@ public class TokenRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param tokenGame objekt to be saved in database
      */
     public void insert(TokenGame tokenGame) {

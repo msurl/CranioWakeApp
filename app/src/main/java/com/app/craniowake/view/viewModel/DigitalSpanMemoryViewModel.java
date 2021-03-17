@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 
 import com.app.craniowake.data.model.gameModels.DigitalSpanMemoryGame;
 import com.app.craniowake.data.repositories.DigitalSpanMemoryRepository;
+
 /**
  * stores and manages UI-related data of the DigitalSpanMemoryActivity and is used as an abstraction Layer
  */
@@ -21,6 +22,7 @@ public class DigitalSpanMemoryViewModel extends AndroidViewModel {
 
     /**
      * passes the object to be saved in database to underlying repository
+     *
      * @param digitalSpanMemoryGame is generated in DigitalSpanMemoryActivity and send to be saved to db
      */
     public void addDigitalSpanMemoryGame(DigitalSpanMemoryGame digitalSpanMemoryGame) {

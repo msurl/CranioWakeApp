@@ -20,6 +20,7 @@ import com.app.craniowake.view.viewModel.CalculatingViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 
 import java.util.Random;
+
 /**
  * Implementation of the Calculus Test
  */
@@ -45,6 +46,7 @@ public class CalculusActivity extends OperationActivity {
 
         createEquation();
     }
+
     /**
      * returns string of dateTime when current operation was created t
      * its used as an identifier
@@ -158,6 +160,7 @@ public class CalculusActivity extends OperationActivity {
 
     /**
      * saves run of calculus test to database and generates a new equation
+     *
      * @param view method is called when "next" button is clicked
      */
     public void onClickAnswer(View view) {
@@ -179,7 +182,8 @@ public class CalculusActivity extends OperationActivity {
 
     /**
      * creates object of CalculusGame and saves equation and its answer to the database. Object is processed by the CalculatingViewModel
-     * @param answer answer given by patient
+     *
+     * @param answer    answer given by patient
      * @param firstNum, secondNum, operator - create current equation and are saved as a string
      */
     private void saveCalculatingAnswer(boolean answer, String firstNum, String secondNum, String operator) {
@@ -216,6 +220,7 @@ public class CalculusActivity extends OperationActivity {
 
     /**
      * checks if result of patient is true or false
+     *
      * @return false or true answer of patient
      */
     private boolean evaluateAnswer(int answer) {
@@ -247,6 +252,7 @@ public class CalculusActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new BaseResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishCalcGame(View view) {

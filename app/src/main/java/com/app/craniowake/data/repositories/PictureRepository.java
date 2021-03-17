@@ -22,6 +22,7 @@ public class PictureRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param pictureGame objekt to be saved in database
      */
     public void insert(PictureGame pictureGame) {

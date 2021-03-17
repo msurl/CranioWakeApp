@@ -17,6 +17,7 @@ import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.PictureViewModel;
 
 import java.util.Random;
+
 /**
  * Implementation of the Picture Test
  */
@@ -44,6 +45,7 @@ public class PictureActivity extends OperationActivity {
 
     /**
      * sets mode to 1=Object or 0=Faces
+     *
      * @param view method is triggered when "change mode" Button is clicked
      */
     public void setPictureGameMode(View view) {
@@ -56,6 +58,7 @@ public class PictureActivity extends OperationActivity {
 
     /**
      * save current answers and set next picture on display
+     *
      * @param view is called when "true" or "false" button is clicked
      */
     @SuppressLint("NonConstantResourceId")
@@ -76,6 +79,7 @@ public class PictureActivity extends OperationActivity {
 
     /**
      * returns picture depending on gameMode(Faces/Objects)
+     *
      * @return id of resource (picture)
      */
     private int chooseMode(Random random) {
@@ -89,7 +93,8 @@ public class PictureActivity extends OperationActivity {
 
     /**
      * creates object of PictureGame and saves the answer to the database. Object is processed by the PictureViewModel
-     * @param answer of patient if recognized picture
+     *
+     * @param answer      of patient if recognized picture
      * @param pictureName picture to be recognized
      */
     private void savePictureGame(boolean answer, String pictureName) {
@@ -107,6 +112,7 @@ public class PictureActivity extends OperationActivity {
 
     /**
      * returns fileName of picture
+     *
      * @param id id of resource (picture)
      * @return name of resource with given id
      */
@@ -116,6 +122,7 @@ public class PictureActivity extends OperationActivity {
 
     /**
      * evaluates answer given by the id of the button which was clicked. Also increases general counter of correct or wrong answers
+     *
      * @param id of button "true" or "false"
      */
     @SuppressLint("NonConstantResourceId")
@@ -169,6 +176,7 @@ public class PictureActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new ModiBaseResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishPictureGame(View view) {

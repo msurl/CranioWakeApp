@@ -16,6 +16,7 @@ public abstract class OperationDao {
 
     /**
      * equivalent to a SQL INSERT INTO statement
+     *
      * @param operation object is saved as an insert entry to db
      */
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -23,6 +24,7 @@ public abstract class OperationDao {
 
     /**
      * equivalent to a SQL SELECT Query. Selects all Operation Entries from the operation_table where the dateTime is equal to the param
+     *
      * @param dateTime Time and Date of the operation used as an identifier
      */
     @Query("SELECT * FROM operation_table WHERE dateTime = :dateTime")

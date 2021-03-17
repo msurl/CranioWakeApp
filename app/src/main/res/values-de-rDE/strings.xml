@@ -75,7 +75,7 @@
     <string name="_minus">-</string>
     <string name="_1234">1234</string>
     <string name="_0_m_a">0 m.A</string>
-    <string name="_6_m_a" >6 m.A</string>
+    <string name="_6_m_a">6 m.A</string>
     <string name="fallnr">FallNr.</string>
     <string name="name">Name</string>
     <string name="patient">Patient:</string>
@@ -154,7 +154,7 @@
     <string name="mode_2_numbers">Modus 2 / Nummern + Buchstaben</string>
     <string name="file_export">Datei wurde erfolgreich exportiert</string>
 
-    
+
     <string name="select_brain_area">SELECT BRAIN AREA:</string>
     <string name="motor_function">Motor Function</string>
     <string name="monopolar">monopolar</string>

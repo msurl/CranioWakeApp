@@ -34,6 +34,7 @@ import com.app.craniowake.view.stimulation.TreshholdTestActivity;
 import com.app.craniowake.view.stimulation.VerificationTestActivity;
 import com.app.craniowake.view.viewModel.ComplicationViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
+
 /**
  * This Activity is the menu and contains ever test to be performed.
  * complications are handled in this Activity.
@@ -80,7 +81,7 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         final TextView currentPatient = findViewById(R.id.patient_id_operation_mode);
 
         currentOperationMode.setText(getCurrentOperationMode());
-        if(getPatientName() != null){
+        if (getPatientName() != null) {
             currentPatient.setText(getPatientName());
         } else {
             currentPatient.setText(R.string.no_patient_selected);
@@ -89,6 +90,7 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
 
     /**
      * collection on Buttons to start a new test Activity
+     *
      * @param v id of the button which passes us on to the next test Activity.
      */
     @SuppressLint("NonConstantResourceId")
@@ -181,6 +183,7 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
 
     /**
      * when clicked a complication is added to the patients db
+     *
      * @param item emergency button in toolbar
      */
     @Override

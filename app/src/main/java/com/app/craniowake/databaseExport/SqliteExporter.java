@@ -19,9 +19,9 @@ import java.util.List;
 
 /**
  * Can export an sqlite databse into a csv file.
- *
+ * <p>
  * The file has on the top dbVersion and on top of each table data the name of the table
- *
+ * <p>
  * https://stackoverflow.com/questions/31367270/exporting-sqlite-database-to-csv-file-in-android
  */
 public class SqliteExporter {
@@ -32,7 +32,8 @@ public class SqliteExporter {
 
     /**
      * exports CSV File to created directory
-     * @param db Instance of a db wrapper to perform queries
+     *
+     * @param db      Instance of a db wrapper to perform queries
      * @param context tells the compiler to which context activity or application the current belongs
      */
     public static String export(SupportSQLiteDatabase db, Context context) throws IOException {
@@ -63,6 +64,7 @@ public class SqliteExporter {
 
     /**
      * Get all the table names we have in db and return as a List<String>
+     *
      * @param db needed to perform queries
      */
     public static List<String> getTablesFromDataBase(SupportSQLiteDatabase db) {
@@ -86,9 +88,10 @@ public class SqliteExporter {
 
     /**
      * iterates through database tables and writes entries into the csv file
+     *
      * @param backupFile csv file to be written on
-     * @param db instance of db wrapper to perform queries on db
-     * @param tables list of all table names in db
+     * @param db         instance of db wrapper to perform queries on db
+     * @param tables     list of all table names in db
      */
     private static void writeDbToCsv(File backupFile, SupportSQLiteDatabase db, List<String> tables) {
         CSVWriter csvWrite = null;
@@ -120,6 +123,7 @@ public class SqliteExporter {
 
     /**
      * Closes csvwriter
+     *
      * @param csvWrite to be closed
      */
     private static void closeCSVWriter(CSVWriter csvWrite) {
@@ -134,6 +138,7 @@ public class SqliteExporter {
 
     /**
      * Closes cursor
+     *
      * @param cursorCSV to be closed
      */
     private static void closeCSVCursor(Cursor cursorCSV) {
@@ -144,7 +149,7 @@ public class SqliteExporter {
 
     /**
      * @param writer writes value into csv
-     * @param value writes version key and tablename
+     * @param value  writes version key and tablename
      */
     private static void writeSingleValue(CSVWriter writer, String value) {
         writer.writeNext(new String[]{value});

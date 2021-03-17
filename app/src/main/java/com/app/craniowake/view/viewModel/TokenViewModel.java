@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 
 import com.app.craniowake.data.model.gameModels.TokenGame;
 import com.app.craniowake.data.repositories.TokenRepository;
+
 /**
  * stores and manages UI-related data of the TokenActivity and is used as an abstraction Layer
  */
@@ -20,6 +21,7 @@ public class TokenViewModel extends AndroidViewModel {
 
     /**
      * passes the object to be saved in database to underlying repository
+     *
      * @param tokenGame is generated in TokenActivity and send to be saved to db
      */
     public void addTokenGame(TokenGame tokenGame) {

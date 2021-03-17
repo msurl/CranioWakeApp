@@ -22,6 +22,7 @@ public class CalculatingRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param calculusGame objekt to be saved in database
      */
     public void insert(CalculusGame calculusGame) {

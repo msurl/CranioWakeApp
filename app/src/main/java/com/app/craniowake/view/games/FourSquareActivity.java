@@ -19,6 +19,7 @@ import com.app.craniowake.view.viewModel.FourSquareViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 
 import java.util.Random;
+
 /**
  * Implementation of the Four Quadrant Test (Vier Quadranten Test)
  */
@@ -64,6 +65,7 @@ public class FourSquareActivity extends OperationActivity {
 
     /**
      * set next picture on display
+     *
      * @param view method is called when picture is clicked
      */
     public void setNextPicture(View view) {
@@ -75,6 +77,7 @@ public class FourSquareActivity extends OperationActivity {
 
     /**
      * returns picture depending on gameMode(Faces/Objects)
+     *
      * @return id of resource (picture)
      */
     private int returnCurrentPic() {
@@ -88,6 +91,7 @@ public class FourSquareActivity extends OperationActivity {
 
     /**
      * returns fileName of picture
+     *
      * @param id id of resource (picture)
      * @return name of resource with given id
      */
@@ -97,6 +101,7 @@ public class FourSquareActivity extends OperationActivity {
 
     /**
      * sets mode to 1=Object or 0=Faces
+     *
      * @param view method is triggered when "change mode" Button is clicked
      */
     public void setFourSquareGameMode(View view) {
@@ -109,6 +114,7 @@ public class FourSquareActivity extends OperationActivity {
 
     /**
      * initiates button color changes depending on the square
+     *
      * @param view method is triggered when one of the four buttons to record answer is clicked
      */
     @SuppressLint("NonConstantResourceId")
@@ -130,6 +136,7 @@ public class FourSquareActivity extends OperationActivity {
 
     /**
      * creates object of FourSquareGame and saves the answer to the database. Object is processed by the FourSquareViewModel
+     *
      * @param pictureName picture to be recognized
      * @param firstSquare answer if patient recognized first square or not
      *                    secondSquare, thirdSquare, fourthSquare analogue
@@ -158,7 +165,8 @@ public class FourSquareActivity extends OperationActivity {
 
     /**
      * changes button color if square has been recognized
-     * @param id from squareButton
+     *
+     * @param id               from squareButton
      * @param recognizedSquare determines if color changes to green = true or grey = false
      */
     private boolean setButtonColor(int id, boolean recognizedSquare) {
@@ -256,6 +264,7 @@ public class FourSquareActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new FourSquareResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishFourSquareGame(View view) {

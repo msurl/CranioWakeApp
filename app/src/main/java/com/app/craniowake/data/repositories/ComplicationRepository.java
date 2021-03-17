@@ -22,6 +22,7 @@ public class ComplicationRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param complication objekt to be saved in database
      */
     public void insert(Complication complication) {

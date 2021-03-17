@@ -17,6 +17,7 @@ import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.PpttViewModel;
 
 import java.util.Random;
+
 /**
  * Implementation of the PPT Test
  */
@@ -40,6 +41,7 @@ public class PpttActivity extends OperationActivity {
 
     /**
      * returns random picture from pictureCollection array
+     *
      * @return id of resource (picture)
      */
     private int returnRandomPictureId() {
@@ -55,6 +57,7 @@ public class PpttActivity extends OperationActivity {
 
     /**
      * returns fileName of picture
+     *
      * @param id id of resource (picture)
      * @return name of resource with given id
      */
@@ -71,6 +74,7 @@ public class PpttActivity extends OperationActivity {
 
     /**
      * evaluates answer given by the id of the button which was clicked. Also increases general counter of correct or wrong answers
+     *
      * @param id of button "true" or "false"
      */
     @SuppressLint("NonConstantResourceId")
@@ -90,7 +94,8 @@ public class PpttActivity extends OperationActivity {
 
     /**
      * creates object of PpttGame and saves the answer to the database. Object is processed by the PpttViewModel
-     * @param answer of patient if recognized picture
+     *
+     * @param answer      of patient if recognized picture
      * @param pictureName picture to be recognized
      */
     private void saveAnswer(boolean answer, String pictureName) {
@@ -122,6 +127,7 @@ public class PpttActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new BaseResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishPPTTGame(View view) {

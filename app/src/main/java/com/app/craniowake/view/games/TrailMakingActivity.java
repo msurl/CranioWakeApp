@@ -26,6 +26,7 @@ import com.app.craniowake.view.viewModel.TrailMakingViewModel;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+
 /**
  * Implementation of the Trail Making Test
  */
@@ -62,6 +63,7 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * sets game to default to start again
+     *
      * @param view method is triggered when "restart" Button is clicked
      */
     public void restartLines(View view) {
@@ -74,6 +76,7 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * following two methods sets mode to 2=numbers+alphabet or 1=numbers
+     *
      * @param view method is triggered when "change mode" Button is clicked
      */
     public void setTrailwayGameMode(View view) {
@@ -102,6 +105,7 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * counts how many elements of the boolean array are true
+     *
      * @return amount of correctly connected points per round
      */
     private int getCorrectAnswersPerRound() {
@@ -116,6 +120,7 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * checks if amount of correctly connected points per round is 10
+     *
      * @return if round has been answered correctly
      */
     private boolean calcCorrectAnswers() {
@@ -146,6 +151,7 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * compares clicked element to the position it should have been. Comparison of two arrays to determine correct location of answer
+     *
      * @param textView touched element
      */
     private void evaluateAnswer(TextView textView) {
@@ -180,6 +186,7 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * creates object of TrailMakingGame and saves the answer to the database. Object is processed by the TrailMakingViewModel
+     *
      * @param answer if patient has connected points correctly or not
      */
     private void saveTrailwayGame(boolean answer) {
@@ -206,8 +213,9 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * create numbers on view programmatically
-     * @param x position of TextView
-     * @param y position of TextView
+     *
+     * @param x     position of TextView
+     * @param y     position of TextView
      * @param input number or sign of element
      */
     private TextView createNumberView(int x, int y, String input) {
@@ -238,6 +246,7 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * shuffles Array and creates random distribution for elements
+     *
      * @param input array of elements to be clicked
      */
     private void setInput(String[] input) {
@@ -261,6 +270,7 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * resizes position on screen depending on screensize of device
+     *
      * @param x default position on screen
      */
     private int transformCoordinateX(int x) {
@@ -309,6 +319,7 @@ public class TrailMakingActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new ModiBaseResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishTrailwayGame(View view) {

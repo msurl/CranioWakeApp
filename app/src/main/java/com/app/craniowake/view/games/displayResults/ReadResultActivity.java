@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import com.app.craniowake.R;
 import com.app.craniowake.view.activityHelper.IntentHolder;
+
 /**
  * Results of the following Tests are Displayed: ReadActivity
  */

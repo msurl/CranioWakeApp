@@ -2,8 +2,6 @@ package com.app.craniowake.view.activityHelper;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class StopWatchTest {
 
     @Test

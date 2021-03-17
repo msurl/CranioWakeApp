@@ -13,6 +13,7 @@ import com.app.craniowake.data.model.Patient;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * class to display a list all existing patients at the specified position in a recyclerview
  */
@@ -31,8 +32,9 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
 
     /**
      * new view for each new row, an old view is recycled and reused by binding new data to it.
+     *
      * @param position the position of the current displayed "container" in which a patient will be displayed
-     * @param holder recycled container to display data
+     * @param holder   recycled container to display data
      */
     @Override
     public void onBindViewHolder(@NonNull PatientListAdapter.PatientListHolder holder, int position) {
@@ -46,7 +48,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         }
     }
 
-    private String concatenatePatientName(Patient currentPatient){
+    private String concatenatePatientName(Patient currentPatient) {
         return currentPatient.getLastname() + " " + currentPatient.getFirstname();
     }
 

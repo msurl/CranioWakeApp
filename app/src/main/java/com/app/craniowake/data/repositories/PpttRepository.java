@@ -22,6 +22,7 @@ public class PpttRepository {
 
     /**
      * insert calls AsyncTask to handle background thread
+     *
      * @param ppttGame objekt to be saved in database
      */
     public void insert(PpttGame ppttGame) {

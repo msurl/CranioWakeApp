@@ -17,6 +17,7 @@ import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.StroopViewModel;
 
 import java.util.Random;
+
 /**
  * Implementation of the Stroop Test
  */
@@ -48,6 +49,7 @@ public class StroopActivity extends OperationActivity {
 
     /**
      * evaluate current answers and set next stroop on display
+     *
      * @param view is called when "true" or "false" button is clicked
      */
     public void setNextStroop(View view) {
@@ -87,6 +89,7 @@ public class StroopActivity extends OperationActivity {
 
     /**
      * evaluates answer given by the id of the button which was clicked. Also increases general counter of correct or wrong answers
+     *
      * @param id of button "true" or "false"
      */
     @SuppressLint("NonConstantResourceId")
@@ -106,7 +109,8 @@ public class StroopActivity extends OperationActivity {
 
     /**
      * creates object of StroopGame and saves the answer to the database. Object is processed by the StroopViewModel
-     * @param answer of patient if color was correctly recognized
+     *
+     * @param answer      of patient if color was correctly recognized
      * @param stroopColor the color to be recognized
      */
     private void saveStroopGame(boolean answer, String stroopColor) {
@@ -133,6 +137,7 @@ public class StroopActivity extends OperationActivity {
 
     /**
      * saves results in an Intent and opens new BaseResultActivity. The current Activity gets destroyed when left.
+     *
      * @param view method is called when button "finish game" is clicked
      */
     public void finishStroopGame(View view) {
