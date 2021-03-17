@@ -39,6 +39,12 @@ In der App sind die folgenden Untersuchungstests in [view/games](https://github.
 * **Lese Test** - *ReadActivity - Ein Text wird vorgelesen*
 * **Reaction Test** - *ReactionActivity - Reactionszeit wird gemessen*
 
+## Verknüpfungen der Activities
+
+Aus der Abbildung kann entnommen werden, welche Activities in Kontakt stehen. Die Pfeile zeigen, welche Activity die Parent-Activity ist
+
+![Activities](https://github.com/macrimo/CranioWakeApp/blob/master/activities.pdf)
+
 ## Datenbankexport
 
 Das generierte CSV File befindet sich nach Abschluss des erfolgreichen Exports unter dem folgenden Pfad im internen Speicher der eigenen Dateien auf dem Android Endgerät.
