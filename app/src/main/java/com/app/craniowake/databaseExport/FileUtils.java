@@ -14,7 +14,7 @@ import java.io.File;
 public class FileUtils {
 
     /**
-     * Returns the path to files folder inside Android/data/data/cranioWake/ on the SD card
+     * Returns the path to files folder inside Android/data/data/CranioWake/ on the SD card
      *
      * @param context tells the compiler to which context activity or application the current belongs
      */

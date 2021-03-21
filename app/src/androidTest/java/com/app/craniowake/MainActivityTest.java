@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.Gravity;
 import android.view.View;
 
+import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.test.core.app.ActivityScenario;
 import androidx.test.espresso.contrib.DrawerActions;
 import androidx.test.espresso.contrib.NavigationViewActions;
@@ -11,12 +12,18 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
 import androidx.test.platform.app.InstrumentationRegistry;
 
+import com.app.craniowake.data.db.CraniowakeDatabase;
 import com.app.craniowake.view.MainActivity;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -26,6 +33,10 @@ import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static com.app.craniowake.databaseExport.FileUtils.createDirIfNotExist;
+import static com.app.craniowake.databaseExport.FileUtils.getAppDir;
+import static com.app.craniowake.databaseExport.FileUtils.isExternalStorageWritable;
+import static com.app.craniowake.databaseExport.SqliteExporter.export;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertEquals;
 
@@ -105,6 +116,41 @@ public class MainActivityTest {
                 .perform(NavigationViewActions.navigateTo(R.id.item_newUserId));
 
         onView(withId(R.id.user_add_patient_id)).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void checkCorrectPath() {
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        assertEquals("com.app.craniowake", appContext.getPackageName());
+        String givenPath = getAppDir(appContext);
+        Assert.assertEquals("/storage/emulated/0/Android/data/com.app.craniowake/files/CranioWake", givenPath);
+    }
+
+    @Test
+    public void checkIfDirExists() {
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        String givenPath = getAppDir(appContext);
+        Assert.assertNotNull(createDirIfNotExist(givenPath));
+    }
+
+    @Test
+    public void checkIfStorageWritable() {
+        Assert.assertTrue(isExternalStorageWritable());
+    }
+
+    @Test
+    public void exportCsv() throws IOException {
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        CraniowakeDatabase craniowakeDatabase = CraniowakeDatabase.getInstance(appContext);
+        SupportSQLiteDatabase db = craniowakeDatabase.getOpenHelper().getReadableDatabase();
+        String createdCSVPath = export(db, appContext);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HHmm");
+        Assert.assertEquals("/storage/emulated/0/Android/data/com.app.craniowake/files/CranioWake/backup/db_backup_"+ sdf.format(new Date()) + ".csv", createdCSVPath);
+
+    }
+
+    @Test
+    public void getCorrectTablesFromDb() {
     }
 
 }

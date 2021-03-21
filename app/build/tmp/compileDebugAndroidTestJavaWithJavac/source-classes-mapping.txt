@@ -1,0 +1,32 @@
+com/app/craniowake/view/games/PictureActivityTest.java
+ com.app.craniowake.view.games.PictureActivityTest
+com/app/craniowake/view/games/TrailMakingActivityTest.java
+ com.app.craniowake.view.games.TrailMakingActivityTest
+com/app/craniowake/test/BuildConfig.java
+ com.app.craniowake.test.BuildConfig
+com/app/craniowake/view/games/FourSquareActivityTest.java
+ com.app.craniowake.view.games.FourSquareActivityTest
+com/app/craniowake/view/games/PpttActivityTest.java
+ com.app.craniowake.view.games.PpttActivityTest
+com/app/craniowake/view/games/LineBisectionActivityTest.java
+ com.app.craniowake.view.games.LineBisectionActivityTest
+com/app/craniowake/view/games/ReactionActivityTest.java
+ com.app.craniowake.view.games.ReactionActivityTest
+com/app/craniowake/view/games/DigitalSpanMemoryActivityTest.java
+ com.app.craniowake.view.games.DigitalSpanMemoryActivityTest
+com/app/craniowake/view/games/TokenActivityTest.java
+ com.app.craniowake.view.games.TokenActivityTest
+com/app/craniowake/view/games/ReadActivityTest.java
+ com.app.craniowake.view.games.ReadActivityTest
+com/app/craniowake/view/games/StroopActivityTest.java
+ com.app.craniowake.view.games.StroopActivityTest
+com/app/craniowake/view/games/CalculusActivityTest.java
+ com.app.craniowake.view.games.CalculusActivityTest
+com/app/craniowake/view/OperationActivityTest.java
+ com.app.craniowake.view.OperationActivityTest
+com/app/craniowake/view/patient/PatientListActivityTest.java
+ com.app.craniowake.view.patient.PatientListActivityTest
+com/app/craniowake/view/patient/AddPatientActivityTest.java
+ com.app.craniowake.view.patient.AddPatientActivityTest
+com/app/craniowake/MainActivityTest.java
+ com.app.craniowake.MainActivityTest
