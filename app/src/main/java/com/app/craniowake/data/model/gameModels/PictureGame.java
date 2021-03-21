@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Picture Test
  */
 @Data
-@Entity(tableName = "picture_game_table")
+@Entity(tableName = "picture_test_table")
 public class PictureGame {
 
     @PrimaryKey(autoGenerate = true)

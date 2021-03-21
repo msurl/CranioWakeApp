@@ -19,7 +19,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Line Bisection Test
  */
 @Data
-@Entity(tableName = "line_dissection_table")
+@Entity(tableName = "line_bisection_test_table")
 public class LineBisectionGame {
 
     @PrimaryKey(autoGenerate = true)

@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Stroop Test
  */
 @Data
-@Entity(tableName = "stroop_game_table")
+@Entity(tableName = "stroop_test_table")
 public class StroopGame {
 
     @PrimaryKey(autoGenerate = true)

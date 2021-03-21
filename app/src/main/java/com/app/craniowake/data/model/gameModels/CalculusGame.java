@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Calculus Test
  */
 @Data
-@Entity(tableName = "calculcationGame_table")
+@Entity(tableName = "calculus_test_table")
 public class CalculusGame {
 
     @PrimaryKey(autoGenerate = true)

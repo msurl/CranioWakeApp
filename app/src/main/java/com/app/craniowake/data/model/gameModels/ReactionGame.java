@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Reaction Test
  */
 @Data
-@Entity(tableName = "reaction_game_table")
+@Entity(tableName = "reaction_test_table")
 public class ReactionGame {
 
     @PrimaryKey(autoGenerate = true)

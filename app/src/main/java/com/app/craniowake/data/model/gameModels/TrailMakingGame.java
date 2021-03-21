@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Trail Making Test
  */
 @Data
-@Entity(tableName = "trailway_game_table")
+@Entity(tableName = "trail_making_test_table")
 public class TrailMakingGame {
 
     @PrimaryKey(autoGenerate = true)

@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the PPT Test
  */
 @Data
-@Entity(tableName = "pptt_game_table")
+@Entity(tableName = "pptt_test_table")
 public class PpttGame {
 
     @PrimaryKey(autoGenerate = true)

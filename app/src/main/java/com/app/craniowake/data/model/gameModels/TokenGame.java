@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Token Test
  */
 @Data
-@Entity(tableName = "token_game_table")
+@Entity(tableName = "token_test_table")
 public class TokenGame {
 
     @PrimaryKey(autoGenerate = true)

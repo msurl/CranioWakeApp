@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Digital Span Memory Test
  */
 @Data
-@Entity(tableName = "digital_span_game_table")
+@Entity(tableName = "digital_span_test_table")
 public class DigitalSpanMemoryGame {
 
     @PrimaryKey(autoGenerate = true)

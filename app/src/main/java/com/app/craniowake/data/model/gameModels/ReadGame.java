@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Read Test
  */
 @Data
-@Entity(tableName = "read_game_table")
+@Entity(tableName = "read_test_table")
 public class ReadGame {
 
     @PrimaryKey(autoGenerate = true)

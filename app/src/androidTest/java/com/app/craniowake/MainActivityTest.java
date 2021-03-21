@@ -24,6 +24,7 @@ import org.junit.runner.RunWith;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -37,6 +38,7 @@ import static com.app.craniowake.databaseExport.FileUtils.createDirIfNotExist;
 import static com.app.craniowake.databaseExport.FileUtils.getAppDir;
 import static com.app.craniowake.databaseExport.FileUtils.isExternalStorageWritable;
 import static com.app.craniowake.databaseExport.SqliteExporter.export;
+import static com.app.craniowake.databaseExport.SqliteExporter.getTablesFromDataBase;
 import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertEquals;
 
@@ -51,6 +53,9 @@ public class MainActivityTest {
     @Rule
     public ActivityScenarioRule rule = new ActivityScenarioRule<>(MainActivity.class);
     private View decorView;
+    Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+    CraniowakeDatabase craniowakeDatabase = CraniowakeDatabase.getInstance(appContext);
+    SupportSQLiteDatabase db = craniowakeDatabase.getOpenHelper().getReadableDatabase();
 
     @Before
     public void setUp() {
@@ -120,7 +125,6 @@ public class MainActivityTest {
 
     @Test
     public void checkCorrectPath() {
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.app.craniowake", appContext.getPackageName());
         String givenPath = getAppDir(appContext);
         Assert.assertEquals("/storage/emulated/0/Android/data/com.app.craniowake/files/CranioWake", givenPath);
@@ -128,7 +132,6 @@ public class MainActivityTest {
 
     @Test
     public void checkIfDirExists() {
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         String givenPath = getAppDir(appContext);
         Assert.assertNotNull(createDirIfNotExist(givenPath));
     }
@@ -140,9 +143,6 @@ public class MainActivityTest {
 
     @Test
     public void exportCsv() throws IOException {
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        CraniowakeDatabase craniowakeDatabase = CraniowakeDatabase.getInstance(appContext);
-        SupportSQLiteDatabase db = craniowakeDatabase.getOpenHelper().getReadableDatabase();
         String createdCSVPath = export(db, appContext);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HHmm");
         Assert.assertEquals("/storage/emulated/0/Android/data/com.app.craniowake/files/CranioWake/backup/db_backup_"+ sdf.format(new Date()) + ".csv", createdCSVPath);
@@ -151,6 +151,28 @@ public class MainActivityTest {
 
     @Test
     public void getCorrectTablesFromDb() {
+        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        CraniowakeDatabase craniowakeDatabase = CraniowakeDatabase.getInstance(appContext);
+        SupportSQLiteDatabase db = craniowakeDatabase.getOpenHelper().getReadableDatabase();
+
+        List<String> dbTables = getTablesFromDataBase(db);
+        Assert.assertEquals("android_metadata" , dbTables.get(0));
+        Assert.assertEquals("sqlite_sequence" , dbTables.get(1));
+        Assert.assertEquals("room_master_table" , dbTables.get(2));
+
+        Assert.assertEquals("stroop_test_table" , dbTables.get(3));
+        Assert.assertEquals("patient_has_operation_table" , dbTables.get(4));
+        Assert.assertEquals("patient_table" , dbTables.get(5));
+        Assert.assertEquals("operation_table" , dbTables.get(6));
+        Assert.assertEquals("calculus_test_table" , dbTables.get(7));
+        Assert.assertEquals("digital_span_test_table" , dbTables.get(8));
+        Assert.assertEquals("four_square_test_table" , dbTables.get(9));
+        Assert.assertEquals("line_bisection_test_table" , dbTables.get(10));
+        Assert.assertEquals("picture_test_table" , dbTables.get(11));
+        Assert.assertEquals("pptt_test_table" , dbTables.get(12));
+        Assert.assertEquals("read_bisection_test_table" , dbTables.get(13));
+        Assert.assertEquals("token_test_table" , dbTables.get(14));
+        Assert.assertEquals("trail_making_test_table" , dbTables.get(15));
     }
 
 }

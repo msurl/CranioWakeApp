@@ -18,7 +18,7 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the Four Quadrant Test
  */
 @Data
-@Entity(tableName = "four_square_table")
+@Entity(tableName = "four_square_test_table")
 public class FourSquareGame {
 
     @PrimaryKey(autoGenerate = true)
