@@ -25,4 +25,11 @@ public class PatientListActivityTest {
         onView(withId(R.id.user_patient_overview)).check(matches(isDisplayed()));
     }
 
+    @Test
+    public void checkIfUIKomponentsDisplayed() {
+        onView(withId(R.id.listViewTitle))
+                .check(matches(isDisplayed()));
+        onView(withId(R.id.patient_items_recyclerView))
+                .check(matches(isDisplayed()));
+    }
 }

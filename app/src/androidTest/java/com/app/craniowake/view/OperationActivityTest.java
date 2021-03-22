@@ -1,7 +1,11 @@
 package com.app.craniowake.view;
 
+
+
+import androidx.multidex.MultiDex;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import com.app.craniowake.R;
 
@@ -10,10 +14,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static androidx.test.espresso.Espresso.onView;
+import static androidx.test.espresso.Espresso.openActionBarOverflowOrOptionsMenu;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.endsWith;
 
 @RunWith(AndroidJUnit4ClassRunner.class)
 public class OperationActivityTest {
@@ -60,6 +67,13 @@ public class OperationActivityTest {
                 .check(matches(isDisplayed()));
         onView(withId(R.id.reaction_button))
                 .check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void checkEmergency(){
+        openActionBarOverflowOrOptionsMenu(InstrumentationRegistry.getInstrumentation().getTargetContext());
+        onView(withId(R.id.sos_button)).perform(click());
+        //onView(withText(endsWith(String.valueOf(R.string.a_complication_has_been_noted)))).check(matches(isDisplayed()));
     }
 
     @Test

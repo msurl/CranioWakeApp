@@ -124,7 +124,22 @@ public class MainActivityTest {
     }
 
     @Test
-    public void checkCorrectPath() {
+    public void startExport(){
+        onView(withId(R.id.nav_view))
+                .check(matches(isClosed(Gravity.START)))
+                .perform(DrawerActions.open());
+
+        onView(withId(R.id.nav_view))
+                .perform(NavigationViewActions.navigateTo(R.id.item_exportId));
+        try {
+            exportCsv();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void checkCorrectPath(){
         assertEquals("com.app.craniowake", appContext.getPackageName());
         String givenPath = getAppDir(appContext);
         Assert.assertEquals("/storage/emulated/0/Android/data/com.app.craniowake/files/CranioWake", givenPath);

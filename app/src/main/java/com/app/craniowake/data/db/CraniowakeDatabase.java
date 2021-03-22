@@ -56,7 +56,7 @@ import com.app.craniowake.data.model.gameModels.TrailMakingGame;
         TrailMakingGame.class,
         Complication.class
 }
-        , version = 3
+        , version = 4
 )
 
 /**
