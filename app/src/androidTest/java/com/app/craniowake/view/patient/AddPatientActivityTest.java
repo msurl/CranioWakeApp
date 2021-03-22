@@ -17,6 +17,9 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
+/**
+ * Testing display and elements of given Activity.
+ */
 @RunWith(AndroidJUnit4ClassRunner.class)
 public class AddPatientActivityTest {
 
@@ -49,7 +52,7 @@ public class AddPatientActivityTest {
     }
 
     @Test
-    public void checkInput(){
+    public void checkInput() {
         onView(withId(R.id.user_input_caseNumber_id)).perform(typeText("123634"), closeSoftKeyboard());
         onView(withId(R.id.add_user_button)).perform(click());
     }

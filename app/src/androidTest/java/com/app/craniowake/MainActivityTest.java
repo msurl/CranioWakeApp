@@ -43,8 +43,9 @@ import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertEquals;
 
 /**
- * Instrumented test, which will execute on an Android device.
- *
+ * Instrumented and Unit test, which will execute on an Android device.
+ * Testing display and elements of given Activity.
+ * Testing DatabaseExport to CSV
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4ClassRunner.class)
@@ -52,10 +53,10 @@ public class MainActivityTest {
 
     @Rule
     public ActivityScenarioRule rule = new ActivityScenarioRule<>(MainActivity.class);
-    private View decorView;
     Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
     CraniowakeDatabase craniowakeDatabase = CraniowakeDatabase.getInstance(appContext);
     SupportSQLiteDatabase db = craniowakeDatabase.getOpenHelper().getReadableDatabase();
+    private View decorView;
 
     @Before
     public void setUp() {
@@ -124,7 +125,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void startExport(){
+    public void startExport() {
         onView(withId(R.id.nav_view))
                 .check(matches(isClosed(Gravity.START)))
                 .perform(DrawerActions.open());
@@ -139,7 +140,7 @@ public class MainActivityTest {
     }
 
     @Test
-    public void checkCorrectPath(){
+    public void checkCorrectPath() {
         assertEquals("com.app.craniowake", appContext.getPackageName());
         String givenPath = getAppDir(appContext);
         Assert.assertEquals("/storage/emulated/0/Android/data/com.app.craniowake/files/CranioWake", givenPath);
@@ -160,7 +161,7 @@ public class MainActivityTest {
     public void exportCsv() throws IOException {
         String createdCSVPath = export(db, appContext);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HHmm");
-        Assert.assertEquals("/storage/emulated/0/Android/data/com.app.craniowake/files/CranioWake/backup/db_backup_"+ sdf.format(new Date()) + ".csv", createdCSVPath);
+        Assert.assertEquals("/storage/emulated/0/Android/data/com.app.craniowake/files/CranioWake/backup/db_backup_" + sdf.format(new Date()) + ".csv", createdCSVPath);
 
     }
 
@@ -171,23 +172,23 @@ public class MainActivityTest {
         SupportSQLiteDatabase db = craniowakeDatabase.getOpenHelper().getReadableDatabase();
 
         List<String> dbTables = getTablesFromDataBase(db);
-        Assert.assertEquals("android_metadata" , dbTables.get(0));
-        Assert.assertEquals("sqlite_sequence" , dbTables.get(1));
-        Assert.assertEquals("room_master_table" , dbTables.get(2));
+        Assert.assertEquals("android_metadata", dbTables.get(0));
+        Assert.assertEquals("sqlite_sequence", dbTables.get(1));
+        Assert.assertEquals("room_master_table", dbTables.get(2));
 
-        Assert.assertEquals("stroop_test_table" , dbTables.get(3));
-        Assert.assertEquals("patient_has_operation_table" , dbTables.get(4));
-        Assert.assertEquals("patient_table" , dbTables.get(5));
-        Assert.assertEquals("operation_table" , dbTables.get(6));
-        Assert.assertEquals("calculus_test_table" , dbTables.get(7));
-        Assert.assertEquals("digital_span_test_table" , dbTables.get(8));
-        Assert.assertEquals("four_square_test_table" , dbTables.get(9));
-        Assert.assertEquals("line_bisection_test_table" , dbTables.get(10));
-        Assert.assertEquals("picture_test_table" , dbTables.get(11));
-        Assert.assertEquals("pptt_test_table" , dbTables.get(12));
-        Assert.assertEquals("read_bisection_test_table" , dbTables.get(13));
-        Assert.assertEquals("token_test_table" , dbTables.get(14));
-        Assert.assertEquals("trail_making_test_table" , dbTables.get(15));
+        Assert.assertEquals("stroop_test_table", dbTables.get(3));
+        Assert.assertEquals("patient_has_operation_table", dbTables.get(4));
+        Assert.assertEquals("patient_table", dbTables.get(5));
+        Assert.assertEquals("operation_table", dbTables.get(6));
+        Assert.assertEquals("calculus_test_table", dbTables.get(7));
+        Assert.assertEquals("digital_span_test_table", dbTables.get(8));
+        Assert.assertEquals("four_square_test_table", dbTables.get(9));
+        Assert.assertEquals("line_bisection_test_table", dbTables.get(10));
+        Assert.assertEquals("picture_test_table", dbTables.get(11));
+        Assert.assertEquals("pptt_test_table", dbTables.get(12));
+        Assert.assertEquals("read_bisection_test_table", dbTables.get(13));
+        Assert.assertEquals("token_test_table", dbTables.get(14));
+        Assert.assertEquals("trail_making_test_table", dbTables.get(15));
     }
 
 }

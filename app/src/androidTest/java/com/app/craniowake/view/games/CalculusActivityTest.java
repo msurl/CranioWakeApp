@@ -14,6 +14,9 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
+/**
+ * Testing display and elements of given Activity.
+ */
 @RunWith(AndroidJUnit4ClassRunner.class)
 public class CalculusActivityTest {
     @Rule

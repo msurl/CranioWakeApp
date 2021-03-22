@@ -212,6 +212,8 @@ public class CalculusActivity extends OperationActivity {
 
     /**
      * LiveData has a delayed runtime so the equation has to be taken from the UI.
+     *
+     * @return Answer that was typed in by the user
      */
     private int getAnswerFromUiInput() {
         EditText givenAnswer = findViewById(R.id.calcAnswer);
@@ -245,6 +247,8 @@ public class CalculusActivity extends OperationActivity {
 
     /**
      * generates equation string to be saved in database
+     *
+     * @return equation including first, second number and the operator
      */
     public String equationToString(String firstNumer, String secondNumber, String equation) {
         return firstNumer + equation + secondNumber;
