@@ -48,15 +48,6 @@ public class CalculusActivity extends OperationActivity {
     }
 
     /**
-     * returns string of dateTime when current operation was created t
-     * its used as an identifier
-     */
-    private String getCurrentOperationId() {
-        Intent intent = getIntent();
-        return intent.getStringExtra(IntentHolder.OPERATION_DATE);
-    }
-
-    /**
      * generates array of numbers from 0-20 for equations
      */
     private void generateRangeOfNumbers() {
@@ -189,7 +180,7 @@ public class CalculusActivity extends OperationActivity {
     private void saveCalculatingAnswer(boolean answer, String firstNum, String secondNum, String operator) {
         calculatingViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(CalculatingViewModel.class);
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
+        operationViewModel.getOperationByDate(getCurrentOperationDate()).observe(this, operation -> {
             try {
                 CalculusGame calculusGame = new CalculusGame(answer, equationToString(firstNum, secondNum, operator), operation.getOperationId());
                 calculatingViewModel.addCalculatingGame(calculusGame);

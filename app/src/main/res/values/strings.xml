@@ -122,7 +122,7 @@
     <string name="patient">Patient:</string>
     <string name="fallnummer">Fallnummer:</string>
     <string name="_1234">1234</string>
-    <string name="creation_date">Creation Date:</string>
+    <string name="birth_date">Birth Date:</string>
     <string name="create_a_new_patient">Create a new Patient</string>
     <string name="firstname">Firstname</string>
     <string name="lastname">lastname</string>
@@ -150,7 +150,7 @@
     <string name="header_model_red">header_model_red</string>
     <string name="a_complication_has_been_noted">A complication has been noted</string>
     <string name="tap_when_the_blue_screen_appears">Tap when the blue screen appears</string>
-    <string name="tap_ich_bin_ein_placeholder">TAP! ich bin ein placeholder</string>
+    <string name="tap_ich_bin_ein_placeholder">TAP! when the Screen turns blue</string>
     <string name="file_export">File has been exported</string>
     <string name="select_brain_area">SELECT BRAIN AREA:</string>
     <string name="motor_function">Motor Function</string>

@@ -317,6 +317,8 @@ public class TrailMakingActivity extends OperationActivity {
         setFrameLayout();
     }
 
+
+
     /**
      * saves results in an Intent and opens new ModiBaseResultActivity. The current Activity gets destroyed when left.
      *

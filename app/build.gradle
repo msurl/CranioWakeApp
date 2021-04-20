@@ -48,7 +48,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
     implementation group: 'com.opencsv', name: 'opencsv', version: '4.1'
 
-    def lifecycle_version = "2.3.0"
+    def lifecycle_version = "2.3.1"
     def arch_version = "2.1.0"
     def room_version = "2.2.6"
 

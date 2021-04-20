@@ -80,8 +80,8 @@
     <string name="name">Name</string>
     <string name="patient">Patient:</string>
     <string name="fallnummer">Fallnummer:</string>
-    <string name="tap_ich_bin_ein_placeholder">TAP!</string>
-    <string name="creation_date">Erstelldatum:</string>
+    <string name="tap_ich_bin_ein_placeholder">Tippe wenn der blaue Bildschirm erscheint</string>
+    <string name="birth_date">Geburtsdatum:</string>
     <string name="create_a_new_patient">Erstelle neuen Patienten</string>
     <string name="firstname">Vorname</string>
     <string name="lastname">Nachname</string>

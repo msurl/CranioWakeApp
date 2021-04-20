@@ -24,6 +24,7 @@ import com.app.craniowake.data.db.CraniowakeDatabase;
 import com.app.craniowake.data.model.Operation;
 import com.app.craniowake.databaseExport.SqliteExporter;
 import com.app.craniowake.view.activityHelper.IntentHolder;
+import com.app.craniowake.view.activityHelper.customUtils.DialogAddedCSV;
 import com.app.craniowake.view.activityHelper.customUtils.DialogAddedPatient;
 import com.app.craniowake.view.patient.AddPatientActivity;
 import com.app.craniowake.view.patient.PatientListActivity;
@@ -112,10 +113,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 CraniowakeDatabase craniowakeDatabase = CraniowakeDatabase.getInstance(this);
                 if (!SqliteExporter.DB_GENERATING_CSV) {
                     SqliteExporter.export(craniowakeDatabase.getOpenHelper().getReadableDatabase(), this);
-                    setTextOnDialoge();
                     displayNoteOfDbExport();
-                    item.setEnabled(false);
                 }
+                item.setEnabled(false);
                 return true;
             default:
                 System.out.println("no item found");
@@ -210,18 +210,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      * informs user of successful databaseExport
      */
     public void displayNoteOfDbExport() {
-        DialogAddedPatient alert = new DialogAddedPatient();
-        setTextOnDialoge();
+        DialogAddedCSV alert = new DialogAddedCSV();
         alert.showDialog(this);
-    }
-
-    private void setTextOnDialoge() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        View v = getLayoutInflater().inflate(R.layout.event_note, null);
-        builder.setView(v);
-        TextView dialog_info = v.findViewById(R.id.text_dialog_information);
-        dialog_info.setText(R.string.file_export);
-
     }
 
     /**

@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 
 import com.app.craniowake.R;
+import com.app.craniowake.data.db.CraniowakeDatabase;
+import com.app.craniowake.databaseExport.SqliteExporter;
 import com.app.craniowake.view.MainActivity;
 
 import static com.app.craniowake.view.activityHelper.IntentHolder.PATIENT_ID;
@@ -38,10 +40,26 @@ public class PatientActivity extends MainActivity {
      *
      * @param item menuItem clicked in navigationDrawer
      */
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         finish();
-        super.onNavigationItemSelected(item);
+        Intent intent = null;
+        switch (item.getItemId()) {
+            case R.id.item_newUserId:
+                intent = new Intent(this, AddPatientActivity.class);
+                break;
+            case R.id.item_userListId:
+                intent = new Intent(this, PatientListActivity.class);
+                break;
+            case R.id.item_exportId:
+                item.setEnabled(false);
+                return true;
+            default:
+                System.out.println("no item found");
+                break;
+        }
+        startActivity(intent);
         return true;
     }
 }

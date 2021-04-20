@@ -42,7 +42,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         try {
             holder.textViewPatientName.setText(concatenatePatientName(currentPatient));
             holder.textViewCaseNumber.setText(String.valueOf(currentPatient.getCaseNumber()));
-            holder.textViewPatientCreationDate.setText(currentPatient.getDateTime());
+            holder.textViewPatientBirthDate.setText(currentPatient.getBirthDate());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -75,13 +75,13 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
     static class PatientListHolder extends RecyclerView.ViewHolder {
         private final TextView textViewPatientName;
         private final TextView textViewCaseNumber;
-        private final TextView textViewPatientCreationDate;
+        private final TextView textViewPatientBirthDate;
 
         public PatientListHolder(View itemView) {
             super(itemView);
             textViewPatientName = itemView.findViewById(R.id.patient_name_list);
             textViewCaseNumber = itemView.findViewById(R.id.patient_casenumber_list);
-            textViewPatientCreationDate = itemView.findViewById(R.id.patient_creation_id);
+            textViewPatientBirthDate = itemView.findViewById(R.id.patient_creation_id);
         }
     }
 }

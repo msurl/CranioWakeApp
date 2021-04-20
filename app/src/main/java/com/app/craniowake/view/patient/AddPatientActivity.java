@@ -94,9 +94,10 @@ public class AddPatientActivity extends PatientActivity {
      */
     private boolean checkIfInputEmpty() {
         RadioGroup radiogroup = findViewById(R.id.RGroup);
+        long caseNumber = Long.parseLong(caseNumberInput.getText().toString());
         int id = radiogroup.getCheckedRadioButtonId(); // funktion gibt -1 zurück, wenn keiner der Radiobuttons ausgewählt wurde
 
-        if (TextUtils.isEmpty(caseNumberInput.getText()) || TextUtils.isEmpty(firstNameInput.getText()) || TextUtils.isEmpty(lastNameInput.getText()) || TextUtils.isEmpty(birthdayInput.getText()) || id == -1) {
+        if (TextUtils.isEmpty(caseNumberInput.getText()) || TextUtils.isEmpty(firstNameInput.getText()) || TextUtils.isEmpty(lastNameInput.getText()) || TextUtils.isEmpty(birthdayInput.getText()) || id == -1 || caseNumber > 3999999999L) {
             Toast.makeText(this, "please fill the form correctly. Patient has not been saved", Toast.LENGTH_LONG).show();
             return false;
         }

@@ -37,7 +37,6 @@ public class SqliteExporter {
      * @param context tells the compiler to which context activity or application the current belongs
      */
     public static String export(SupportSQLiteDatabase db, Context context) throws IOException {
-        DB_GENERATING_CSV = true;
         if (!FileUtils.isExternalStorageWritable()) {
             throw new IOException("Cannot write to external storage");
         }
@@ -51,9 +50,16 @@ public class SqliteExporter {
         List<String> tables = getTablesFromDataBase(db);
         Log.d(TAG, "Started to fill the backup file in " + backupFile.getAbsolutePath());
         long starTime = System.currentTimeMillis();
-        writeDbToCsv(backupFile, db, tables); // schleife -> write für jede einzelne table (backupfile + name)
-        long endTime = System.currentTimeMillis();
-        Log.d(TAG, "Creating backup took " + (endTime - starTime) + "ms.");
+
+        for(String table : tables) {
+            writeDbToCsv(backupFile, db, table); // schleife -> write für jede einzelne table (backupfile + name)
+            DB_GENERATING_CSV = true;
+            long endTime = System.currentTimeMillis();
+            Log.d(TAG, "Creating backup took " + (endTime - starTime) + "ms.");
+        }
+
+        //long endTime = System.currentTimeMillis();
+        //Log.d(TAG, "Creating backup took " + (endTime - starTime) + "ms.");
         return backupFile.getAbsolutePath();
     }
 
@@ -91,15 +97,15 @@ public class SqliteExporter {
      *
      * @param backupFile csv file to be written on
      * @param db         instance of db wrapper to perform queries on db
-     * @param tables     list of all table names in db
+     * @param table     list of all table names in db
      */
-    private static void writeDbToCsv(File backupFile, SupportSQLiteDatabase db, List<String> tables) {
+    private static void writeDbToCsv(File backupFile, SupportSQLiteDatabase db, String table) {
         CSVWriter csvWrite = null;
         Cursor cursorCSV = null;
         try {
             csvWrite = new CSVWriter(new FileWriter(backupFile));
             writeSingleValue(csvWrite, DB_BACKUP_DB_VERSION_KEY + "=" + db.getVersion());
-            for (String table : tables) {
+            //for (String table : tables) {
                 writeSingleValue(csvWrite, DB_BACKUP_TABLE_NAME + "=" + table);
                 cursorCSV = db.query("SELECT * FROM " + table);
                 csvWrite.writeNext(cursorCSV.getColumnNames());
@@ -111,7 +117,7 @@ public class SqliteExporter {
                     }
                     csvWrite.writeNext(columnArr);
                 }
-            }
+            //}
         } catch (Exception sqlException) {
             Log.e(TAG, sqlException.getMessage(), sqlException);
         } finally {

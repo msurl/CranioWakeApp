@@ -2,7 +2,10 @@ package com.app.craniowake.view.games.displayResults;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.app.craniowake.R;
 import com.app.craniowake.view.activityHelper.IntentHolder;
@@ -10,7 +13,7 @@ import com.app.craniowake.view.activityHelper.IntentHolder;
 /**
  * Results of the following Tests are Displayed: ReactionActivity
  */
-public class ReactionResultActivity extends BaseResultActivity {
+public class ReactionResultActivity extends AppCompatActivity {
 
 
     @Override
@@ -33,7 +36,7 @@ public class ReactionResultActivity extends BaseResultActivity {
         String round4 = intent.getStringExtra(IntentHolder.REACTION_ROUND_4);
         String round5 = intent.getStringExtra(IntentHolder.REACTION_ROUND_5);
 
-        displayBaseResults(gameName, round1, round2, round3, round4, round5);
+        displayBaseResultsOfReactionGame(gameName, round1, round2, round3, round4, round5);
     }
 
     /**
@@ -42,9 +45,10 @@ public class ReactionResultActivity extends BaseResultActivity {
      * @param round1 time needed to react in 00:00.000
      *               round2-round5 analogue
      */
-    void displayBaseResults(String gameName, String round1, String round2, String round3, String round4, String round5) {
 
-        TextView inputGameName = findViewById(R.id.reaction_input_name);
+    private void displayBaseResultsOfReactionGame(String gameName, String round1, String round2, String round3, String round4, String round5) {
+
+        TextView inputGameName = findViewById(R.id.reaction_input_gamename);
         TextView inputRound1 = findViewById(R.id.reaction_inputRound1);
         TextView inputRound2 = findViewById(R.id.reaction_inputRound2);
         TextView inputRound3 = findViewById(R.id.reaction_inputRound3);
@@ -57,5 +61,9 @@ public class ReactionResultActivity extends BaseResultActivity {
         inputRound3.setText(round3);
         inputRound4.setText(round4);
         inputRound5.setText(round5);
+    }
+
+    public void backToMenuReaction(View view) {
+        finish();
     }
 }

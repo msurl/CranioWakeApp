@@ -52,7 +52,7 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
             TextView textView = findViewById(R.id.current_value);
             progress++;
-            textView.setText("" + (progress / 2));
+            textView.setText("" + ((double) progress / 2));
         }
 
         @Override
@@ -148,7 +148,7 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         return intent.getStringExtra(IntentHolder.PATIENT_NAME);
     }
 
-    private String getCurrentOperationDate() {
+    protected String getCurrentOperationDate() {
         Intent intent = getIntent();
         return intent.getStringExtra(IntentHolder.OPERATION_DATE);
     }
