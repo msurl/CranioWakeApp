@@ -5,7 +5,7 @@ Applikation die im Rahmen der Arbeit "Entwicklung einer Android App zur Erfassun
 Eine Anleitung zur Installation auf einem Android-Gerät finden sie unter:
 [Anleitung](https://mobilsicher.de/ratgeber/apps-aus-apk-datei-installieren-android-2)
 
-Download der App: [Craniowake]
+Download der App: [Craniowake] (https://github.com/macrimo/CranioWakeApp/blob/master/CraniowakeApp.apk)
 
 ## Android Gerät
 Die App ist graphisch hauptsächlich auf das Samsung Galaxy S2 Tab Emulator for tests (1536 x 2048 pixels, 9.7 inches)
