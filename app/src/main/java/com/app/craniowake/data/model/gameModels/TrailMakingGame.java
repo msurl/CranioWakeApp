@@ -4,11 +4,8 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
+import com.app.craniowake.data.model.CurrentDateTimable;
 import com.app.craniowake.data.model.Operation;
-
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 
 import lombok.Data;
 
@@ -19,7 +16,7 @@ import static androidx.room.ForeignKey.CASCADE;
  */
 @Data
 @Entity(tableName = "trail_making_test_table")
-public class TrailMakingGame {
+public class TrailMakingGame implements CurrentDateTimable {
 
     @PrimaryKey(autoGenerate = true)
     private int trailwayId;
@@ -36,27 +33,8 @@ public class TrailMakingGame {
     public TrailMakingGame(boolean correctAnswer, int fkOperationId) {
         this.correctAnswer = correctAnswer;
         this.fkOperationId = fkOperationId;
-        setCurrentDateTime();
+        applyCurrentDateTimeAsStringTo(this.dateTime);
     }
-
-    /**
-     * returns current Date and Time when called.
-     */
-    private void setCurrentDateTime() {
-        LocalDateTime localDateTime = LocalDateTime.now(ZoneId.systemDefault());
-        this.dateTime = formatDateTime(localDateTime);
-    }
-
-    /**
-     * Entity of the Calculus Test
-     *
-     * @param localDateTime formats generated datetime to: JJJJ-MM-DDT00:00:00.000
-     */
-    private String formatDateTime(LocalDateTime localDateTime) {
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-        return localDateTime.format(formatter);
-    }
-
 }
 
 

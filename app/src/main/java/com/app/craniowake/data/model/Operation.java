@@ -19,7 +19,7 @@ import static androidx.room.ForeignKey.CASCADE;
  */
 @Data
 @Entity(indices = {@Index(value = {"dateTime"}, unique = true)}, tableName = "operation_table")
-public class Operation {
+public class Operation implements CurrentDateTimable{
 
     @PrimaryKey(autoGenerate = true)
     private int operationId;
@@ -40,24 +40,6 @@ public class Operation {
         this.brainarea = brainarea;
         this.operationMode = operationMode;
         this.fkPatientId = fkPatientId;
-        setCurrentDateTime();
-    }
-
-    /**
-     * returns current Date and Time when called.
-     */
-    private void setCurrentDateTime() {
-        LocalDateTime localDateTime = LocalDateTime.now(ZoneId.systemDefault());
-        this.dateTime = formatDateTime(localDateTime);
-    }
-
-    /**
-     * Entity of the Calculus Test
-     *
-     * @param localDateTime formats generated datetime to: JJJJ-MM-DDT00:00:00.000
-     */
-    private String formatDateTime(LocalDateTime localDateTime) {
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-        return localDateTime.format(formatter);
+        applyCurrentDateTimeAsStringTo(this.dateTime);
     }
 }

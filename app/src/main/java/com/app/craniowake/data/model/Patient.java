@@ -16,7 +16,7 @@ import lombok.Data;
  */
 @Data
 @Entity(indices = {@Index(value = {"caseNumber"}, unique = true)}, tableName = "patient_table")
-public class Patient {
+public class Patient implements CurrentDateTimable{
 
     @PrimaryKey(autoGenerate = true)
     private int patientId;
@@ -34,25 +34,7 @@ public class Patient {
         this.firstname = firstname;
         this.birthDate = birthDate;
         this.sex = sex;
-        setCurrentDateTime();
-    }
-
-    /**
-     * returns current Date and Time when called.
-     */
-    private void setCurrentDateTime() {
-        LocalDateTime localDateTime = LocalDateTime.now(ZoneId.systemDefault());
-        this.dateTime = formatDateTime(localDateTime);
-    }
-
-    /**
-     * Entity of the Calculus Test
-     *
-     * @param localDateTime formats generated datetime to: JJJJ-MM-DDT00:00:00.000
-     */
-    private String formatDateTime(LocalDateTime localDateTime) {
-        DateTimeFormatter formatter = DateTimeFormatter.ISO_DATE_TIME;
-        return localDateTime.format(formatter);
+        applyCurrentDateTimeAsStringTo(this.dateTime);
     }
 
     public int getPatientId() {
