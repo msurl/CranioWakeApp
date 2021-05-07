@@ -166,7 +166,7 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate(getCurrentOperationDate()).observe(this, operation -> {
             try {
-                Complication complication = new Complication(operation.getFkPatientId());
+                Complication complication = new Complication(operation.getOperationId());
                 complicationViewModel.addComplication(complication);
             } catch (Exception e) {
                 System.out.println("complication has not been added to db");

@@ -103,7 +103,7 @@ public class PpttActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
             try {
-                PpttGame ppttGame = new PpttGame(pictureName, answer, operation.getFkPatientId());
+                PpttGame ppttGame = new PpttGame(pictureName, answer, operation.getOperationId());
                 ppttViewModel.addPpttGame(ppttGame);
             } catch (Exception e) {
                 System.out.println("pptt has not been added to db");

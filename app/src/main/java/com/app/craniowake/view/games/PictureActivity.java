@@ -102,7 +102,7 @@ public class PictureActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
             try {
-                PictureGame pictureGame = new PictureGame(pictureName, answer, operation.getFkPatientId());
+                PictureGame pictureGame = new PictureGame(pictureName, answer, operation.getOperationId());
                 pictureViewModel.addPictureGame(pictureGame);
             } catch (Exception e) {
                 System.out.println("PictureGame has not been added to db");

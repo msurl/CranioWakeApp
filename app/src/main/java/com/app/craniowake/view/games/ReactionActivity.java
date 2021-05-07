@@ -129,7 +129,7 @@ public class ReactionActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
             try {
-                ReactionGame reactionGame = new ReactionGame(milliSeconds, operation.getFkPatientId());
+                ReactionGame reactionGame = new ReactionGame(milliSeconds, operation.getOperationId());
                 reactionViewModel.addReactionGame(reactionGame);
             } catch (Exception e) {
                 System.out.println("PictureGame has not been added to db");

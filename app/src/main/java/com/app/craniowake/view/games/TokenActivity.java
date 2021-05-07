@@ -67,7 +67,7 @@ public class TokenActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
             try {
-                TokenGame tokenGame = new TokenGame(token, answer, operation.getFkPatientId());
+                TokenGame tokenGame = new TokenGame(token, answer, operation.getOperationId());
                 tokenViewModel.addTokenGame(tokenGame);
             } catch (Exception e) {
                 System.out.println("PictureGame has not been added to db");

@@ -194,7 +194,7 @@ public class TrailMakingActivity extends OperationActivity {
         OperationViewModel operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
             try {
-                TrailMakingGame trailMakingGame = new TrailMakingGame(answer, operation.getFkPatientId());
+                TrailMakingGame trailMakingGame = new TrailMakingGame(answer, operation.getOperationId());
                 trailMakingViewModel.addTrailwayGame(trailMakingGame);
             } catch (Exception e) {
                 System.out.println("PictureGame has not been added to db");

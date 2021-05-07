@@ -118,7 +118,7 @@ public class StroopActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
             try {
-                StroopGame stroopGame = new StroopGame(stroopColor, answer, operation.getFkPatientId());
+                StroopGame stroopGame = new StroopGame(stroopColor, answer, operation.getOperationId());
                 stroopViewModel.addStroopGame(stroopGame);
             } catch (Exception e) {
                 System.out.println("PictureGame has not been added to db");
