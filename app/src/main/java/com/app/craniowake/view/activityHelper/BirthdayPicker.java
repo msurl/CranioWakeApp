@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
+import androidx.lifecycle.MutableLiveData;
+import androidx.lifecycle.ViewModel;
+
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -15,24 +18,20 @@ import java.util.TimeZone;
  */
 public class BirthdayPicker implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
     private final Context context;
-    private final EditText editText;
-    private int day;
-    private int month;
-    private int birthYear;
+    MutableLiveData<String> birthday;
 
-    public BirthdayPicker(Context context, int editTextViewID) {
-        Activity act = (Activity) context;
-        this.editText = act.findViewById(editTextViewID);
-        this.editText.setOnClickListener(this);
+    public BirthdayPicker(Context context, int editTextViewID, MutableLiveData<String> birthday) {
         this.context = context;
+        this.birthday = birthday;
+        Activity act = (Activity) context;
+        View editText = act.findViewById(editTextViewID);
+        editText.setOnClickListener(this);
     }
 
     @Override
-    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-        birthYear = year;
-        month = monthOfYear;
-        day = dayOfMonth;
-        updateDisplay();
+    public final void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+//        Vielleicht von setValue() auf postValue() ändern
+        birthday.setValue(formatDate(year, monthOfYear, dayOfMonth));
     }
 
     /**
@@ -51,7 +50,7 @@ public class BirthdayPicker implements View.OnClickListener, DatePickerDialog.On
     /**
      * formats selected date and sets editText
      */
-    private void updateDisplay() {
-        editText.setText(new StringBuilder().append(day).append("/").append(month + 1).append("/").append(birthYear).append(" "));
+    private String formatDate(int year, int month, int day) {
+        return day + "/"+ (month + 1) + "/" + year+ " ";
     }
 }
