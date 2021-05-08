@@ -3,9 +3,6 @@ package com.app.craniowake.view.patient;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,16 +24,10 @@ public class AddPatientActivity extends PatientActivity {
 
     BirthdayPicker birthdayPicker;
     private PatientViewModel patientViewModel;
-    private EditText caseNumberInput;
-    private EditText firstNameInput;
-    private EditText lastNameInput;
-    private EditText birthdayInput;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.user_add_patient);
         initializeNawigationDrawer();
         patientViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(PatientViewModel.class);
 
