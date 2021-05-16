@@ -4,8 +4,9 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-import com.app.craniowake.data.model.CurrentDateTimable;
 import com.app.craniowake.data.model.Operation;
+
+import java.time.LocalDateTime;
 
 import lombok.Data;
 
@@ -16,23 +17,23 @@ import static androidx.room.ForeignKey.CASCADE;
  */
 @Data
 @Entity(tableName = "reaction_test_table")
-public class ReactionGame implements CurrentDateTimable {
+public class ReactionGame {
 
     @PrimaryKey(autoGenerate = true)
-    private int reactionId;
+    private long reactionId;
     private int milisec;
-    private String dateTime;
+    private LocalDateTime dateTime;
     @ForeignKey
             (entity = Operation.class,
                     parentColumns = "operationId",
                     childColumns = "fkOperationId",
                     onDelete = CASCADE
             )
-    private int fkOperationId;
+    private long fkOperationId;
 
-    public ReactionGame(int milisec, int fkOperationId) {
+    public ReactionGame(int milisec, long fkOperationId) {
         this.milisec = milisec;
         this.fkOperationId = fkOperationId;
-        applyCurrentDateTimeAsStringTo(this.dateTime);
+        this.dateTime = LocalDateTime.now();
     }
 }

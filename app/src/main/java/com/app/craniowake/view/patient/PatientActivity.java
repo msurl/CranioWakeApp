@@ -7,8 +7,6 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 
 import com.app.craniowake.R;
-import com.app.craniowake.data.db.CraniowakeDatabase;
-import com.app.craniowake.databaseExport.SqliteExporter;
 import com.app.craniowake.view.MainActivity;
 
 import static com.app.craniowake.view.activityHelper.IntentHolder.PATIENT_ID;
@@ -28,7 +26,7 @@ public class PatientActivity extends MainActivity {
     /**
      * saves id of patient to intent extra
      */
-    void addIntent(int patientId) {
+    void addIntent(long patientId) {
         Intent data = new Intent();
         data.putExtra(PATIENT_ID, patientId);
         setResult(RESULT_OK, data);

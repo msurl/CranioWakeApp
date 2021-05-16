@@ -30,7 +30,7 @@ import com.app.craniowake.view.games.ReadActivity;
 import com.app.craniowake.view.games.StroopActivity;
 import com.app.craniowake.view.games.TokenActivity;
 import com.app.craniowake.view.games.TrailMakingActivity;
-import com.app.craniowake.view.stimulation.TreshholdTestActivity;
+import com.app.craniowake.view.stimulation.ThreshholdTestActivity;
 import com.app.craniowake.view.stimulation.VerificationTestActivity;
 import com.app.craniowake.view.viewModel.ComplicationViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
@@ -202,7 +202,8 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
      * this part is not part of CranioWake 1.0 yet. Its the implementation of the Seekbar needed in cranioWake 2.0
      */
     public void startTreshholdTest(View view) {
-        Intent intent = new Intent(this, TreshholdTestActivity.class);
+        Intent intent = new Intent(this, ThreshholdTestActivity.class);
+        intent.putExtra(IntentHolder.OPERATION_DATE, getCurrentOperationDate());
         startActivity(intent);
     }
 

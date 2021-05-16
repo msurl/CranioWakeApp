@@ -6,8 +6,11 @@ import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+import androidx.room.TypeConverter;
+import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+import com.app.craniowake.data.Converters;
 import com.app.craniowake.data.dao.CalculatingDao;
 import com.app.craniowake.data.dao.ComplicationDao;
 import com.app.craniowake.data.dao.DigitalSpanMemoryDao;
@@ -20,8 +23,10 @@ import com.app.craniowake.data.dao.PpttDao;
 import com.app.craniowake.data.dao.ReactionDao;
 import com.app.craniowake.data.dao.ReadDao;
 import com.app.craniowake.data.dao.StroopDao;
+import com.app.craniowake.data.dao.ThresholdDao;
 import com.app.craniowake.data.dao.TokenDao;
 import com.app.craniowake.data.dao.TrailMakingDao;
+import com.app.craniowake.data.dao.VerificationDao;
 import com.app.craniowake.data.model.Complication;
 import com.app.craniowake.data.model.Operation;
 import com.app.craniowake.data.model.Patient;
@@ -34,8 +39,12 @@ import com.app.craniowake.data.model.gameModels.PpttGame;
 import com.app.craniowake.data.model.gameModels.ReactionGame;
 import com.app.craniowake.data.model.gameModels.ReadGame;
 import com.app.craniowake.data.model.gameModels.StroopGame;
+import com.app.craniowake.data.model.stimulation.ThresholdStimulation;
+import com.app.craniowake.data.model.stimulation.ThresholdTest;
 import com.app.craniowake.data.model.gameModels.TokenGame;
 import com.app.craniowake.data.model.gameModels.TrailMakingGame;
+import com.app.craniowake.data.model.stimulation.VerificationStimulation;
+import com.app.craniowake.data.model.stimulation.VerificationTest;
 
 /**
  * all Tables inside of the database
@@ -54,11 +63,15 @@ import com.app.craniowake.data.model.gameModels.TrailMakingGame;
         StroopGame.class,
         TokenGame.class,
         TrailMakingGame.class,
-        Complication.class
+        Complication.class,
+        ThresholdTest.class,
+        VerificationTest.class,
+        VerificationStimulation.class,
+        ThresholdStimulation.class
 }
-        , version = 1
+        , version = 2
 )
-
+@TypeConverters({Converters.class})
 /**
  * Database class of the App Craniowake which holds the database.
  * The CraniowakeDatabase defines the database configuration and serves as the main access point to the persisted data.
@@ -120,6 +133,10 @@ public abstract class CraniowakeDatabase extends RoomDatabase {
     public abstract TrailMakingDao trailwayDao();
 
     public abstract ComplicationDao complicationDao();
+
+    public abstract ThresholdDao thresholdDao();
+
+    public abstract VerificationDao verificationDao();
 
     /**
      * A default user is added to the database in a background thread via AsyncTask

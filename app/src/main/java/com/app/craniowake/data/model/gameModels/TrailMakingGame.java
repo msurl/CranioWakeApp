@@ -4,8 +4,9 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-import com.app.craniowake.data.model.CurrentDateTimable;
 import com.app.craniowake.data.model.Operation;
+
+import java.time.LocalDateTime;
 
 import lombok.Data;
 
@@ -16,24 +17,24 @@ import static androidx.room.ForeignKey.CASCADE;
  */
 @Data
 @Entity(tableName = "trail_making_test_table")
-public class TrailMakingGame implements CurrentDateTimable {
+public class TrailMakingGame {
 
     @PrimaryKey(autoGenerate = true)
-    private int trailwayId;
+    private long trailwayId;
     private boolean correctAnswer;
-    private String dateTime;
+    private LocalDateTime dateTime;
     @ForeignKey
             (entity = Operation.class,
                     parentColumns = "operationId",
                     childColumns = "fkOperationId",
                     onDelete = CASCADE
             )
-    private int fkOperationId;
+    private long fkOperationId;
 
-    public TrailMakingGame(boolean correctAnswer, int fkOperationId) {
+    public TrailMakingGame(boolean correctAnswer, long fkOperationId) {
         this.correctAnswer = correctAnswer;
         this.fkOperationId = fkOperationId;
-        applyCurrentDateTimeAsStringTo(this.dateTime);
+        this.dateTime = LocalDateTime.now();
     }
 }
 

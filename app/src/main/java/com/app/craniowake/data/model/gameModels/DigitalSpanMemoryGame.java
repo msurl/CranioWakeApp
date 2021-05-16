@@ -4,8 +4,9 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-import com.app.craniowake.data.model.CurrentDateTimable;
 import com.app.craniowake.data.model.Operation;
+
+import java.time.LocalDateTime;
 
 import lombok.Data;
 
@@ -16,24 +17,24 @@ import static androidx.room.ForeignKey.CASCADE;
  */
 @Data
 @Entity(tableName = "digital_span_test_table")
-public class DigitalSpanMemoryGame implements CurrentDateTimable {
+public class DigitalSpanMemoryGame {
 
     @PrimaryKey(autoGenerate = true)
-    private int digitalSpanMemoryId;
+    private long digitalSpanMemoryId;
     private boolean answer;
-    private String dateTime;
+    private LocalDateTime dateTime;
     @ForeignKey
             (entity = Operation.class,
                     parentColumns = "operationId",
                     childColumns = "fkOperationId",
                     onDelete = CASCADE
             )
-    private int fkOperationId;
+    private long fkOperationId;
 
 
-    public DigitalSpanMemoryGame(boolean answer, int fkOperationId) {
+    public DigitalSpanMemoryGame(boolean answer, long fkOperationId) {
         this.answer = answer;
         this.fkOperationId = fkOperationId;
-        applyCurrentDateTimeAsStringTo(this.dateTime);
+        this.dateTime = LocalDateTime.now();
     }
 }

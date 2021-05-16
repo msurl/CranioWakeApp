@@ -25,6 +25,12 @@ public class AddPatientActivity extends PatientActivity {
     BirthdayPicker birthdayPicker;
     private PatientViewModel patientViewModel;
 
+    private Boolean validCasenumber;
+    private Boolean validFirstname;
+    private Boolean validLastname;
+    private Boolean validBirthdate;
+    private String gender;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +40,13 @@ public class AddPatientActivity extends PatientActivity {
         UserAddPatientBinding binding = DataBindingUtil.setContentView(this, R.layout.user_add_patient);
         binding.setLifecycleOwner(this);
         binding.setViewmodel(patientViewModel);
+
+        // TODO: There might be a better solution; priority: LOW
+//        patientViewModel.getValidBirthdate().observe(this, validBirthdate -> this.validBirthdate = validBirthdate);
+//        patientViewModel.getValidCasenumber().observe(this, validCasenumber -> this.validCasenumber = validCasenumber);
+//        patientViewModel.getValidFirstname().observe(this, validFirstname -> this.validFirstname = validFirstname);
+//        patientViewModel.getValidLastname().observe(this, validLastname -> this.validLastname = validLastname);
+//        patientViewModel.getGender().observe(this, gender -> this.gender = gender);
 
         birthdayPicker = new BirthdayPicker(this, R.id.user_birthday_id ,patientViewModel.getBirthdate());
     }
@@ -106,7 +119,14 @@ public class AddPatientActivity extends PatientActivity {
                 && Long.parseLong(patientViewModel.getCaseNumber().getValue()) <= 3999999999L;
     }
 
+//    private boolean isValidInput() {
+//        return validBirthdate && validFirstname && validLastname && validCasenumber;
+//    }
+
     private String getGender() {
-        return patientViewModel.getCheckedButtonId().getValue() == R.id.input_user_male ? "male" : "female";
+        // The wrapping LiveData Object needs to be observed to return a non-Null object on .getValue()-call
+        patientViewModel.getGender().observe(this, g -> {});
+        return patientViewModel.getGender().getValue();
+//        return patientViewModel.getCheckedButtonId().getValue() == R.id.input_user_male ? "male" : "female";
     }
 }

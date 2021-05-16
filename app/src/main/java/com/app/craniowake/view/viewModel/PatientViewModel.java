@@ -42,20 +42,26 @@ public class PatientViewModel extends AndroidViewModel {
     private LiveData<String> gender;
 
     //    private LiveData<Boolean> emptyButton;
+    @Getter
     private LiveData<Boolean> validCasenumber;
+    @Getter
     private LiveData<Boolean> validFirstname;
+    @Getter
     private LiveData<Boolean> validLastname;
+    @Getter
     private LiveData<Boolean> validBirthdate;
-
+    @Getter
+    private LiveData<Long> numericalCasenumber;
 
     private static final String EMPTY_STRING = "";
     private static final Integer NO_SELECTION_ID = -1;
+    private static final Integer MALE_SELECTION_ID = R.id.input_user_male;
 
     public PatientViewModel(@NonNull Application application) {
         super(application);
         patientRepository = new PatientRepository(application);
         allPatients = patientRepository.getAllPatients();
-        checkedButtonId = new MutableLiveData<>(R.id.input_user_male);
+        checkedButtonId = new MutableLiveData<>(MALE_SELECTION_ID);
         caseNumber = new MutableLiveData<>(EMPTY_STRING);
         firstname = new MutableLiveData<>(EMPTY_STRING);
         lastname = new MutableLiveData<>(EMPTY_STRING);
@@ -63,7 +69,7 @@ public class PatientViewModel extends AndroidViewModel {
         gender = Transformations.map(checkedButtonId, id -> {
             if (id == -1)
                 return "no_gender";
-            if (id == R.id.input_user_male)
+            if (id == MALE_SELECTION_ID)
                 return "male";
             else
                 return "female";
@@ -75,6 +81,8 @@ public class PatientViewModel extends AndroidViewModel {
         validCasenumber = Transformations.map(caseNumber, cn -> {
             return Long.parseLong(cn) > 3999999999L || !PatientViewModel.nonEmptyString(cn);
         });
+        numericalCasenumber = Transformations.map(caseNumber, cn -> Long.parseLong(cn));
+
 
     }
 
@@ -97,7 +105,7 @@ public class PatientViewModel extends AndroidViewModel {
      *
      * @param id return patient by this id
      */
-    public LiveData<Patient> getPatientById(int id) {
+    public LiveData<Patient> getPatientById(long id) {
         return patientRepository.getPatientById(id);
     }
 
@@ -115,4 +123,6 @@ public class PatientViewModel extends AndroidViewModel {
     private static boolean nonEmptyString(String string) {
         return !TextUtils.isEmpty(string);
     }
+
+
 }
