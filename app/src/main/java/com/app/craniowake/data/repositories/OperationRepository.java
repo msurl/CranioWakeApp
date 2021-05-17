@@ -9,6 +9,8 @@ import com.app.craniowake.data.dao.OperationDao;
 import com.app.craniowake.data.db.CraniowakeDatabase;
 import com.app.craniowake.data.model.Operation;
 
+import java.time.LocalDateTime;
+
 /**
  * handles all data operations for the operation model and dao.
  * Provides a clean API so that the rest of the app can retrieve this data.
@@ -36,7 +38,7 @@ public class OperationRepository {
      *
      * @param date is used as an identifier for operations
      */
-    public LiveData<Operation> getOperationByDate(String date) {
+    public LiveData<Operation> getOperationByDate(LocalDateTime date) {
         return operationDao.getOperationByDate(date);
     }
 

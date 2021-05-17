@@ -8,6 +8,8 @@ import androidx.room.Query;
 
 import com.app.craniowake.data.model.Operation;
 
+import java.time.LocalDateTime;
+
 /**
  * data access object which handles all Queries for the Operation model.
  */
@@ -28,5 +30,5 @@ public abstract class OperationDao {
      * @param dateTime Time and Date of the operation used as an identifier
      */
     @Query("SELECT * FROM operation_table WHERE dateTime = :dateTime")
-    public abstract LiveData<Operation> getOperationByDate(String dateTime);
+    public abstract LiveData<Operation> getOperationByDate(LocalDateTime dateTime);
 }

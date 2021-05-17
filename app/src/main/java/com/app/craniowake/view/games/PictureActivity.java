@@ -18,6 +18,8 @@ import com.app.craniowake.view.games.displayResults.ModiBaseResultActivity;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.PictureViewModel;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 /**
@@ -125,7 +127,7 @@ public class PictureActivity extends OperationActivity {
     private void savePictureGame(boolean answer, String pictureName) {
         pictureViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(PictureViewModel.class);
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
                 PictureGame pictureGame = new PictureGame(pictureName, answer, operation.getOperationId());
                 pictureViewModel.addPictureGame(pictureGame);
@@ -169,9 +171,9 @@ public class PictureActivity extends OperationActivity {
      * returns string of dateTime when current operation was created t
      * its used as an identifier
      */
-    private String getCurrentOperationId() {
+    private Serializable getCurrentOperationId() {
         Intent intent = getIntent();
-        return intent.getStringExtra(IntentHolder.OPERATION_DATE);
+        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     private void setUiElements() {

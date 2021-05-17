@@ -9,6 +9,8 @@ import androidx.lifecycle.LiveData;
 import com.app.craniowake.data.model.Operation;
 import com.app.craniowake.data.repositories.OperationRepository;
 
+import java.time.LocalDateTime;
+
 /**
  * stores and manages UI-related data of the OperationActivity and is used as an abstraction Layer
  */
@@ -26,7 +28,7 @@ public class OperationViewModel extends AndroidViewModel {
      *
      * @param date identifier of which Operation to retrieve
      */
-    public LiveData<Operation> getOperationByDate(String date) {
+    public LiveData<Operation> getOperationByDate(LocalDateTime date) {
         return operationRepository.getOperationByDate(date);
     }
 

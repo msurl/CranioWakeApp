@@ -16,6 +16,8 @@ import com.app.craniowake.view.games.displayResults.BaseResultActivity;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.StroopViewModel;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 /**
@@ -116,7 +118,7 @@ public class StroopActivity extends OperationActivity {
     private void saveStroopGame(boolean answer, String stroopColor) {
         stroopViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(StroopViewModel.class);
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
                 StroopGame stroopGame = new StroopGame(stroopColor, answer, operation.getOperationId());
                 stroopViewModel.addStroopGame(stroopGame);
@@ -130,9 +132,9 @@ public class StroopActivity extends OperationActivity {
      * returns string of dateTime when current operation was created t
      * its used as an identifier
      */
-    private String getCurrentOperationId() {
+    private Serializable getCurrentOperationId() {
         Intent intent = getIntent();
-        return intent.getStringExtra(IntentHolder.OPERATION_DATE);
+        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     /**

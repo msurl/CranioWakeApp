@@ -35,6 +35,9 @@ import com.app.craniowake.view.stimulation.VerificationTestActivity;
 import com.app.craniowake.view.viewModel.ComplicationViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
 /**
  * This Activity is the menu and contains ever test to be performed.
  * complications are handled in this Activity.
@@ -148,9 +151,9 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         return intent.getStringExtra(IntentHolder.PATIENT_NAME);
     }
 
-    protected String getCurrentOperationDate() {
+    protected Serializable getCurrentOperationDate() {
         Intent intent = getIntent();
-        return intent.getStringExtra(IntentHolder.OPERATION_DATE);
+        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     private String getCurrentOperationMode() {
@@ -164,7 +167,7 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
     private void saveComplication() {
         complicationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(ComplicationViewModel.class);
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate(getCurrentOperationDate()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationDate()).observe(this, operation -> {
             try {
                 Complication complication = new Complication(operation.getOperationId());
                 complicationViewModel.addComplication(complication);

@@ -18,6 +18,8 @@ import com.app.craniowake.view.games.displayResults.FourSquareResultActivity;
 import com.app.craniowake.view.viewModel.FourSquareViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 /**
@@ -144,7 +146,7 @@ public class FourSquareActivity extends OperationActivity {
     private void saveFourSquareGame(String pictureName, boolean firstSquare, boolean secondSquare, boolean thirdSquare, boolean fourthSquare) {
         fourSquareViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(FourSquareViewModel.class);
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
                 FourSquareGame fourSquareGame = new FourSquareGame(pictureName, firstSquare, secondSquare, thirdSquare, fourthSquare, operation.getOperationId());
                 fourSquareViewModel.addFourSquareGame(fourSquareGame);
@@ -158,9 +160,9 @@ public class FourSquareActivity extends OperationActivity {
      * returns string of dateTime when current operation was created t
      * its used as an identifier
      */
-    private String getCurrentOperationId() {
+    private Serializable getCurrentOperationId() {
         Intent intent = getIntent();
-        return intent.getStringExtra(IntentHolder.OPERATION_DATE);
+        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     /**

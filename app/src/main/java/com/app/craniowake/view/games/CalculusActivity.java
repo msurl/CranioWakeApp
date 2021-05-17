@@ -19,6 +19,7 @@ import com.app.craniowake.view.games.displayResults.BaseResultActivity;
 import com.app.craniowake.view.viewModel.CalculatingViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 
+import java.time.LocalDateTime;
 import java.util.Random;
 
 /**
@@ -180,7 +181,7 @@ public class CalculusActivity extends OperationActivity {
     private void saveCalculatingAnswer(boolean answer, String firstNum, String secondNum, String operator) {
         calculatingViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(CalculatingViewModel.class);
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate(getCurrentOperationDate()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationDate()).observe(this, operation -> {
             try {
                 CalculusGame calculusGame = new CalculusGame(answer, equationToString(firstNum, secondNum, operator), operation.getOperationId());
                 calculatingViewModel.addCalculatingGame(calculusGame);

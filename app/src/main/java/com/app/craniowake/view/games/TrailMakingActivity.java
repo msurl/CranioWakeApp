@@ -23,6 +23,8 @@ import com.app.craniowake.view.games.displayResults.ModiBaseResultActivity;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.TrailMakingViewModel;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -192,7 +194,7 @@ public class TrailMakingActivity extends OperationActivity {
     private void saveTrailwayGame(boolean answer) {
         trailMakingViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(TrailMakingViewModel.class);
         OperationViewModel operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
                 TrailMakingGame trailMakingGame = new TrailMakingGame(answer, operation.getOperationId());
                 trailMakingViewModel.addTrailwayGame(trailMakingGame);
@@ -206,9 +208,9 @@ public class TrailMakingActivity extends OperationActivity {
      * returns string of dateTime when current operation was created t
      * its used as an identifier
      */
-    private String getCurrentOperationId() {
+    private Serializable getCurrentOperationId() {
         Intent intent = getIntent();
-        return intent.getStringExtra(IntentHolder.OPERATION_DATE);
+        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     /**

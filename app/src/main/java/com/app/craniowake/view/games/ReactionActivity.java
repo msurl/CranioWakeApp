@@ -21,6 +21,9 @@ import com.app.craniowake.view.games.displayResults.ReactionResultActivity;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.ReactionViewModel;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
+
 /**
  * Implementation of the Reaction Test
  */
@@ -127,7 +130,7 @@ public class ReactionActivity extends OperationActivity {
     private void saveReactionGame(int milliSeconds) {
         reactionViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(ReactionViewModel.class);
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
                 ReactionGame reactionGame = new ReactionGame(milliSeconds, operation.getOperationId());
                 reactionViewModel.addReactionGame(reactionGame);
@@ -141,9 +144,9 @@ public class ReactionActivity extends OperationActivity {
      * returns string of dateTime when current operation was created t
      * its used as an identifier
      */
-    private String getCurrentOperationId() {
+    private Serializable getCurrentOperationId() {
         Intent intent = getIntent();
-        return intent.getStringExtra(IntentHolder.OPERATION_DATE);
+        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     /**

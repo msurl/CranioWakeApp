@@ -17,6 +17,8 @@ import com.app.craniowake.view.games.displayResults.BaseResultActivity;
 import com.app.craniowake.view.viewModel.DigitalSpanMemoryViewModel;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Random;
 
 /**
@@ -75,7 +77,7 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
     private void saveDigitalSpanMemoryAnswer(boolean answer) {
         digitalSpanMemoryViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(DigitalSpanMemoryViewModel.class);
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate(getCurrentOperationId()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
                 DigitalSpanMemoryGame digitalSpanMemoryGame = new DigitalSpanMemoryGame(answer, operation.getOperationId());
                 digitalSpanMemoryViewModel.addDigitalSpanMemoryGame(digitalSpanMemoryGame);
@@ -128,9 +130,9 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
      * returns string of dateTime when current operation was created t
      * its used as an identifier
      */
-    private String getCurrentOperationId() {
+    private Serializable getCurrentOperationId() {
         Intent intent = getIntent();
-        return intent.getStringExtra(IntentHolder.OPERATION_DATE);
+        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     /**
