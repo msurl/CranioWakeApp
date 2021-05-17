@@ -2,6 +2,8 @@ package com.app.craniowake.view.games;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -35,12 +37,29 @@ public class PictureActivity extends OperationActivity {
     private int correctAnswersMode2 = 0;
     private int wrongAnswersMode2 = 0;
 
+    private boolean soundLoaded = false;
+    private SoundPool soundPool;
+    private int beepSoundId;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_picture_test);
         setUiElements();
         setNextPicture();
+        initSoundPool();
+        
+    }
+
+    public void initSoundPool() {
+        AudioAttributes attributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+
+        soundPool = new SoundPool.Builder().setMaxStreams(1).setAudioAttributes(attributes).build();
+        soundPool.setOnLoadCompleteListener((soundPool, sampleId, status) -> soundLoaded = (status == 0));
+        beepSoundId = soundPool.load(this, R.raw.beep, 1);
     }
 
     /**
@@ -56,6 +75,11 @@ public class PictureActivity extends OperationActivity {
         }
     }
 
+    public void playBeepSound() {
+        if(soundLoaded)
+            soundPool.play(beepSoundId, 1, 1, 1, 0, 1);
+    }
+
     /**
      * save current answers and set next picture on display
      *
@@ -65,6 +89,7 @@ public class PictureActivity extends OperationActivity {
     public void setPatientRecognizedPicture(View view) {
         savePictureGame(evaluateAnswer(view.getId()), check(currentPictureId));
         setNextPicture();
+        playBeepSound();
     }
 
     private int generateRandomPicture() {
