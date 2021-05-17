@@ -5,8 +5,6 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 
 import lombok.Data;
 
@@ -17,22 +15,22 @@ import static androidx.room.ForeignKey.CASCADE;
  */
 @Data
 @Entity(tableName = "complication_table")
-public class Complication implements CurrentDateTimable{
+public class Complication {
 
     @PrimaryKey(autoGenerate = true)
-    private int complicationId;
+    private long complicationId;
 
-    private String dateTime;
+    private LocalDateTime dateTime;
     @ForeignKey
             (entity = Patient.class,
                     parentColumns = "operationId",
                     childColumns = "fkOperationId",
                     onDelete = CASCADE
             )
-    private int fkOperationId;
+    private long fkOperationId;
 
-    public Complication(int fkOperationId) {
+    public Complication(long fkOperationId) {
         this.fkOperationId = fkOperationId;
-        applyCurrentDateTimeAsStringTo(this.dateTime);
+        this.dateTime = LocalDateTime.now();
     }
 }

@@ -39,6 +39,7 @@ import lombok.SneakyThrows;
  * MainActivity and entry point of the App. It starts a new Operation (OperationActivity)
  * From here the navigationDrawer is operated to open PatientListActivity, AddPatientActivity and initiate a databaseExport
  */
+// TODO: Um das MVVM Pattern konsequent umzusetzen, sollten CustomBindingAdapter für alle Klassen geschrieben werden! Via Two-Way Data Binding sollten dann alle Attribute mit den XML files gemappt werden.
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, NavigationView.OnNavigationItemSelectedListener {
 
     PatientViewModel patientViewModel;
@@ -77,9 +78,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      *
      * @return id of patient
      */
-    private int getById() {
+    private long getById() {
         Intent intent = getIntent();
-        return intent.getIntExtra(IntentHolder.PATIENT_ID, 0);
+        return intent.getLongExtra(IntentHolder.PATIENT_ID, 0);
     }
 
     /**
@@ -136,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
      * Intents to be send to OperationActivity
      *
      * @param selectedBrainArea area were tumor most likely is located
-     * @param selectedGameMode  moment of testing(prä, intra, post, followup)
+     * @param selectedGameMode  moment of testing(pre, intra, post, followup)
      */
     private void saveOperation(String selectedGameMode, String selectedBrainArea) {
         final Intent intent = new Intent(this, OperationActivity.class);

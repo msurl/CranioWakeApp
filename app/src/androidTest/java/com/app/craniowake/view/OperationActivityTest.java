@@ -38,7 +38,7 @@ public class OperationActivityTest {
         onView(withId(R.id.current_operation_status))
                 .check(matches(isDisplayed()));
 
-        onView(withId(R.id.treshhold_test))
+        onView(withId(R.id.threshhold_test))
                 .check(matches(isDisplayed()));
         onView(withId(R.id.verification_test))
                 .check(matches(isDisplayed()));

@@ -5,8 +5,6 @@ import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 
 import lombok.Data;
 
@@ -16,16 +14,16 @@ import lombok.Data;
  */
 @Data
 @Entity(indices = {@Index(value = {"caseNumber"}, unique = true)}, tableName = "patient_table")
-public class Patient implements CurrentDateTimable{
+public class Patient{
 
     @PrimaryKey(autoGenerate = true)
-    private int patientId;
+    private long patientId;
 
     private long caseNumber;
     private String lastname;
     private String firstname;
     private String birthDate;
-    private String dateTime;
+    private LocalDateTime dateTime;
     private String sex;
 
     public Patient(long caseNumber, String lastname, String firstname, String birthDate, String sex) {
@@ -34,10 +32,14 @@ public class Patient implements CurrentDateTimable{
         this.firstname = firstname;
         this.birthDate = birthDate;
         this.sex = sex;
-        applyCurrentDateTimeAsStringTo(this.dateTime);
+        this.dateTime = LocalDateTime.now();
     }
 
-    public int getPatientId() {
+    public Patient() {
+        this.dateTime = LocalDateTime.now();
+    }
+
+    public long getPatientId() {
         return patientId;
     }
 

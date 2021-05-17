@@ -4,8 +4,9 @@ import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
-import com.app.craniowake.data.model.CurrentDateTimable;
 import com.app.craniowake.data.model.Operation;
+
+import java.time.LocalDateTime;
 
 import lombok.Data;
 
@@ -16,25 +17,25 @@ import static androidx.room.ForeignKey.CASCADE;
  */
 @Data
 @Entity(tableName = "pptt_test_table")
-public class PpttGame implements CurrentDateTimable {
+public class PpttGame {
 
     @PrimaryKey(autoGenerate = true)
-    private int ppttId;
+    private long ppttId;
     private boolean answer;
     private String pictureName;
-    private String dateTime;
+    private LocalDateTime dateTime;
     @ForeignKey
             (entity = Operation.class,
                     parentColumns = "operationId",
                     childColumns = "fkOperationId",
                     onDelete = CASCADE
             )
-    private int fkOperationId;
+    private long fkOperationId;
 
-    public PpttGame(String pictureName, boolean answer, int fkOperationId) {
+    public PpttGame(String pictureName, boolean answer, long fkOperationId) {
         this.pictureName = pictureName;
         this.answer = answer;
         this.fkOperationId = fkOperationId;
-        applyCurrentDateTimeAsStringTo(this.dateTime);
+        this.dateTime = LocalDateTime.now();
     }
 }

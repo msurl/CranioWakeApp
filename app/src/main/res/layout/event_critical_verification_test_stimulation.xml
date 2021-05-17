@@ -1,314 +1,341 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_gravity="top"
-    android:layout_margin="20dp">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:verification="http://schemas.android.com/apk/res-auto"
+    xmlns:stimulation="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.craniowake.view.viewModel.VerificationTestViewModel" />
+
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#525BC3AE"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/stromTestId"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:scrollbarAlwaysDrawVerticalTrack="true"
-            android:scrollHorizontally="false"
-            android:text="@string/verification_test"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-            android:textSize="36sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:gravity="center_horizontal"
-            android:text="@string/motor_function"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:layout_margin="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:id="@+id/radiogroup_monopoloar_bipolar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/monoploar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="@string/monopolar"
-                    android:textSize="26sp" />
-
-                <RadioButton
-                    android:id="@+id/bipolar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="@string/bipolar"
-                    android:textSize="26sp" />
-            </RadioGroup>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:id="@+id/radiogroup_cortical_subcortical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/cortical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="@string/cortical"
-                    android:textSize="26sp" />
-
-                <RadioButton
-                    android:id="@+id/subcortical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="@string/subcortical"
-                    android:textSize="26sp" />
-            </RadioGroup>
+            android:background="#525BC3AE"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/stromTestId"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="@string/stimulation"
-                android:textSize="26sp" />
-
-            <Spinner
-                android:id="@+id/spinnerMuscleCriticalVerification"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="@android:drawable/btn_dropdown"
-                android:spinnerMode="dropdown" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:id="@+id/RGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/clinical"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="clinical"
-                    android:textSize="26sp" />
-
-                <RadioButton
-                    android:id="@+id/emg"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="EMG"
-                    android:textSize="26sp" />
-
-                <RadioButton
-                    android:id="@+id/both"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="both"
-                    android:textSize="26sp" />
-            </RadioGroup>
+                android:gravity="center_horizontal"
+                android:scrollbarAlwaysDrawVerticalTrack="true"
+                android:scrollHorizontally="false"
+                android:text="@string/verification_test"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:text="response in muscle:"
-                android:textSize="26sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+                android:gravity="center_horizontal"
+                android:text="@string/motor_function"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:orientation="vertical">
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <EditText
-                    android:layout_width="match_parent"
+                <RadioGroup
+                    android:id="@+id/radiogroup_monopoloar_bipolar"
+                    verification:motorFunctionStimulationType="@={viewmodel.verificationTest.motorFunctionStimulationType}"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:autofillHints="0.0"
-                    android:hint="0.0"
-                    android:inputType="numberDecimal"
-                    android:padding="20dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/monopolar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/monopolar"
+                        android:textSize="26sp" />
+
+                    <RadioButton
+                        android:id="@+id/bipolar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/bipolar"
+                        android:textSize="26sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radiogroup_cortical_subcortical"
+                    verification:motorFunctionStimulationArea="@={viewmodel.verificationTest.motorFunctionStimulationArea}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/cortical_verification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/cortical"
+                        android:textSize="26sp" />
+
+                    <RadioButton
+                        android:id="@+id/subcortical_verification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/subcortical"
+                        android:textSize="26sp" />
+
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="@string/stimulation"
                     android:textSize="26sp" />
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text=" mA. "
-                android:textSize="26sp" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="add stimulation" />
-        </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:gravity="center_horizontal"
-            android:text="Speech and Language Function"
-            android:textAlignment="center"
-            android:textSize="30sp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <RadioGroup
-                android:id="@+id/radiogroup_cortical_subcortical_speech"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/cortical_speech"
+                <RadioGroup
+                    android:id="@+id/RGroup"
+                    verification:verResponseType="@={viewmodel.verificationTest.clinicalEMGBoth}"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:text="cortical"
-                    android:textSize="26sp" />
+                    android:orientation="horizontal">
 
-                <RadioButton
-                    android:id="@+id/subcortical_speech"
+                    <RadioButton
+                        android:id="@+id/clinical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="clinical"
+                        android:textSize="26sp" />
+
+                    <RadioButton
+                        android:id="@+id/emg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="EMG"
+                        android:textSize="26sp" />
+
+                    <RadioButton
+                        android:id="@+id/both"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="both"
+                        android:textSize="26sp" />
+                </RadioGroup>
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="response in muscle:"
+                    android:textSize="26sp" />
+
+                <Spinner
+                    android:id="@+id/spinnerMuscleCriticalVerification"
+                    stimulation:responseInMuscle="@={viewmodel.verificationTest.responseInMuscle}"
+                    stimulation:muscles="@{viewmodel.muscles}"
+                    android:entries="@{viewmodel.muscles}"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:text="subcortical"
-                    android:textSize="26sp" />
-            </RadioGroup>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:text="stimulation"
-                android:textSize="26sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:orientation="vertical">
-
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:autofillHints="0.0"
-                    android:hint="0.0"
-                    android:inputType="numberDecimal"
-                    android:padding="20dp"
-                    android:textSize="26sp" />
-
+                    android:layout_weight="1"
+                    android:background="@android:drawable/btn_dropdown"
+                    android:spinnerMode="dropdown" />
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:gravity="center"
-                android:text=" mA. "
-                android:textSize="26sp" />
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/muscle_stimulation_verification"
+                        android:text="@={viewmodel.motorFunctionCharge}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:autofillHints="0.0"
+                        android:hint="0.0"
+                        android:inputType="numberDecimal"
+                        android:padding="20dp"
+                        android:textSize="26sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text=" mA. "
+                    android:textSize="26sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="add stimulation"
+                    android:onClick="@{() -> viewmodel.addMotorStimulation()}"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:gravity="center_horizontal"
+                android:text="Speech and Language Function"
+                android:textAlignment="center"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioGroup
+                    android:id="@+id/radiogroup_cortical_subcortical_speech"
+                    verification:speechStimulationArea="@={viewmodel.verificationTest.speechAndLanguageStimulationArea}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/cortical_speech"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="cortical"
+                        android:textSize="26sp" />
+
+                    <RadioButton
+                        android:id="@+id/subcortical_speech"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="subcortical"
+                        android:textSize="26sp" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:text="stimulation"
+                    android:textSize="26sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/speech_stimulation_verification"
+                        android:text="@={viewmodel.speechFunctionCharge}"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:autofillHints="0.0"
+                        android:hint="0.0"
+                        android:inputType="numberDecimal"
+                        android:padding="20dp"
+                        android:textSize="26sp" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:text=" mA. "
+                    android:textSize="26sp" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="add stimulation"
+                    android:onClick="@{() -> viewmodel.addSpeechStimulation()}"
+                    />
+            </LinearLayout>
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="add stimulation" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@color/dirtyLightBlue"
+                android:onClick="closeActivity"
+                android:padding="25dp"
+                android:text="finish"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+
         </LinearLayout>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"
-            android:layout_marginBottom="30dp"
-            android:background="@color/dirtyLightBlue"
-            android:onClick="closeActivity"
-            android:padding="25dp"
-            android:text="finish"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-
-
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
+</layout>

@@ -3,17 +3,16 @@ package com.app.craniowake.view.patient;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.Patient;
+import com.app.craniowake.databinding.UserAddPatientBinding;
 import com.app.craniowake.view.activityHelper.BirthdayPicker;
 import com.app.craniowake.view.activityHelper.customUtils.DialogAddedPatient;
 import com.app.craniowake.view.viewModel.PatientViewModel;
@@ -25,34 +24,41 @@ public class AddPatientActivity extends PatientActivity {
 
     BirthdayPicker birthdayPicker;
     private PatientViewModel patientViewModel;
-    private EditText caseNumberInput;
-    private EditText firstNameInput;
-    private EditText lastNameInput;
-    private EditText birthdayInput;
 
+    private Boolean validCasenumber;
+    private Boolean validFirstname;
+    private Boolean validLastname;
+    private Boolean validBirthdate;
+    private String gender;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.user_add_patient);
         initializeNawigationDrawer();
         patientViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(PatientViewModel.class);
-        birthdayPicker = new BirthdayPicker(this, R.id.user_birthday_id);
+
+        UserAddPatientBinding binding = DataBindingUtil.setContentView(this, R.layout.user_add_patient);
+        binding.setLifecycleOwner(this);
+        binding.setViewmodel(patientViewModel);
+
+        // TODO: There might be a better solution; priority: LOW
+//        patientViewModel.getValidBirthdate().observe(this, validBirthdate -> this.validBirthdate = validBirthdate);
+//        patientViewModel.getValidCasenumber().observe(this, validCasenumber -> this.validCasenumber = validCasenumber);
+//        patientViewModel.getValidFirstname().observe(this, validFirstname -> this.validFirstname = validFirstname);
+//        patientViewModel.getValidLastname().observe(this, validLastname -> this.validLastname = validLastname);
+//        patientViewModel.getGender().observe(this, gender -> this.gender = gender);
+
+        birthdayPicker = new BirthdayPicker(this, R.id.user_birthday_id ,patientViewModel.getBirthdate());
     }
 
     public void addPatient(View view) {
-        getDisplayInput();
-        if (checkIfInputEmpty()) {
+        if (isValidInput()) {
             savePatientToDb();
             displayNoteOfDbExport();
         }
-    }
-
-    private void getDisplayInput() {
-        caseNumberInput = findViewById(R.id.user_input_caseNumber_id);
-        firstNameInput = findViewById(R.id.user_input_firstname_id);
-        lastNameInput = findViewById(R.id.user_input_lastname_id);
-        birthdayInput = findViewById(R.id.user_birthday_id);
+        else {
+            showInvalidInputToast();
+        }
     }
 
     /**
@@ -60,31 +66,23 @@ public class AddPatientActivity extends PatientActivity {
      * id is given to Intent
      */
     private void savePatientToDb() {
-        long caseNumber = Long.parseLong(caseNumberInput.getText().toString());
-        String firstName = firstNameInput.getText().toString();
-        String lastName = lastNameInput.getText().toString();
-        String birthday = birthdayInput.getText().toString();
+        // Option 2
+        long caseNumber = Long.parseLong(patientViewModel.getCaseNumber().getValue());
+        String firstName = patientViewModel.getFirstname().getValue();
+        String lastName = patientViewModel.getLastname().getValue();
+        String birthday = patientViewModel.getBirthdate().getValue();
+//        String gender = patientViewModel.getGender().getValue();
+        String gender = getGender();
 
-        Patient patient = new Patient(caseNumber, lastName, firstName, birthday, checkPatientGender());
+        // Option 1
+//        Patient patient = patientViewModel.getPatientFromViewInput();
+
+        // Option 2
+        Patient patient = new Patient(caseNumber, firstName, lastName, birthday, gender);
         addIntent(patient.getPatientId());
         patientViewModel.addPatient(patient);
-    }
 
-    /**
-     * checks which radiobutton has been clicked
-     *
-     * @return sex of patient
-     */
-    private String checkPatientGender() {
-        RadioButton maleRadioButton = findViewById(R.id.input_user_male);
-        RadioButton femaleRadioButton = findViewById(R.id.input_user_female);
-
-        if (femaleRadioButton.isChecked()) {
-            return "female";
-        } else if (maleRadioButton.isChecked()) {
-            return "male";
-        }
-        return "no_gender";
+        // Option 3 wäre es, direkt innehalb des ViewModels den Patienten zu erstellen, abzuspeichern und dann die ID zurüclzugeben.
     }
 
     /**
@@ -92,16 +90,8 @@ public class AddPatientActivity extends PatientActivity {
      *
      * @return if a field is emtpy or not
      */
-    private boolean checkIfInputEmpty() {
-        RadioGroup radiogroup = findViewById(R.id.RGroup);
-        long caseNumber = Long.parseLong(caseNumberInput.getText().toString());
-        int id = radiogroup.getCheckedRadioButtonId(); // funktion gibt -1 zurück, wenn keiner der Radiobuttons ausgewählt wurde
-
-        if (TextUtils.isEmpty(caseNumberInput.getText()) || TextUtils.isEmpty(firstNameInput.getText()) || TextUtils.isEmpty(lastNameInput.getText()) || TextUtils.isEmpty(birthdayInput.getText()) || id == -1 || caseNumber > 3999999999L) {
-            Toast.makeText(this, "please fill the form correctly. Patient has not been saved", Toast.LENGTH_LONG).show();
-            return false;
-        }
-        return true;
+    private void showInvalidInputToast() {
+      Toast.makeText(this, "please fill the form correctly. Patient has not been saved", Toast.LENGTH_LONG).show();
     }
 
     /**
@@ -121,4 +111,22 @@ public class AddPatientActivity extends PatientActivity {
         dialog_info.setText(R.string.the_patient_has_been_added);
     }
 
+    private boolean isValidInput() {
+        return !TextUtils.isEmpty(patientViewModel.getCaseNumber().getValue())
+                && !TextUtils.isEmpty(patientViewModel.getBirthdate().getValue())
+                && !TextUtils.isEmpty(patientViewModel.getFirstname().getValue())
+                && !TextUtils.isEmpty(patientViewModel.getLastname().getValue())
+                && Long.parseLong(patientViewModel.getCaseNumber().getValue()) <= 3999999999L;
+    }
+
+//    private boolean isValidInput() {
+//        return validBirthdate && validFirstname && validLastname && validCasenumber;
+//    }
+
+    private String getGender() {
+        // The wrapping LiveData Object needs to be observed to return a non-Null object on .getValue()-call
+        patientViewModel.getGender().observe(this, g -> {});
+        return patientViewModel.getGender().getValue();
+//        return patientViewModel.getCheckedButtonId().getValue() == R.id.input_user_male ? "male" : "female";
+    }
 }
