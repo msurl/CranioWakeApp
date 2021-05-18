@@ -12,56 +12,67 @@
         android:testOnly="false"
         android:theme="@style/AppTheme.NoActionBar">
         <activity
-            android:name=".view.MainActivity"
-            android:configChanges="keyboardHidden|orientation"
+            android:name=".view.SplashScreen"
+            android:noHistory="true"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.app.craniowake.view.games.TokenActivity"
+            android:name=".view.MainActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="landscape">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".view.games.TokenActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.OperationActivity"
+            android:name=".view.OperationActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.CalculusActivity"
+            android:name=".view.games.CalculusActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.ReadActivity"
+            android:name=".view.games.ReadActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.PictureActivity"
+            android:name=".view.games.PictureActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.PpttActivity"
+            android:name=".view.games.PpttActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.StroopActivity"
+            android:name=".view.games.StroopActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.FourSquareActivity"
+            android:name=".view.games.FourSquareActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.LineBisectionActivity"
+            android:name=".view.games.LineBisectionActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.DigitalSpanMemoryActivity"
+            android:name=".view.games.DigitalSpanMemoryActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.TrailMakingActivity"
+            android:name=".view.games.TrailMakingActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
@@ -85,34 +96,33 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.games.ReactionActivity"
+            android:name=".view.games.ReactionActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.stimulation.ThreshholdTestActivity"
+            android:name=".view.stimulation.ThreshholdTestActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.stimulation.VerificationTestActivity"
+            android:name=".view.stimulation.VerificationTestActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.stimulation.StimulationActivity"
+            android:name=".view.stimulation.StimulationActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.patient.PatientActivity"
+            android:name=".view.patient.PatientActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.patient.AddPatientActivity"
+            android:name=".view.patient.AddPatientActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
-            android:name="com.app.craniowake.view.patient.PatientListActivity"
+            android:name=".view.patient.PatientListActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
-
     </application>
 
 </manifest>

@@ -148,6 +148,7 @@
     <string name="the_patient_has_been_added">the patient has been added</string>
     <string name="ok">OK</string>
     <string name="header_model_red">header_model_red</string>
+    <string name="this_is_not_a_medical_product">This is not a medical product!</string>
     <string name="a_complication_has_been_noted">A complication has been noted</string>
     <string name="tap_when_the_blue_screen_appears">Tap when the blue screen appears</string>
     <string name="tap_ich_bin_ein_placeholder">TAP! when the Screen turns blue</string>

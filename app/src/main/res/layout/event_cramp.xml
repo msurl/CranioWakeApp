@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/a"
+        android:id="@+id/warning_icon_emergency"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:background="#DA5F6A"
@@ -18,7 +18,7 @@
         android:id="@+id/text_dialog_emergency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/a"
+        android:layout_below="@+id/warning_icon_emergency"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="4dp"
         android:layout_marginTop="20dp"
@@ -30,7 +30,7 @@
         android:textSize="26sp" />
 
     <Button
-        android:id="@+id/btn_dialog"
+        android:id="@+id/btn_dialog_emergency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_dialog_emergency"

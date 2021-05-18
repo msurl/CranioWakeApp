@@ -23,6 +23,7 @@ import com.app.craniowake.R;
 import com.app.craniowake.data.db.CraniowakeDatabase;
 import com.app.craniowake.data.model.Operation;
 import com.app.craniowake.databaseExport.SqliteExporter;
+import com.app.craniowake.view.activityHelper.DialogBuilder;
 import com.app.craniowake.view.activityHelper.IntentHolder;
 import com.app.craniowake.view.activityHelper.customUtils.DialogAddedCSV;
 import com.app.craniowake.view.activityHelper.customUtils.DialogAddedPatient;
@@ -58,6 +59,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.menu_start_screen);
         generateUIElements();
         displayNameOfCurrentPatient();
+//        showDisclaimer();
+    }
+
+    private void showDisclaimer() {
+        DialogBuilder.of(this, R.layout.disclaimer_dialog, R.id.btn_dialog_disclaimer).show();
     }
 
     /**

@@ -23,7 +23,7 @@ public class DialogEmergency {
         dialog.setCancelable(false);
         dialog.setContentView(R.layout.event_cramp);
 
-        Button dialogButton = dialog.findViewById(R.id.btn_dialog);
+        Button dialogButton = dialog.findViewById(R.id.btn_dialog_disclaimer);
         dialogButton.setOnClickListener(v -> dialog.dismiss());
 
         dialog.show();
