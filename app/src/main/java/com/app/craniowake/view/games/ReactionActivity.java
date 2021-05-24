@@ -164,7 +164,6 @@ public class ReactionActivity extends OperationActivity {
     private void startReactionAnimation(final TextView textView, final Handler mHandler) {
 
         final long[] sleeper = {1250};
-        flags = 0;
         final FrameLayout reactionGameBackground = findViewById(R.id.reaction_background_color_id);
         reactionGameBackground.setOnTouchListener(handleTouch);
 
@@ -175,19 +174,12 @@ public class ReactionActivity extends OperationActivity {
                 try {
                     mHandler.post(() -> {
                         counter[0]++;
-                        if (flags == 0) {
-                            textView.setText("-1");
-                            flags = 1;
-                        } else {
-                            textView.setText("1");
-                            flags = 0;
-                        }
-                        if (counter[0] == 3) {
+                        if (counter[0] == 2) {
                             sleeper[0] = generateRandomTime();
                             //mache random zeit bis zum vierten durchlauf
                         }
 
-                        if (counter[0] == 4) {
+                        if (counter[0] == 3) {
                             reactionGameBackground.setBackgroundColor(Color.BLUE);
                             stopWatch.startTime();
                             //starte timer bis geklickt wird
