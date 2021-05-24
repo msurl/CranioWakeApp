@@ -9,6 +9,7 @@ import com.app.craniowake.data.model.Operation;
 import java.time.LocalDateTime;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import static androidx.room.ForeignKey.CASCADE;
 
@@ -16,14 +17,14 @@ import static androidx.room.ForeignKey.CASCADE;
  * Model of the PPT Test
  */
 @Data
+@NoArgsConstructor
 @Entity(tableName = "pptt_test_table")
-public class PpttGame {
+public class PpttGame extends Game {
 
     @PrimaryKey(autoGenerate = true)
     private long ppttId;
     private boolean answer;
     private String pictureName;
-    private LocalDateTime dateTime;
     @ForeignKey
             (entity = Operation.class,
                     parentColumns = "operationId",
@@ -33,9 +34,16 @@ public class PpttGame {
     private long fkOperationId;
 
     public PpttGame(String pictureName, boolean answer, long fkOperationId) {
+        super();
         this.pictureName = pictureName;
         this.answer = answer;
         this.fkOperationId = fkOperationId;
-        this.dateTime = LocalDateTime.now();
+    }
+
+    public PpttGame(String pictureName, boolean answer, double stimulation, long fkOperationId) {
+        super(stimulation);
+        this.pictureName = pictureName;
+        this.answer = answer;
+        this.fkOperationId = fkOperationId;
     }
 }
