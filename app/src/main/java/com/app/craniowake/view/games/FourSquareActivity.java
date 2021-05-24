@@ -148,10 +148,17 @@ public class FourSquareActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
-                FourSquareGame fourSquareGame = new FourSquareGame(pictureName, firstSquare, secondSquare, thirdSquare, fourthSquare, operation.getOperationId());
+                FourSquareGame fourSquareGame;
+                if(stimulated)
+                    fourSquareGame = new FourSquareGame(pictureName, firstSquare, secondSquare, thirdSquare, fourthSquare, stimulation, operation.getOperationId());
+                else
+                    fourSquareGame = new FourSquareGame(pictureName, firstSquare, secondSquare, thirdSquare, fourthSquare, operation.getOperationId());
                 fourSquareViewModel.addFourSquareGame(fourSquareGame);
             } catch (Exception e) {
                 System.out.println("PictureGame has not been added to db");
+            }
+            finally {
+                stimulated = false;
             }
         });
     }

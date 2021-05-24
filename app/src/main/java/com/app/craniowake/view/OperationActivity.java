@@ -2,11 +2,14 @@ package com.app.craniowake.view;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -37,6 +40,9 @@ import com.app.craniowake.view.viewModel.OperationViewModel;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
 
 /**
  * This Activity is the menu and contains ever test to be performed.
@@ -44,6 +50,17 @@ import java.time.LocalDateTime;
  * BaseClass to all the TestActivities
  */
 public class OperationActivity extends AppCompatActivity implements View.OnClickListener {
+
+
+    protected SoundPool soundPool;
+    protected int beepSoundId;
+    protected int successSoundId;
+    protected int wrongSoundId;
+    protected int failSoundId;
+    protected Collection<Integer> soundsLoaded = new HashSet<>();
+
+    protected double stimulation = 0.0;
+    protected boolean stimulated = false;
 
     /**
      * this part is not part of CranioWake 1.0 yet. Its the implementation of the Seekbar needed in cranioWake 2.0
@@ -54,8 +71,8 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         @Override
         public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
             TextView textView = findViewById(R.id.current_value);
-            progress++;
-            textView.setText("" + ((double) progress / 2));
+            stimulation = (double) progress / 2;
+            textView.setText("" + stimulation);
         }
 
         @Override
@@ -89,6 +106,8 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         } else {
             currentPatient.setText(R.string.no_patient_selected);
         }
+
+        initSoundPool();
     }
 
     /**
@@ -226,6 +245,48 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
     protected void initiateSeekbar() {
         SeekBar seek_bar = findViewById(R.id.slider_stimulation);
         seek_bar.setOnSeekBarChangeListener(listener);
+        initializeStimulateButton();
+    }
+
+    protected void initSoundPool() {
+        AudioAttributes attributes = new AudioAttributes.Builder()
+                .setUsage(AudioAttributes.USAGE_GAME)
+                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                .build();
+
+        soundPool = new SoundPool.Builder().setMaxStreams(1).setAudioAttributes(attributes).build();
+        soundPool.setOnLoadCompleteListener((soundPool, sampleId, status) -> {
+            if(status == 0)
+                soundsLoaded.add(sampleId);
+        });
+        beepSoundId = soundPool.load(this, R.raw.beep, 1);
+        successSoundId = soundPool.load(this, R.raw.success, 1);
+        wrongSoundId = soundPool.load(this, R.raw.wrong, 1);
+        failSoundId = soundPool.load(this, R.raw.fail, 1);
+    }
+
+    public void playBeepSound() {
+        if(soundsLoaded.contains(beepSoundId))
+            soundPool.play(beepSoundId, 1, 1, 1, 0, 1);
+    }
+
+    public void playSuccessSound() {
+        if(soundsLoaded.contains(successSoundId))
+            soundPool.play(successSoundId, 1, 1, 1, 0, 1);
+    }
+
+    public void playWrongSound() {
+        if(soundsLoaded.contains(wrongSoundId))
+            soundPool.play(wrongSoundId, 1, 1, 1, 0, 1);
+    }
+
+    public void playFailSound() {
+        if(soundsLoaded.contains(failSoundId))
+            soundPool.play(failSoundId, 1, 1, 1, 0, 1);
+    }
+
+    public void stimulate() {
+        stimulated = true;
     }
 
     /**
@@ -233,5 +294,10 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
      */
     public void closeActivity(View view) {
         finish();
+    }
+
+    public void initializeStimulateButton() {
+        Button stimulate = findViewById(R.id.stimulate);
+        stimulate.setOnClickListener(v -> stimulated = true);
     }
 }

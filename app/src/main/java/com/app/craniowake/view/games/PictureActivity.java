@@ -6,6 +6,7 @@ import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.lifecycle.ViewModelProvider;
@@ -39,30 +40,14 @@ public class PictureActivity extends OperationActivity {
     private int correctAnswersMode2 = 0;
     private int wrongAnswersMode2 = 0;
 
-    private boolean soundLoaded = false;
-    private SoundPool soundPool;
-    private int beepSoundId;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.act_picture_test);
         setUiElements();
         setNextPicture();
-        initSoundPool();
-        
     }
 
-    public void initSoundPool() {
-        AudioAttributes attributes = new AudioAttributes.Builder()
-                .setUsage(AudioAttributes.USAGE_GAME)
-                .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
-                .build();
-
-        soundPool = new SoundPool.Builder().setMaxStreams(1).setAudioAttributes(attributes).build();
-        soundPool.setOnLoadCompleteListener((soundPool, sampleId, status) -> soundLoaded = (status == 0));
-        beepSoundId = soundPool.load(this, R.raw.beep, 1);
-    }
 
     /**
      * sets mode to 1=Object or 0=Faces
@@ -77,11 +62,6 @@ public class PictureActivity extends OperationActivity {
         }
     }
 
-    public void playBeepSound() {
-        if(soundLoaded)
-            soundPool.play(beepSoundId, 1, 1, 1, 0, 1);
-    }
-
     /**
      * save current answers and set next picture on display
      *
@@ -89,9 +69,15 @@ public class PictureActivity extends OperationActivity {
      */
     @SuppressLint("NonConstantResourceId")
     public void setPatientRecognizedPicture(View view) {
-        savePictureGame(evaluateAnswer(view.getId()), check(currentPictureId));
+        boolean correctAnswer = evaluateAnswer(view.getId());
+        savePictureGame(correctAnswer, check(currentPictureId));
         setNextPicture();
-        playBeepSound();
+        if(correctAnswer){
+            playSuccessSound();
+        }
+        else {
+            playWrongSound();
+        }
     }
 
     private int generateRandomPicture() {
@@ -129,10 +115,19 @@ public class PictureActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
-                PictureGame pictureGame = new PictureGame(pictureName, answer, operation.getOperationId());
+                PictureGame pictureGame;
+                if(stimulated) {
+                    pictureGame = new PictureGame(pictureName, answer, operation.getOperationId(), stimulation);
+                }
+                else {
+                    pictureGame = new PictureGame(pictureName, answer, operation.getOperationId());
+                }
                 pictureViewModel.addPictureGame(pictureGame);
             } catch (Exception e) {
                 System.out.println("PictureGame has not been added to db");
+            }
+            finally {
+                stimulated = false;
             }
         });
     }

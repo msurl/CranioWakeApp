@@ -86,6 +86,12 @@ public class StroopActivity extends OperationActivity {
     @SuppressLint("NonConstantResourceId")
     private void evaluateAnswer(View view) {
         boolean answer = getPatientAnswer(view.getId());
+
+        if(answer)
+            playSuccessSound();
+        else
+            playWrongSound();
+
         saveStroopGame(answer, getCurrentStroop(tmpRandom));
     }
 
@@ -120,10 +126,17 @@ public class StroopActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
-                StroopGame stroopGame = new StroopGame(stroopColor, answer, operation.getOperationId());
+                StroopGame stroopGame;
+                if(stimulated)
+                    stroopGame = new StroopGame(stroopColor, answer, stimulation, operation.getOperationId());
+                else
+                    stroopGame = new StroopGame(stroopColor, answer, operation.getOperationId());
                 stroopViewModel.addStroopGame(stroopGame);
             } catch (Exception e) {
                 System.out.println("PictureGame has not been added to db");
+            }
+            finally {
+                stimulated = false;
             }
         });
     }

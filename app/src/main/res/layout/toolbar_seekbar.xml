@@ -63,6 +63,14 @@
                 android:text="@string/_0"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/stimulate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="stimulate"
+                />
         </LinearLayout>
     </androidx.appcompat.widget.Toolbar>
 </LinearLayout>

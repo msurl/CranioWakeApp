@@ -210,10 +210,17 @@ public class LineBisectionActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
-                LineBisectionGame lineBisectionGame = new LineBisectionGame(distance, miliseconds, operation.getOperationId());
+                LineBisectionGame lineBisectionGame;
+                if(stimulated)
+                    lineBisectionGame = new LineBisectionGame(distance, miliseconds, stimulation, operation.getOperationId());
+                else
+                    lineBisectionGame = new LineBisectionGame(distance, miliseconds, operation.getOperationId());
                 lineBisectionViewModel.addLineDissectionGame(lineBisectionGame);
             } catch (Exception e) {
                 System.out.println("Line Dissection Test has not been added to db");
+            }
+            finally {
+                stimulated = false;
             }
         });
     }

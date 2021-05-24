@@ -183,10 +183,19 @@ public class CalculusActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationDate()).observe(this, operation -> {
             try {
-                CalculusGame calculusGame = new CalculusGame(answer, equationToString(firstNum, secondNum, operator), operation.getOperationId());
+                CalculusGame calculusGame;
+                if(stimulated) {
+                    calculusGame = new CalculusGame(answer, equationToString(firstNum, secondNum, operator), stimulation, operation.getOperationId());
+                }
+                else {
+                    calculusGame = new CalculusGame(answer, equationToString(firstNum, secondNum, operator), operation.getOperationId());
+                }
                 calculatingViewModel.addCalculatingGame(calculusGame);
             } catch (Exception e) {
                 System.out.println("CalcGame has not been added to db");
+            }
+            finally {
+                stimulated = false;
             }
         });
     }

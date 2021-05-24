@@ -43,9 +43,7 @@ public class Patient{
         return patientId;
     }
 
-
     public long getCaseNumber() {
         return caseNumber;
     }
-
 }

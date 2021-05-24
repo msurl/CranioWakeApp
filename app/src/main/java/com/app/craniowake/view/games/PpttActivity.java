@@ -71,6 +71,12 @@ public class PpttActivity extends OperationActivity {
     public void setPatientRecognizedObjectsInPicture(View view) {
         boolean answer = evaluateAnswer(view.getId());
         saveAnswer(answer, check(currentPic));
+
+        if(answer)
+            playSuccessSound();
+        else
+            playWrongSound();
+
         displayNewPicture();
     }
 
@@ -105,10 +111,18 @@ public class PpttActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
-                PpttGame ppttGame = new PpttGame(pictureName, answer, operation.getOperationId());
+                PpttGame ppttGame;
+                if(stimulated)
+                    ppttGame = new PpttGame(pictureName, answer, stimulation, operation.getOperationId());
+                else
+                    ppttGame = new PpttGame(pictureName, answer, operation.getOperationId());
+
                 ppttViewModel.addPpttGame(ppttGame);
             } catch (Exception e) {
                 System.out.println("pptt has not been added to db");
+            }
+            finally {
+                stimulated = false;
             }
         });
     }

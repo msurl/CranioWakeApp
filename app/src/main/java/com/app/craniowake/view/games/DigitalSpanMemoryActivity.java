@@ -65,7 +65,14 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
      */
     public void setAnswer(View view) {
         shutdown = true;
-        saveDigitalSpanMemoryAnswer(getAnswer(view.getId()));
+        boolean answer = getAnswer(view.getId());
+
+        if(answer)
+            playSuccessSound();
+        else
+            playWrongSound();
+
+        saveDigitalSpanMemoryAnswer(answer);
         setTextViewToStart();
     }
 
@@ -79,10 +86,17 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
         operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
             try {
-                DigitalSpanMemoryGame digitalSpanMemoryGame = new DigitalSpanMemoryGame(answer, operation.getOperationId());
+                DigitalSpanMemoryGame digitalSpanMemoryGame;
+                if(stimulated)
+                    digitalSpanMemoryGame = new DigitalSpanMemoryGame(answer, stimulation, operation.getOperationId());
+                else
+                    digitalSpanMemoryGame = new DigitalSpanMemoryGame(answer, operation.getOperationId());
                 digitalSpanMemoryViewModel.addDigitalSpanMemoryGame(digitalSpanMemoryGame);
             } catch (Exception e) {
                 System.out.println("DigitalSpanGame has not been added to db");
+            }
+            finally {
+                stimulated = false;
             }
         });
     }
