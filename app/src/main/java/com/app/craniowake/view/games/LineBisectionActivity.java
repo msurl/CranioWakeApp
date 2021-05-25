@@ -149,6 +149,7 @@ public class LineBisectionActivity extends OperationActivity {
             myViewLine.setBackgroundColor(Color.GREEN);
             correctAnswers++;
         } else {
+            myViewLine.setBackgroundColor(Color.RED);
             wrongAnswers++;
         }
     }
