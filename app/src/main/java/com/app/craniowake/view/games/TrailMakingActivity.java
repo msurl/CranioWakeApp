@@ -48,6 +48,8 @@ public class TrailMakingActivity extends OperationActivity {
     private float width;
     private float height;
 
+    private static final int TEXTSIZE = 70;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -236,7 +238,8 @@ public class TrailMakingActivity extends OperationActivity {
         textView.setText(input);
         textView.setX(x);
         textView.setY(y);
-        textView.setTextSize(70);
+        textView.setTextSize(TEXTSIZE);
+        textView.setPadding(TEXTSIZE / 2, TEXTSIZE / 2, TEXTSIZE / 2, TEXTSIZE / 2);
         textView.setClickable(true);
         textView.setTextColor(Color.RED);
         textView.setTypeface(null, Typeface.BOLD);
