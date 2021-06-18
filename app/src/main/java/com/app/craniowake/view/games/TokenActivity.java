@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.gameModels.TokenGame;
+import com.app.craniowake.databinding.ActTokenTestBinding;
 import com.app.craniowake.view.OperationActivity;
 import com.app.craniowake.view.activityHelper.IntentHolder;
 import com.app.craniowake.view.games.displayResults.BaseResultActivity;
@@ -26,105 +28,23 @@ import java.util.Random;
  */
 public class TokenActivity extends OperationActivity {
 
-    OperationViewModel operationViewModel;
     TokenViewModel tokenViewModel;
-
-    private String tmpToken;
-    private int correctAnswers = 0;
-    private int wrongAnswers = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_token_test);
+
+        tokenViewModel = new ViewModelProvider(this).get(TokenViewModel.class);
+        tokenViewModel.setCurrentOperationId(getCurrentOperationId());
+
+        ActTokenTestBinding binding = DataBindingUtil.setContentView(this, R.layout.act_token_test);
+        binding.setViewmodel(tokenViewModel);
+        binding.setLifecycleOwner(this);
 
         initializeToolbar(R.id.toolbar_seekbar);
         initiateSeekbar();
-        generateRandomToken();
     }
 
-    /**
-     * compares tokenId to string buttonTokenId
-     *
-     * @return true or false depending if token was recognized or not
-     */
-    private boolean compareTokenToButton(String buttonToken) {
-        if (tmpToken.equals(buttonToken)) {
-            correctAnswers++;
-            return true;
-        } else {
-            wrongAnswers++;
-            return false;
-        }
-    }
-
-    /**
-     * creates object of TokenGame and saves the answer to the database. Object is processed by the TokenViewModel
-     *
-     * @param answer of patient if recognized token
-     * @param token  to be recognized
-     */
-    private void saveTokenGame(boolean answer, String token) {
-        tokenViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(TokenViewModel.class);
-        operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
-            try {
-                TokenGame tokenGame;
-
-                if (stimulated)
-                    tokenGame = new TokenGame(token, answer, stimulation, operation.getOperationId());
-                else
-                    tokenGame = new TokenGame(token, answer, operation.getOperationId());
-
-                tokenViewModel.addTokenGame(tokenGame);
-            } catch (Exception e) {
-                System.out.println("PictureGame has not been added to db");
-            }
-            finally {
-                stimulated = false;
-            }
-        });
-    }
-
-    private void evaluateAnswer(int id) {
-        ImageButton myButton = findViewById(id);
-        String buttonToken = myButton.getResources().getResourceEntryName(id);
-        boolean answer = compareTokenToButton(buttonToken);
-        saveTokenGame(answer, buttonToken);
-        generateRandomToken();
-    }
-
-    /**
-     * returns string of dateTime when current operation was created t
-     * its used as an identifier
-     */
-    private Serializable getCurrentOperationId() {
-        Intent intent = getIntent();
-        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
-    }
-
-    /**
-     * following two methods first generates a random tokenString(size,color,shape) and displays it on screen
-     */
-
-    private void generateRandomToken() {
-        String[] allToken = getResources().getStringArray(R.array.token);
-        Random randomTokenName = new Random();
-        int tmpRandom = randomTokenName.nextInt(allToken.length);
-        tmpToken = allToken[tmpRandom];
-        displayRandomToken(tmpRandom);
-    }
-
-    private void displayRandomToken(int randomize) {
-        String[] randomToken = getResources().getStringArray(R.array.tokenView);
-        TextView textView = findViewById(R.id.findTheToken);
-        textView.setText(randomToken[randomize]);
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    public void clickOnToken(View view) {
-        evaluateAnswer(view.getId());
-    }
 
     /**
      * saves results in an Intent and opens new BaseResultActivity. The current Activity gets destroyed when left.
@@ -133,6 +53,9 @@ public class TokenActivity extends OperationActivity {
      */
     public void finishTokenGame(View view) {
         Intent intent = new Intent(this, BaseResultActivity.class);
+
+        int correctAnswers = tokenViewModel.getCorrectAnswers();
+        int wrongAnswers = tokenViewModel.getWrongAnswers();
 
         intent.putExtra(IntentHolder.GAME_NAME, getString(R.string.token_test));
         intent.putExtra(IntentHolder.RUNS, (correctAnswers + wrongAnswers));

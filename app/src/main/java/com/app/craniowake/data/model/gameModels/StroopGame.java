@@ -25,6 +25,7 @@ public class StroopGame extends Game {
     @PrimaryKey(autoGenerate = true)
     private long stroopId;
     private String ink;
+    private String text;
     private boolean answer;
     @ForeignKey
             (entity = Operation.class,
@@ -35,7 +36,7 @@ public class StroopGame extends Game {
     private long fkOperationId;
 
     @Ignore
-    public StroopGame(String ink, boolean answer, long fkOperationId) {
+    public StroopGame(String ink, String text, boolean answer, long fkOperationId) {
         super();
         this.ink = ink;
         this.answer = answer;
@@ -43,7 +44,7 @@ public class StroopGame extends Game {
     }
 
     @Ignore
-    public StroopGame(String ink, boolean answer, double stimulation, long fkOperationId) {
+    public StroopGame(String ink, String text, boolean answer, double stimulation, long fkOperationId) {
         super(stimulation);
         this.ink = ink;
         this.answer = answer;

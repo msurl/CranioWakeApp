@@ -2,6 +2,7 @@ package com.app.craniowake.view;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -153,9 +154,21 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         patientViewModel.getPatientById(getById()).observe(this, patient -> {
             try {
                 Operation newOperation = new Operation(selectedBrainArea, selectedGameMode, patient.getPatientId());
-                operationViewModel.addOperation(newOperation);
+
+
+                Long id = operationViewModel.addOperation(newOperation).get();
+//                operationViewModel.addOperation(newOperation, oId -> {
+//                    intent.putExtra(IntentHolder.OPERATION_ID, oId);
+//                    intent.putExtra(IntentHolder.PATIENT_ID, getById());
+//                    intent.putExtra(IntentHolder.PATIENT_NAME, patient.getFirstname() + patient.getLastname());
+//                    intent.putExtra(IntentHolder.OPERATION_MODE, selectedGameMode);
+//
+//                    setResult(RESULT_OK, intent);
+//                    startActivity(intent);
+//                });
 
                 intent.putExtra(IntentHolder.OPERATION_DATE, newOperation.getDateTime());
+                intent.putExtra(IntentHolder.OPERATION_ID, id );
                 intent.putExtra(IntentHolder.PATIENT_ID, getById());
                 intent.putExtra(IntentHolder.PATIENT_NAME, patient.getFirstname() + patient.getLastname());
                 intent.putExtra(IntentHolder.OPERATION_MODE, selectedGameMode);

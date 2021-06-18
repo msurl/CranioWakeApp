@@ -7,8 +7,6 @@ import androidx.room.PrimaryKey;
 
 import com.app.craniowake.data.model.Operation;
 
-import java.time.LocalDateTime;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,8 +22,13 @@ public class CalculusGame extends Game {
 
     @PrimaryKey(autoGenerate = true)
     private long calcGameId;
-    private String equation;
-    private boolean answer;
+//    private String equation;
+
+    private Equation equation;
+
+    private Integer answer;
+
+    private boolean correct;
 
     @ForeignKey
             (entity = Operation.class,
@@ -36,18 +39,52 @@ public class CalculusGame extends Game {
     private long fkOperationId;
 
     @Ignore
-    public CalculusGame(boolean answer, String equation, long fkOperationId) {
+    public CalculusGame(int numbScale) {
         super();
-        this.answer = answer;
+        randomiseEquation(numbScale);
+        this.correct = false;
+    }
+
+    @Ignore
+    public CalculusGame(double stimulation, int numbScale) {
+        super(stimulation);
+        randomiseEquation(numbScale);
+        this.correct = false;
+    }
+
+    @Ignore
+    public CalculusGame(Integer answer, Equation equation, long fkOperationId) {
+        super();
+        this.correct = (equation.result() == answer);
         this.fkOperationId = fkOperationId;
         this.equation = equation;
     }
 
     @Ignore
-    public CalculusGame(boolean answer, String equation, double stimulation, long fkOperationId) {
+    public CalculusGame(Integer answer, Equation equation, double stimulation, long fkOperationId) {
         super(stimulation);
-        this.answer = answer;
+        this.correct = (equation.result() == answer);
         this.fkOperationId = fkOperationId;
         this.equation = equation;
     }
+
+    public void randomiseEquation(int numbScale) {
+        this.equation = Equation.random(numbScale);
+    }
+
+    public String getAnswerString() {
+        return answer == null ?  "": answer.toString();
+    }
+
+    public void setAnswerString(String answerString) {
+        if (answerString.equals("")){
+            this.answer = null;
+            this.correct = false;
+        }
+        else {
+            this.answer = Integer.parseInt(answerString);
+            this.correct = (answer == equation.result());
+        }
+    }
+
 }

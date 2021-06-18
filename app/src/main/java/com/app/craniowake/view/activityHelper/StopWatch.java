@@ -15,7 +15,8 @@ public class StopWatch {
 
     private final Handler handler;
     private TextView txtTimer;
-    private String time;
+    private int minutes;
+    private int seconds;
     private int milliSeconds;
     private long startTime, timeInMilliseconds, timeBuff, updateTime = 0L;
 
@@ -32,7 +33,6 @@ public class StopWatch {
             int minutes = seconds / 60;
             seconds %= 60;
             setTimer(minutes, seconds, milliSeconds);
-            setTextViewTimer(minutes, seconds, milliSeconds);
             handler.postDelayed(this, 0);
         }
     };
@@ -46,7 +46,6 @@ public class StopWatch {
      */
     public void resetTimer() {
         setTimer(0, 0, 0);
-        setTextViewTimer(0, 0, 0);
         updateTime = 0L;
         startTime = 0L;
         timeInMilliseconds = 0L;
@@ -58,21 +57,14 @@ public class StopWatch {
      */
     @SuppressLint({"DefaultLocale", "SetTextI18n"})
     private void setTimer(int minutes, int seconds, int milliSeconds) {
-        time = "" + minutes + ":" + String.format("%02d", seconds) + ":" + String.format("%03d", milliSeconds);
-    }
-
-    /**
-     * displays formatted time on a TextView
-     */
-    @SuppressLint({"DefaultLocale", "SetTextI18n"})
-    private void setTextViewTimer(int minutes, int seconds, int milliSeconds) {
+        this.minutes = minutes;
+        this.seconds = seconds;
         this.milliSeconds = milliSeconds;
-        txtTimer.setText("" + minutes + ":" + String.format("%02d", seconds) + ":" + String.format("%03d", milliSeconds));
     }
 
     @SuppressLint({"DefaultLocale", "SetTextI18n"})
     public String getTimer() {
-        return time;
+        return "" + minutes + ":" + String.format("%02d", seconds) + ":" + String.format("%03d", milliSeconds);
     }
 
     /**

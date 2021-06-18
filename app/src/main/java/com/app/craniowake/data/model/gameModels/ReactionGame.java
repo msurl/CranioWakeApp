@@ -7,8 +7,6 @@ import androidx.room.PrimaryKey;
 
 import com.app.craniowake.data.model.Operation;
 
-import java.time.LocalDateTime;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,7 +22,7 @@ public class ReactionGame extends Game {
 
     @PrimaryKey(autoGenerate = true)
     private long reactionId;
-    private int milisec;
+    private long milisec;
 
     @ForeignKey
             (entity = Operation.class,
@@ -35,14 +33,14 @@ public class ReactionGame extends Game {
     private long fkOperationId;
 
     @Ignore
-    public ReactionGame(int milisec, long fkOperationId) {
+    public ReactionGame(long milisec, long fkOperationId) {
         super();
         this.milisec = milisec;
         this.fkOperationId = fkOperationId;
     }
 
     @Ignore
-    public ReactionGame(int milisec, double stimulation, long fkOperationId) {
+    public ReactionGame(long milisec, double stimulation, long fkOperationId) {
         super(stimulation);
         this.milisec = milisec;
         this.fkOperationId = fkOperationId;

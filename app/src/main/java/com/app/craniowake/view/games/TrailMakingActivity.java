@@ -23,7 +23,6 @@ import com.app.craniowake.view.games.displayResults.ModiBaseResultActivity;
 import com.app.craniowake.view.viewModel.OperationViewModel;
 import com.app.craniowake.view.viewModel.TrailMakingViewModel;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -196,7 +195,7 @@ public class TrailMakingActivity extends OperationActivity {
     private void saveTrailwayGame(boolean answer) {
         trailMakingViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(TrailMakingViewModel.class);
         OperationViewModel operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationDate()).observe(this, operation -> {
             try {
                 TrailMakingGame trailMakingGame;
                 if(stimulated)
@@ -212,15 +211,6 @@ public class TrailMakingActivity extends OperationActivity {
                 stimulated = false;
             }
         });
-    }
-
-    /**
-     * returns string of dateTime when current operation was created t
-     * its used as an identifier
-     */
-    private Serializable getCurrentOperationId() {
-        Intent intent = getIntent();
-        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     /**
@@ -345,13 +335,13 @@ public class TrailMakingActivity extends OperationActivity {
         intent.putExtra(IntentHolder.CORRECT_ANSWERS, (correctAnswersMode1 + correctAnswersMode2));
         intent.putExtra(IntentHolder.WRONG_ANSWERS, (falseAnswersMode1 + falseAnswersMode2));
 
-        intent.putExtra(IntentHolder.RUNS_MODE_1, (correctAnswersMode1 + falseAnswersMode1));
-        intent.putExtra(IntentHolder.CORRECT_ANSWERS_MODE_1, correctAnswersMode1);
-        intent.putExtra(IntentHolder.WRONG_ANSWERS_MODE_1, falseAnswersMode1);
+        intent.putExtra(IntentHolder.RUNS_OBJECT_MODE, (correctAnswersMode1 + falseAnswersMode1));
+        intent.putExtra(IntentHolder.CORRECT_ANSWERS_OBJECT_MODE, correctAnswersMode1);
+        intent.putExtra(IntentHolder.WRONG_ANSWERS_OBJECT_MODE, falseAnswersMode1);
 
-        intent.putExtra(IntentHolder.RUNS_MODE_2, (correctAnswersMode2 + falseAnswersMode2));
-        intent.putExtra(IntentHolder.CORRECT_ANSWERS_MODE_2, correctAnswersMode2);
-        intent.putExtra(IntentHolder.WRONG_ANSWERS_MODE_2, falseAnswersMode2);
+        intent.putExtra(IntentHolder.RUNS_FACE_MODE, (correctAnswersMode2 + falseAnswersMode2));
+        intent.putExtra(IntentHolder.CORRECT_ANSWERS_FACE_MODE, correctAnswersMode2);
+        intent.putExtra(IntentHolder.WRONG_ANSWERS_FACE_MODE, falseAnswersMode2);
 
         finish();
         startActivity(intent);

@@ -32,7 +32,7 @@ public class DigitalSpanMemoryGame extends Game{
                     onDelete = CASCADE
             )
     private long fkOperationId;
-
+// TODO: Drüber nachdenken, ob es nicht Sinn macht, hier noch die Zahlenfolge abzuspeichern
 
     public DigitalSpanMemoryGame(boolean answer, long fkOperationId) {
         super();

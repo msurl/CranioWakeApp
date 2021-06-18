@@ -7,8 +7,6 @@ import androidx.room.PrimaryKey;
 
 import com.app.craniowake.data.model.Operation;
 
-import java.time.LocalDateTime;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,7 +22,8 @@ public class TokenGame extends Game {
 
     @PrimaryKey(autoGenerate = true)
     private long tokenId;
-    private String token;
+    private String correctToken;
+    private String selectedToken;
     private boolean answer;
     @ForeignKey
             (entity = Operation.class,
@@ -35,17 +34,19 @@ public class TokenGame extends Game {
     private long fkOperationId;
 
     @Ignore
-    public TokenGame(String token, boolean answer, long fkOperationId) {
+    public TokenGame(String correctToken, String selectedToken, boolean answer, long fkOperationId) {
         super();
-        this.token = token;
+        this.correctToken = correctToken;
+        this.selectedToken = selectedToken;
         this.answer = answer;
         this.fkOperationId = fkOperationId;
     }
 
     @Ignore
-    public TokenGame(String token, boolean answer, double stimulation, long fkOperationId) {
+    public TokenGame(String correctToken, String selectedToken, boolean answer, double stimulation, long fkOperationId) {
         super(stimulation);
-        this.token = token;
+        this.correctToken = correctToken;
+        this.selectedToken = selectedToken;
         this.answer = answer;
         this.fkOperationId = fkOperationId;
     }

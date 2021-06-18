@@ -49,9 +49,9 @@ public class FourSquareResultActivity extends BaseResultActivity {
     public void setResultMode1FourSquare(View view) {
         Intent intent = getIntent();
         String gameName = intent.getStringExtra(IntentHolder.GAME_NAME);
-        int runs = intent.getIntExtra(IntentHolder.RUNS_MODE_1, 0);
-        int correctAnsw = intent.getIntExtra(IntentHolder.CORRECT_ANSWERS_MODE_1, 0);
-        int wrongAnsw = intent.getIntExtra(IntentHolder.WRONG_ANSWERS_MODE_1, 0);
+        int runs = intent.getIntExtra(IntentHolder.RUNS_OBJECT_MODE, 0);
+        int correctAnsw = intent.getIntExtra(IntentHolder.CORRECT_ANSWERS_OBJECT_MODE, 0);
+        int wrongAnsw = intent.getIntExtra(IntentHolder.WRONG_ANSWERS_OBJECT_MODE, 0);
 
         int square1 = intent.getIntExtra(IntentHolder.FIRST_SQUARE_MODE_1, 0);
         int square2 = intent.getIntExtra(IntentHolder.SECOND_SQUARE_MODE_1, 0);
@@ -70,9 +70,9 @@ public class FourSquareResultActivity extends BaseResultActivity {
     public void setResultMode2FourSquare(View view) {
         Intent intent = getIntent();
         String gameName = intent.getStringExtra(IntentHolder.GAME_NAME);
-        int runs = intent.getIntExtra(IntentHolder.RUNS_MODE_2, 0);
-        int correctAnsw = intent.getIntExtra(IntentHolder.CORRECT_ANSWERS_MODE_2, 0);
-        int wrongAnsw = intent.getIntExtra(IntentHolder.WRONG_ANSWERS_MODE_2, 0);
+        int runs = intent.getIntExtra(IntentHolder.RUNS_FACE_MODE, 0);
+        int correctAnsw = intent.getIntExtra(IntentHolder.CORRECT_ANSWERS_FACE_MODE, 0);
+        int wrongAnsw = intent.getIntExtra(IntentHolder.WRONG_ANSWERS_FACE_MODE, 0);
 
         int square1 = intent.getIntExtra(IntentHolder.FIRST_SQUARE_MODE_2, 0);
         int square2 = intent.getIntExtra(IntentHolder.SECOND_SQUARE_MODE_2, 0);

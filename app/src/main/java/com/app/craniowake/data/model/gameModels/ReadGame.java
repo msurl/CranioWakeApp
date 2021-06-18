@@ -10,6 +10,7 @@ import com.app.craniowake.data.model.Operation;
 import java.time.LocalDateTime;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import static androidx.room.ForeignKey.CASCADE;
@@ -24,6 +25,7 @@ public class ReadGame extends Game {
 
     @PrimaryKey(autoGenerate = true)
     private long readId;
+    private String text;
     private int mistakeCounter;
     @ForeignKey
             (entity = Operation.class,
@@ -34,16 +36,34 @@ public class ReadGame extends Game {
     private long fkOperationId;
 
     @Ignore
-    public ReadGame(int mistakeCounter, long fkOperationId) {
+    public ReadGame(String text, long fkOperationId) {
+        this(text, 0, fkOperationId);
+    }
+
+    @Ignore
+    public ReadGame(String text, int mistakeCounter, long fkOperationId) {
         super();
+        this.text = text;
         this.mistakeCounter = mistakeCounter;
         this.fkOperationId = fkOperationId;
     }
 
     @Ignore
-    public ReadGame(int mistakeCounter, double stimulation, long fkOperationId) {
+    public ReadGame(String text, int mistakeCounter, double stimulation, long fkOperationId) {
         super(stimulation);
+        this.text = text;
         this.mistakeCounter = mistakeCounter;
         this.fkOperationId = fkOperationId;
+    }
+
+    public void incrementMistakes() {
+        mistakeCounter++;
+    }
+
+    public void decrementMistakes() {
+        if(mistakeCounter > 0)
+        {
+            mistakeCounter--;
+        }
     }
 }

@@ -3,6 +3,7 @@ package com.app.craniowake.data.repositories;
 import android.app.Application;
 import android.os.AsyncTask;
 
+import androidx.core.util.Consumer;
 import androidx.lifecycle.LiveData;
 
 import com.app.craniowake.data.dao.OperationDao;
@@ -29,9 +30,13 @@ public class OperationRepository {
      *
      * @param newOperation objekt to be saved in database
      */
-    public void insert(Operation newOperation) {
-        new AddOperationAsyncTask(operationDao).execute(newOperation);
+    public AsyncTask<Operation, Void, Long> insert(Operation newOperation) {
+        return new AddOperationAsyncTask(operationDao).execute(newOperation);
     }
+
+//    public void insert(Operation newOperation) {
+//        return new AddOperationAsyncTask(operationDao).execute(newOperation);
+//    }
 
     /**
      * returns LiveData of the given operation by date
@@ -42,7 +47,7 @@ public class OperationRepository {
         return operationDao.getOperationByDate(date);
     }
 
-    private static class AddOperationAsyncTask extends AsyncTask<Operation, Void, Void> {
+    private static class AddOperationAsyncTask extends AsyncTask<Operation, Void, Long> {
         private final OperationDao operationDao;
 
         private AddOperationAsyncTask(OperationDao operationDao) {
@@ -50,10 +55,10 @@ public class OperationRepository {
         }
 
         @Override
-        protected Void doInBackground(Operation... operations) {
+        protected Long doInBackground(Operation... operations) {
             long insertedId = operationDao.addOperation(operations[0]);
             operations[0].setOperationId((int) insertedId);
-            return null;
+            return insertedId;
         }
     }
 

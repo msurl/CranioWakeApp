@@ -175,6 +175,11 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
+    protected long getCurrentOperationId() {
+        Intent intent = getIntent();
+        return intent.getLongExtra(IntentHolder.OPERATION_ID, -1l);
+    }
+
     private String getCurrentOperationMode() {
         Intent intent = getIntent();
         return intent.getStringExtra(IntentHolder.OPERATION_MODE);

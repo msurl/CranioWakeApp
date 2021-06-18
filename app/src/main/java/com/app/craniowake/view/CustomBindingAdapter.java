@@ -1,18 +1,21 @@
 package com.app.craniowake.view;
 
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.InverseBindingAdapter;
 
 import com.app.craniowake.R;
+import com.app.craniowake.view.activityHelper.IntentHolder;
 
 import java.util.Arrays;
 
 // TODO: Views, die in beiden Tests vorkommen, zu jeweils einem Element zusammenfassen
-public class VerificationTestBindingAdapter {
+public class CustomBindingAdapter {
 
     @BindingAdapter("verification:motorFunctionStimulationArea")
     public static void setMotorFunctionStimulationAreaRadioButtonId(RadioGroup radioGroup, String area) {
@@ -188,5 +191,27 @@ public class VerificationTestBindingAdapter {
             return "both";
 
         return "";
+    }
+
+    @BindingAdapter("app:intText")
+    public static void setIntegerField(TextView view, Integer integer) {
+        if (integer != null) {
+            view.setText(integer.toString());
+        }
+        else {
+            view.setText("");
+        }
+    }
+
+    @InverseBindingAdapter(attribute = "app:intText", event = "android:textAttrChanged")
+    public static Integer getIntegerFieldFromTextViewContent(TextView view) {
+        CharSequence content = view.getText();
+        // This default implementation returns null if the content is equal to "" (empty String)
+        return Integer.getInteger(content.toString());
+    }
+
+    @BindingAdapter("app:viewIdSrc")
+    public static void setImageFromId(ImageView view, Integer rId) {
+        view.setImageResource(rId);
     }
 }

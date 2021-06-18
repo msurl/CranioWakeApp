@@ -11,6 +11,7 @@ public class IntentHolder {
     public static final String PATIENT_ID = "com.app.craniowake.Activities.Helper.PATIENT_ID";
     public static final String PATIENT_NAME = "com.app.craniowake.Activities.Helper.PATIENT_NAME";
     public static final String OPERATION_DATE = "com.app.craniowake.Activities.Helper.OPERATION_DATE";
+    public static final String OPERATION_ID = "com.app.craniowake.Activities.Helper.OPERATION_ID";
     public static final String OPERATION_MODE = "com.app.craniowake.Activities.Helper.OPERATION_MODE";
 
     /**
@@ -24,13 +25,13 @@ public class IntentHolder {
     /**
      * for multiple modi result
      */
-    public static final String RUNS_MODE_1 = "com.app.craniowake.Activities.Helper.RUNS_MODE_1";
-    public static final String CORRECT_ANSWERS_MODE_1 = "com.app.craniowake.Activities.Helper.CORRECT_ANSWER_MODE_1";
-    public static final String WRONG_ANSWERS_MODE_1 = "com.app.craniowake.Activities.Helper.WRONG_ANSWER_MODE_1";
+    public static final String RUNS_OBJECT_MODE = "com.app.craniowake.Activities.Helper.RUNS_MODE_1";
+    public static final String CORRECT_ANSWERS_OBJECT_MODE = "com.app.craniowake.Activities.Helper.CORRECT_ANSWER_MODE_1";
+    public static final String WRONG_ANSWERS_OBJECT_MODE = "com.app.craniowake.Activities.Helper.WRONG_ANSWER_MODE_1";
 
-    public static final String RUNS_MODE_2 = "com.app.craniowake.Activities.Helper.RUNS_MODE_2";
-    public static final String CORRECT_ANSWERS_MODE_2 = "com.app.craniowake.Activities.Helper.CORRECT_ANSWER_MODE_2";
-    public static final String WRONG_ANSWERS_MODE_2 = "com.app.craniowake.Activities.Helper.WRONG_ANSWER_MODE_2";
+    public static final String RUNS_FACE_MODE = "com.app.craniowake.Activities.Helper.RUNS_MODE_2";
+    public static final String CORRECT_ANSWERS_FACE_MODE = "com.app.craniowake.Activities.Helper.CORRECT_ANSWER_MODE_2";
+    public static final String WRONG_ANSWERS_FACE_MODE = "com.app.craniowake.Activities.Helper.WRONG_ANSWER_MODE_2";
 
     /**
      * for foursquare result

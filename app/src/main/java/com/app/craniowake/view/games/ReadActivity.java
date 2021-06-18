@@ -7,10 +7,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.gameModels.ReadGame;
+import com.app.craniowake.databinding.ActReadTestBinding;
 import com.app.craniowake.view.OperationActivity;
 import com.app.craniowake.view.activityHelper.IntentHolder;
 import com.app.craniowake.view.games.displayResults.ReadResultActivity;
@@ -26,105 +28,21 @@ import java.util.Random;
  */
 public class ReadActivity extends OperationActivity {
 
-    private final int[] textCollection = {R.drawable.text_dd, R.drawable.text_fortunadd_deu};
-    OperationViewModel operationViewModel;
     ReadViewModel readViewModel;
-    private int mistakeCounter = 0;
-    private int totalMistakes = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_read_test);
-        ImageView btn = findViewById(R.id.read_test_view);
-        btn.setImageResource(R.drawable.text_dd);
+
+        readViewModel = new ViewModelProvider(this).get(ReadViewModel.class);
+        readViewModel.setOperationId(getCurrentOperationId());
+
+        ActReadTestBinding binding = DataBindingUtil.setContentView(this, R.layout.act_read_test);
+        binding.setViewmodel(readViewModel);
+        binding.setLifecycleOwner(this);
 
         initializeToolbar(R.id.toolbar_seekbar);
         initiateSeekbar();
-    }
-
-    /**
-     * sets second text
-     *
-     * @param view method called when clicked on text
-     */
-    public void setNextText(View view) {
-        mistakeCounter = 0;
-        setMistakeCounter();
-        Random random = new Random();
-        ImageView btn = findViewById(R.id.read_test_view);
-        btn.setImageResource(textCollection[random.nextInt(textCollection.length)]);
-    }
-
-    /**
-     * adds or decreases mistake counter depending on given answer by patient
-     */
-    @SuppressLint("NonConstantResourceId")
-    public void addMistake(View view) {
-        switch (view.getId()) {
-            case R.id.addMistakeButton:
-                mistakeCounter++;
-                totalMistakes++;
-                break;
-            case R.id.subMistakeButton:
-                mistakeCounter--;
-                checkMistakeCounter();
-                break;
-            default:
-                System.out.println("hat nicht geklappt");
-                break;
-        }
-        setMistakeCounter();
-    }
-
-    @SuppressLint("SetTextI18n")
-    private void setMistakeCounter() {
-        TextView textView = findViewById(R.id.mistakeCounterTextInput);
-        textView.setText(Integer.toString(mistakeCounter));
-    }
-
-    /**
-     * counter never negative
-     */
-    private void checkMistakeCounter() {
-        if (mistakeCounter < 0) {
-            mistakeCounter = 0;
-        }
-    }
-
-    /**
-     * creates object of ReadGame and saves the answer to the database. Object is processed by the ReadViewModel
-     *
-     * @param mistakeCounter amount of reading mistakes made by patient
-     */
-    private void saveReadGame(int mistakeCounter) {
-        readViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(ReadViewModel.class);
-        operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
-            try {
-                ReadGame readGame;
-                if (stimulated)
-                    readGame = new ReadGame(mistakeCounter, stimulation, operation.getOperationId());
-                else
-                    readGame = new ReadGame(mistakeCounter, operation.getOperationId());
-
-                readViewModel.addReadGame(readGame);
-            } catch (Exception e) {
-                System.out.println("PictureGame has not been added to db");
-            }
-            finally {
-                stimulated = false;
-            }
-        });
-    }
-
-    /**
-     * returns string of dateTime when current operation was created
-     * its used as an identifier
-     */
-    private Serializable getCurrentOperationId() {
-        Intent intent = getIntent();
-        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     /**
@@ -133,8 +51,9 @@ public class ReadActivity extends OperationActivity {
      * @param view method is called when button "finish game" is clicked
      */
     public void finishReadGame(View view) {
-        saveReadGame(totalMistakes);
         Intent intent = new Intent(this, ReadResultActivity.class);
+
+        int totalMistakes = readViewModel.getTotalMistakes();
 
         intent.putExtra(IntentHolder.GAME_NAME, "Reading Test");
         intent.putExtra(IntentHolder.READ_MISTAKES, totalMistakes);

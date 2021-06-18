@@ -39,9 +39,9 @@ public class ModiBaseResultActivity extends BaseResultActivity {
         Intent intent = getIntent();
 
         String gameName = intent.getStringExtra(IntentHolder.GAME_NAME);
-        int runs = intent.getIntExtra(IntentHolder.RUNS_MODE_1, 0);
-        int correctAnsw = intent.getIntExtra(IntentHolder.CORRECT_ANSWERS_MODE_1, 0);
-        int wrongAnsw = intent.getIntExtra(IntentHolder.WRONG_ANSWERS_MODE_1, 0);
+        int runs = intent.getIntExtra(IntentHolder.RUNS_OBJECT_MODE, 0);
+        int correctAnsw = intent.getIntExtra(IntentHolder.CORRECT_ANSWERS_OBJECT_MODE, 0);
+        int wrongAnsw = intent.getIntExtra(IntentHolder.WRONG_ANSWERS_OBJECT_MODE, 0);
 
         displayBaseResults(gameName, runs, correctAnsw, wrongAnsw);
         setGameMode(gameName, getString(R.string.mode_1_objects), getString(R.string.mode_1_numbers));
@@ -56,9 +56,9 @@ public class ModiBaseResultActivity extends BaseResultActivity {
         Intent intent = getIntent();
 
         String gameName = intent.getStringExtra(IntentHolder.GAME_NAME);
-        int runs = intent.getIntExtra(IntentHolder.RUNS_MODE_2, 0);
-        int correctAnsw = intent.getIntExtra(IntentHolder.CORRECT_ANSWERS_MODE_2, 0);
-        int wrongAnsw = intent.getIntExtra(IntentHolder.WRONG_ANSWERS_MODE_2, 0);
+        int runs = intent.getIntExtra(IntentHolder.RUNS_FACE_MODE, 0);
+        int correctAnsw = intent.getIntExtra(IntentHolder.CORRECT_ANSWERS_FACE_MODE, 0);
+        int wrongAnsw = intent.getIntExtra(IntentHolder.WRONG_ANSWERS_FACE_MODE, 0);
 
         displayBaseResults(gameName, runs, correctAnsw, wrongAnsw);
         setGameMode(gameName, getString(R.string.mode_2_faces), getString(R.string.mode_2_numbers));

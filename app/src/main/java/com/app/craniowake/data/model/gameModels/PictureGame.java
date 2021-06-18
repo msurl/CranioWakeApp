@@ -25,6 +25,7 @@ public class PictureGame extends Game{
     @PrimaryKey(autoGenerate = true)
     private long pictureId;
     private String pictureName;
+    private boolean face;
     private boolean answer;
     @ForeignKey
             (entity = Operation.class,
@@ -35,16 +36,18 @@ public class PictureGame extends Game{
     private long fkOperationId;
 
     @Ignore
-    public PictureGame(String pictureName, boolean answer, long fkOperationId) {
+    public PictureGame(String pictureName, boolean face, boolean answer, long fkOperationId) {
         super();
+        this.face = face;
         this.pictureName = pictureName;
         this.answer = answer;
         this.fkOperationId = fkOperationId;
     }
 
     @Ignore
-    public PictureGame(String pictureName, boolean answer, long fkOperationId, double stimulation) {
+    public PictureGame(String pictureName, boolean face, boolean answer, long fkOperationId, double stimulation) {
         super(stimulation);
+        this.face = face;
         this.pictureName = pictureName;
         this.answer = answer;
         this.fkOperationId = fkOperationId;

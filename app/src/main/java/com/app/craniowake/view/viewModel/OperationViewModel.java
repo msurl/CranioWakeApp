@@ -1,8 +1,10 @@
 package com.app.craniowake.view.viewModel;
 
 import android.app.Application;
+import android.os.AsyncTask;
 
 import androidx.annotation.NonNull;
+import androidx.core.util.Consumer;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
@@ -37,7 +39,11 @@ public class OperationViewModel extends AndroidViewModel {
      *
      * @param operation is generated in MainActivity and send to be saved to db
      */
-    public void addOperation(Operation operation) {
-        operationRepository.insert(operation);
+    public AsyncTask<Operation, Void, Long> addOperation(Operation operation) {
+        return operationRepository.insert(operation);
     }
+
+//    public void addOperation(Operation operation, Consumer<Long> processIdAfterExecution) {
+//        operationRepository.insert(operation);
+//    }
 }

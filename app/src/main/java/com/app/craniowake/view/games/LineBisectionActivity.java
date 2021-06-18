@@ -209,7 +209,7 @@ public class LineBisectionActivity extends OperationActivity {
     private void saveLineDissectionGame(float distance, int miliseconds) {
         lineBisectionViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(LineBisectionViewModel.class);
         operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
+        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationDate()).observe(this, operation -> {
             try {
                 LineBisectionGame lineBisectionGame;
                 if(stimulated)
@@ -224,15 +224,6 @@ public class LineBisectionActivity extends OperationActivity {
                 stimulated = false;
             }
         });
-    }
-
-    /**
-     * returns string of dateTime when current operation was created t
-     * its used as an identifier
-     */
-    private Serializable getCurrentOperationId() {
-        Intent intent = getIntent();
-        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     /**

@@ -6,10 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.gameModels.StroopGame;
+import com.app.craniowake.databinding.ActStroopTestBinding;
 import com.app.craniowake.view.OperationActivity;
 import com.app.craniowake.view.activityHelper.IntentHolder;
 import com.app.craniowake.view.games.displayResults.BaseResultActivity;
@@ -25,129 +27,30 @@ import java.util.Random;
  */
 public class StroopActivity extends OperationActivity {
 
-    OperationViewModel operationViewModel;
     StroopViewModel stroopViewModel;
-    private int tmpRandom;
-
-    private int correctAnswers = 0;
-    private int wrongAnswers = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.act_stroop_test);
+
+        stroopViewModel = new ViewModelProvider(this).get(StroopViewModel.class);
+        stroopViewModel.setCurrentOperationId(getCurrentOperationId());
+        // TODO: An dieser Stelle prüfen, ob es zulässig ist, dass das ViewModel eine (indirekte) Referenz auf die zugehörige Activity hält. Ansonsten onClickListener in die Activity verlegen!
+        stroopViewModel.addAnswerConsumer(this::playSound);
+
+        ActStroopTestBinding binding = DataBindingUtil.setContentView(this, R.layout.act_stroop_test);
+        binding.setLifecycleOwner(this);
+        binding.setViewmodel(stroopViewModel);
 
         initializeToolbar(R.id.toolbar_seekbar);
         initiateSeekbar();
-        startNextStroop();
     }
 
-    private void startNextStroop() {
-        Random random = new Random();
-        TextView stroopView = findViewById(R.id.stroopink);
-        setStroopText(random, stroopView);
-        setStroopInk(random, stroopView);
-    }
-
-    /**
-     * evaluate current answers and set next stroop on display
-     *
-     * @param view is called when "true" or "false" button is clicked
-     */
-    public void setNextStroop(View view) {
-        evaluateAnswer(view);
-        startNextStroop();
-    }
-
-    /**
-     * displays random color of stroop text
-     */
-    private void setStroopText(Random random, TextView stroopView) {
-        String[] stroopColors = getResources().getStringArray(R.array.colorNames);
-        tmpRandom = random.nextInt(stroopColors.length);
-        String tmpStroop = stroopColors[tmpRandom];
-        stroopView.setText(tmpStroop);
-    }
-
-    private String getCurrentStroop(int index) {
-        String[] stroopColors = getResources().getStringArray(R.array.colorNames);
-        return stroopColors[index];
-    }
-
-    /**
-     * displays random color of stroop ink
-     */
-    private void setStroopInk(Random random, TextView stroopView) {
-        int[] rainbow = getResources().getIntArray(R.array.rainbow);
-        tmpRandom = random.nextInt(rainbow.length);
-        stroopView.setTextColor(rainbow[tmpRandom]);
-    }
-
-    @SuppressLint("NonConstantResourceId")
-    private void evaluateAnswer(View view) {
-        boolean answer = getPatientAnswer(view.getId());
-
-        if(answer)
+    private void playSound(boolean correct) {
+        if(correct)
             playSuccessSound();
         else
             playWrongSound();
-
-        saveStroopGame(answer, getCurrentStroop(tmpRandom));
-    }
-
-    /**
-     * evaluates answer given by the id of the button which was clicked. Also increases general counter of correct or wrong answers
-     *
-     * @param id of button "true" or "false"
-     */
-    @SuppressLint("NonConstantResourceId")
-    private boolean getPatientAnswer(int id) {
-        switch (id) {
-            case R.id.stroopTrueButton:
-                correctAnswers++;
-                return true;
-            case R.id.stroopFalseButton:
-                wrongAnswers++;
-                return false;
-            default:
-                break;
-        }
-        return false;
-    }
-
-    /**
-     * creates object of StroopGame and saves the answer to the database. Object is processed by the StroopViewModel
-     *
-     * @param answer      of patient if color was correctly recognized
-     * @param stroopColor the color to be recognized
-     */
-    private void saveStroopGame(boolean answer, String stroopColor) {
-        stroopViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(StroopViewModel.class);
-        operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationId()).observe(this, operation -> {
-            try {
-                StroopGame stroopGame;
-                if(stimulated)
-                    stroopGame = new StroopGame(stroopColor, answer, stimulation, operation.getOperationId());
-                else
-                    stroopGame = new StroopGame(stroopColor, answer, operation.getOperationId());
-                stroopViewModel.addStroopGame(stroopGame);
-            } catch (Exception e) {
-                System.out.println("PictureGame has not been added to db");
-            }
-            finally {
-                stimulated = false;
-            }
-        });
-    }
-
-    /**
-     * returns string of dateTime when current operation was created t
-     * its used as an identifier
-     */
-    private Serializable getCurrentOperationId() {
-        Intent intent = getIntent();
-        return intent.getSerializableExtra(IntentHolder.OPERATION_DATE);
     }
 
     /**
@@ -157,6 +60,9 @@ public class StroopActivity extends OperationActivity {
      */
     public void finishStroopGame(View view) {
         Intent intent = new Intent(this, BaseResultActivity.class);
+
+        int correctAnswers = stroopViewModel.getCorrectAnswers();
+        int wrongAnswers = stroopViewModel.getWrongAnswers();
 
         intent.putExtra(IntentHolder.GAME_NAME, "Stroop Test");
         intent.putExtra(IntentHolder.RUNS, (correctAnswers + wrongAnswers));
