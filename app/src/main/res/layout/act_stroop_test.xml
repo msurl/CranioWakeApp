@@ -1,83 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/stroop_act_id"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.craniowake.view.viewModel.StroopViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stroop_act_id"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <include
-            layout="@layout/toolbar_seekbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/name_the_color_of_the_ink"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-            <Button
-                android:id="@+id/finish_stroop_game"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:backgroundTint="@color/dirtyLightBlue"
-                android:onClick="finishStroopGame"
-                android:text="@string/finish_game"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/design_default_color_background" />
-        </FrameLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/stroopFalseButton"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:background="#D64F4C"
-                android:onClick="setNextStroop"
-                android:text="@string/_false"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                tools:ignore="NestedWeights" />
+            <include
+                layout="@layout/toolbar_seekbar"
+                app:viewmodel="@{viewmodel}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/stroopink"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text=""
-                android:textColor="#FF0000"
-                android:textSize="150sp"
-                android:textStyle="bold" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/stroopTrueButton"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:background="#8BC34A"
-                android:onClick="setNextStroop"
-                android:text="@string/_true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/name_the_color_of_the_ink"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/finish_stroop_game"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/dirtyLightBlue"
+                    android:onClick="finishStroopGame"
+                    android:text="@string/finish_game"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/design_default_color_background" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/stroopFalseButton"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:background="#D64F4C"
+                    android:onClick="@{() -> viewmodel.answer(false)}"
+                    android:text="@string/_false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/stroopink"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@{viewmodel.colorTextLiveData}"
+                    android:textColor="@{viewmodel.inkColorCodeLiveData}"
+                    android:textSize="150sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/stroopTrueButton"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:background="#8BC34A"
+                    android:onClick="@{() -> viewmodel.answer(true)}"
+                    android:text="@string/_true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

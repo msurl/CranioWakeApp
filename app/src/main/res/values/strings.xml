@@ -154,7 +154,6 @@
     <string name="tap_ich_bin_ein_placeholder">TAP! when the Screen turns blue</string>
     <string name="file_export">File has been exported</string>
     <string name="select_brain_area">SELECT BRAIN AREA:</string>
-    <string name="motor_function">Motor Function</string>
     <string name="monopolar">monopolar</string>
     <string name="bipolar">bipolar</string>
     <string name="cortical">cortical</string>
@@ -165,4 +164,54 @@
     <string name="user_management">User management</string>
     <string name="export">Export</string>
 
+    <string name="vigilance_global">Vigilance &amp; Global</string>
+    <string name="cranial_nerves">Cranial Nerves</string>
+    <string name="sensory_function">Sensory Function</string>
+    <string name="motor_function">Motor Function</string>
+    <string name="reflexes">Reflexes</string>
+
+    <string name="latent_arm_palsy">Latent Arm Palsy</string>
+    <string name="latent_leg_palsy">Latent Leg Palsy</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="upper_extremity_right">Upper Extremity Right</string>
+    <string name="upper_extremity_left">Upper Extremity Left</string>
+    <string name="shoulder_abduction">Shoulder Abduction</string>
+    <string name="elbow_flexion">Elbow Flexion</string>
+    <string name="elbow_extension">Elbow Extension</string>
+    <string name="finger_extension">Finger Extension</string>
+    <string name="finger_flexion">Finger Flexion</string>
+
+    <string name="lower_extremity_right">Lower Extremity Right</string>
+    <string name="lower_extremity_left">Lower Extremity Left</string>
+    <string name="hip_flexion">Hip Flexion</string>
+    <string name="knee_flexion">Knee Flexion</string>
+    <string name="knee_extension">Knee Extension</string>
+    <string name="ankle_dorsiflexion">Ankle Dorsiflexion</string>
+    <string name="ankle_plantarflexion">Ankle Plantarflexion</string>
+
+    <string name="pain">pain</string>
+    <string name="paraesthesia">paraesthesia</string>
+    <string name="anaesthesia">anaesthesia</string>
+
+    <string name="olfactorius_hn_i">Olfactorius HN I</string>
+    <string name="opticus_hn_ii">Opticus HN II</string>
+    <string name="occular_motility">Occular Motility HN III, IV, VI</string>
+    <string name="trigeminus">Trigeminus HN V</string>
+    <string name="facialis">Facialis HN VII</string>
+    <string name="acusticus">Acusticus HN VII</string>
+    <string name="glosopharyngeus">Glosopharynheus HN IX</string>
+    <string name="vagus">Vagus HN X</string>
+    <string name="accessorius">Accessorius HN XI</string>
+    <string name="hypoglossus">Hypoglossus HN XII</string>
+
+    <string name="glasgow_coma_scale">Glasgow Coma Scale</string>
+    <string name="orientation">Orientation</string>
+    <string name="meningismus">Meningismus</string>
+    <string name="gait">Gait</string>
+    <string name="coordination">Coordination</string>
+    <string name="neglect">Neglect</string>
+
+    <string name="duesseldorf_read_game_text">Düsseldorf\n\nDüsseldorf is the capital of the state of North Rhine-Westphalia. The trade fair city is home to a large number of listed companies, including Henkel AG. Düsseldorf is the German location with the highest turnover for auditing, corporate and legal consulting, advertising and clothing fashion, as well as an important banking (and industrial) location. Düsseldorf Airport is the intercontinental hub of North Rhine-Westphalia.</string>
+    <string name="fortuna_read_game_text">Fortuna Düsseldorf\n\nFortuna Düsseldorf (full name: Düsseldorfer Turn- und Sportverein Fortuna 1985 e.V.) is a German sports club from Düsseldorf. After originating in the former working-class district of Flingern, the name the Flingeraner is sometimes used. The main focus of the sports club is football, but there are also departments for handball and running. The greatest successes in the club\'s history were winning the German football championship in 1933, reaching the final of the European Cup Winners\' Cup in 1979 and winning the DFB Cup twice (1879 and 1980).</string>
 </resources>

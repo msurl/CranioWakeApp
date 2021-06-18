@@ -1,87 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/dig_act_id"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.craniowake.view.viewModel.DigitalSpanMemoryViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/dig_act_id"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <include
-            layout="@layout/toolbar_seekbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/remember_the_following_3_numbers"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-            <Button
-                android:id="@+id/finish_game_dig_span"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:backgroundTint="@color/dirtyLightBlue"
-                android:onClick="finishSpanMemoryGame"
-                android:text="@string/finish_game"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/design_default_color_background" />
-        </FrameLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <Button
-                android:id="@+id/digSpanFalseButton"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:background="#D64F4C"
-                android:onClick="setAnswer"
-                android:text="@string/_false"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                tools:ignore="NestedWeights" />
+            <include
+                layout="@layout/toolbar_seekbar"
+                app:viewmodel="@{viewmodel}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/dig_span_num"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:onClick="startNextSetOfNumbers"
-                android:text="@string/start"
-                android:textColor="#D64F4C"
-                android:textSize="150sp"
-                android:textStyle="bold" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <Button
-                android:id="@+id/digSpanTrueButton"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:background="#8BC34A"
-                android:onClick="setAnswer"
-                android:text="@string/_true"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/remember_the_following_3_numbers"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/finish_game_dig_span"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/dirtyLightBlue"
+                    android:onClick="finishSpanMemoryGame"
+                    android:text="@string/finish_game"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/design_default_color_background" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/digSpanFalseButton"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:background="#D64F4C"
+                    android:onClick="wrongAnswer"
+                    android:text="@string/_false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold"
+                    tools:ignore="NestedWeights" />
+
+                <TextView
+                    android:id="@+id/dig_span_num"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:onClick="startNextSetOfNumbers"
+                    android:text="@{viewmodel.currentNumber}"
+                    android:textColor="#D64F4C"
+                    android:textSize="150sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/digSpanTrueButton"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:background="#8BC34A"
+                    android:onClick="correctAnswer"
+                    android:text="@string/_true"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

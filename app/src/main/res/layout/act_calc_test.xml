@@ -1,134 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/calc_act_id"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.craniowake.view.viewModel.CalculatingViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/calc_act_id"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <include
-            layout="@layout/toolbar_seekbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/calculate_the_equation"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-            <Button
-                android:id="@+id/finish_game_calc"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:backgroundTint="@color/dirtyLightBlue"
-                android:onClick="finishCalcGame"
-                android:text="@string/finish_game"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColor="@color/design_default_color_background" />
-        </FrameLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/firstNumberView"
+            <include
+                layout="@layout/toolbar_seekbar"
+                app:viewmodel="@{viewmodel}"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:autoSizeMinTextSize="12sp"
-                android:autoSizeTextType="uniform"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:hint="@string/_5"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content" />
 
-            <TextView
-                android:id="@+id/operatorView"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:autoSizeMinTextSize="12sp"
-                android:autoSizeTextType="uniform"
-                android:background="@android:color/transparent"
-                android:gravity="center"
-                android:lineSpacingExtra="8sp"
-                android:selectAllOnFocus="false"
-                android:text="@string/operator"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/secondNumberView"
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/calculate_the_equation"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+                <Button
+                    android:id="@+id/finish_game_calc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:backgroundTint="@color/dirtyLightBlue"
+                    android:onClick="finishCalcGame"
+                    android:text="@string/finish_game"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/design_default_color_background" />
+            </FrameLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:autoSizeMinTextSize="12sp"
-                android:autoSizeTextType="uniform"
-                android:background="@android:color/transparent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
                 android:gravity="center"
-                android:hint="@string/_6"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-                android:textStyle="bold" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/firstNumberView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:hint="@string/_5"
+                    android:text="@{viewmodel.game.equation.firstOperand.toString()}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/operatorView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:lineSpacingExtra="8sp"
+                    android:selectAllOnFocus="false"
+                    android:text="@{viewmodel.game.equation.operator.toString()}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/secondNumberView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:autoSizeMinTextSize="12sp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@android:color/transparent"
+                    android:gravity="center"
+                    android:hint="@string/_6"
+                    android:text="@{viewmodel.game.equation.secondOperand.toString()}"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/answer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+                <EditText
+                    android:id="@+id/calcAnswer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:autofillHints="0"
+                    android:gravity="center"
+                    android:hint="@string/_0"
+                    android:text="@={viewmodel.game.answerString}"
+                    android:inputType="number"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+                <Button
+                    android:id="@+id/next_calc_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:onClick="@{() -> viewmodel.answer()}"
+                    android:text="@string/next"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#4C4848" />
+            </LinearLayout>
+
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/answer"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-            <EditText
-                android:id="@+id/calcAnswer"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:autofillHints="0"
-                android:gravity="center"
-                android:hint="@string/_0"
-                android:inputType="number"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
-
-            <Button
-                android:id="@+id/next_calc_button"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:onClick="onClickAnswer"
-                android:text="@string/next"
-                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-                android:textColor="#4C4848" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

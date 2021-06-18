@@ -1,65 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/react_act_id"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <include
-        layout="@layout/toolbar_seekbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.craniowake.view.viewModel.ReactionViewModel" />
+    </data>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/tap_when_the_blue_screen_appears"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <Button
-            android:id="@+id/finish_react_game"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:backgroundTint="@color/dirtyLightBlue"
-            android:onClick="finishReactionGame"
-            android:text="@string/finish_game"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#FFFFFF" />
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/reaction_background_color_id"
+    <LinearLayout
+        android:id="@+id/react_act_id"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#D64F4C"
-        android:onClick="startReactionTest">
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/reaction_textview_tap_id"
+        <include
+            layout="@layout/toolbar_seekbar"
+            app:viewmodel="@{viewmodel}"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:gravity="center"
-            android:padding="50dp"
-            android:text="@string/tap_ich_bin_ein_placeholder"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+            android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/textViewTimer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="bottom"
-            android:text=""
-            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </FrameLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/tap_when_the_blue_screen_appears"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/finish_react_game"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/dirtyLightBlue"
+                android:onClick="finishReactionGame"
+                android:text="@string/finish_game"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#FFFFFF" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/reaction_background_color_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/red"
+            android:backgroundTint="@{viewmodel.backgroundLiveData}"
+            android:clickable="true"
+            android:onClick="click">
+
+            <TextView
+                android:id="@+id/reaction_textview_tap_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="center"
+                android:padding="50dp"
+                android:text="@string/tap_ich_bin_ein_placeholder"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+            <TextView
+                android:id="@+id/textViewTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:text=""
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

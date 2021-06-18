@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".view.stimulation.ClinicalTestActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/vigilance_global"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/vigilance_global"
+            app:layout_constraintEnd_toStartOf="@+id/cranial_nerves"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/cranial_nerves"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cranial_nerves"
+            app:layout_constraintEnd_toStartOf="@+id/motor_function_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/vigilance_global"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/motor_function_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/motor_function"
+            app:layout_constraintEnd_toStartOf="@+id/sensory_function"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cranial_nerves"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/sensory_function"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/sensory_function"
+            app:layout_constraintEnd_toStartOf="@+id/reflexes"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/motor_function_button"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/reflexes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/reflexes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sensory_function"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/fragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+</LinearLayout>

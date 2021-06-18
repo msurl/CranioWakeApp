@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/option_glasgow_coma_scale"
+        android:title="@string/glasgow_coma_scale" />
+    <item android:id="@+id/option_orientation"
+        android:title="@string/orientation" />
+    <item android:id="@+id/option_meningismus"
+        android:title="@string/meningismus" />
+    <item android:id="@+id/option_gait"
+        android:title="@string/gait" />
+    <item android:id="@+id/option_coordination"
+        android:title="@string/coordination" />
+    <item android:id="@+id/option_neglect"
+        android:title="@string/neglect" />
+</menu>

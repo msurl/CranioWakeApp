@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/option_olfactorius_hn_i"
+        android:title="@string/olfactorius_hn_i" />
+    <item android:id="@+id/option_opticus_hn_ii"
+        android:title="@string/opticus_hn_ii" />
+    <item android:id="@+id/option_occular_motility"
+        android:title="@string/occular_motility" />
+    <item android:id="@+id/option_trigeminus"
+        android:title="@string/trigeminus" />
+    <item android:id="@+id/option_facialis"
+        android:title="@string/facialis" />
+    <item android:id="@+id/option_acusticus"
+        android:title="@string/acusticus" />
+    <item android:id="@+id/option_glosopharyngeus"
+        android:title="@string/glosopharyngeus" />
+    <item android:id="@+id/option_vagus"
+        android:title="@string/vagus" />
+    <item android:id="@+id/option_accessorius"
+        android:title="@string/accessorius" />
+    <item android:id="@+id/option_hypoglossus"
+        android:title="@string/hypoglossus" />
+</menu>

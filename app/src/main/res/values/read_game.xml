@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="read_game_texts">
+        <item>@string/duesseldorf_read_game_text</item>
+        <item>@string/fortuna_read_game_text</item>
+    </string-array>
+</resources>
