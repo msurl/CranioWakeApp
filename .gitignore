@@ -85,3 +85,6 @@ lint/tmp/
 # lint/reports/
 .idea/jarRepositories.xml
 .idea/.name
+.idea/runConfigurations.xml
+.idea/misc.xml
+.idea/compiler.xml
