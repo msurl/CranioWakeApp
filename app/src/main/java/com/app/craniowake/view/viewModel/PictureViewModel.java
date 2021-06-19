@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.app.craniowake.R;
+import com.app.craniowake.data.model.gameModels.Game;
 import com.app.craniowake.data.model.gameModels.PictureGame;
 import com.app.craniowake.data.repositories.PictureRepository;
 
@@ -79,7 +80,7 @@ public class PictureViewModel extends WithStimulationViewModel {
     }
 
     public void addPictureGame(String pictureName, boolean face, boolean correctAnswer, long operationId) {
-        addPictureGame(new PictureGame(pictureName, face, correctAnswer, operationId, getStimulationNumeric()));
+        addPictureGame(new PictureGame(pictureName, face, correctAnswer, getStimulationNumeric(), getStimulationType(), operationId));
     }
 
     public void addPictureGame(boolean correctAnswer) {

@@ -41,8 +41,8 @@ public class TrailMakingGame extends Game {
     }
 
     @Ignore
-    public TrailMakingGame(boolean correctAnswer, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public TrailMakingGame(boolean correctAnswer, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.correctAnswer = correctAnswer;
         this.fkOperationId = fkOperationId;
     }

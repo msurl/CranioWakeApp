@@ -156,9 +156,11 @@
     <string name="select_brain_area">SELECT BRAIN AREA:</string>
     <string name="monopolar">monopolar</string>
     <string name="bipolar">bipolar</string>
-    <string name="cortical">cortical</string>
-    <string name="subcortical">subcortical</string>
+    <string name="epidural" translatable="false">epidural</string>
+    <string name="cortical" translatable="false">cortical</string>
+    <string name="subcortical" translatable="false">subcortical</string>
     <string name="stimulation">stimulation</string>
+    <string name="stimulate">stimulate</string>
     <string name="export_csv">export csv</string>
     <string name="patient_list">patient list</string>
     <string name="user_management">User management</string>

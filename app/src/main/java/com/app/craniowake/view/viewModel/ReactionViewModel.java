@@ -12,6 +12,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 
+import com.app.craniowake.data.model.gameModels.Game;
 import com.app.craniowake.data.model.gameModels.ReactionGame;
 import com.app.craniowake.data.repositories.ReactionRepository;
 import com.app.craniowake.view.activityHelper.StopWatch;
@@ -91,6 +92,6 @@ public class ReactionViewModel extends WithStimulationViewModel {
     }
 
     public void addReactionGame(Long operationId) {
-        addReactionGame(new ReactionGame(stopWatch.getMilliSeconds(), getStimulationNumeric(), operationId));
+        addReactionGame(new ReactionGame(stopWatch.getMilliSeconds(), getStimulationNumeric(), getStimulationType(), operationId));
     }
 }

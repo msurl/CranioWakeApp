@@ -44,8 +44,8 @@ public class StroopGame extends Game {
     }
 
     @Ignore
-    public StroopGame(String ink, String text, boolean answer, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public StroopGame(String ink, String text, boolean answer, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.ink = ink;
         this.answer = answer;
         this.fkOperationId = fkOperationId;

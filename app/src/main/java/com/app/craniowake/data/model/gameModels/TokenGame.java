@@ -43,8 +43,8 @@ public class TokenGame extends Game {
     }
 
     @Ignore
-    public TokenGame(String correctToken, String selectedToken, boolean answer, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public TokenGame(String correctToken, String selectedToken, boolean answer, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.correctToken = correctToken;
         this.selectedToken = selectedToken;
         this.answer = answer;

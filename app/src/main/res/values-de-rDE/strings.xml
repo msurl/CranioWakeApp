@@ -160,8 +160,9 @@
     <string name="motor_function">Motor Function</string>
     <string name="monopolar">monopolar</string>
     <string name="bipolar">bipolar</string>
+    <!-- Ich denke, es macht Sinn, diese Strings nicht zu übersetzen, wenn hier sowieso die englischen Begriffe verwendet werden
     <string name="cortical">cortical</string>
-    <string name="subcortical">subcortical</string>
+    <string name="subcortical">subcortical</string> -->
     <string name="stimulation">stimulation</string>
     <string name="export_csv">export csv</string>
     <string name="patient_list">patient list</string>
@@ -169,4 +170,5 @@
     <string name="export">Export</string>
     <string name="duesseldorf_read_game_text">"Düsseldorf\n\nDüsseldorf ist die Hauptstadt des Landes Nordrhein-Westfalen. Die Messestadt ist Sitz einer Vielzahl börsennotierter Unternehmen, darunter die Henkel AG. Düsseldorf ist der umsatzstärkste deutsche Standort für Wirtschaftsprüfung, Unternehmens- und Rechtsberatung, Werbung und Kleidermode sowie ein wichtiger Banken- (und Industriestandort). Der Der Düsseldorfer Flughafen ist das interkontinentale Drehkreuz Nordrhein-Westfalens. "</string>
     <string name="fortuna_read_game_text">Fortuna Düsseldorf\n\nFortuna Düsseldorf (vollständiger Name: Düsseldorfer Turn- und Sportverein Fortuna 1985 e.V.) ist ein deutscher Sportverein aus Düsseldorf. Nach der Herkunft aus dem früheren Arbeiterviertel Flingern wird gelegentlich die Bezeichnung die Flingeraner benutzt. Der Schwerpunkt des Sportvereins liegt auf dem Fußball, es bestehen aber auch Abteilungen für Handball und Laufsport. Größte Erfolge der Vereinsgeschichte waren der Gewinn der deutschen Fußballmeisterschaft im Jahr 1933, das Erreichen des Finales des Europapokals der Pokalsieger 1979 und zwei DFB-Pokalsiege (1879 und 1980).</string>
+    <string name="stimulate">stimulieren</string>
 </resources>

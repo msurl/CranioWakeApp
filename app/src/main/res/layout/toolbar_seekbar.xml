@@ -68,9 +68,28 @@
                     android:layout_gravity="center"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:text="@{viewmodel.stimulation}"
+                    android:text="@{viewmodel.stimulationString}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#FFFFFF" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup_stimulation_type_header"
+                    android:checkedButton="@={viewmodel.stimulationTypeButtonId}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/radioButton_stimulation_type_epidural"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/epidural" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton_stimulation_type_cortical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cortical" />
+                </RadioGroup>
 
                 <Button
                     android:id="@+id/stimulate"

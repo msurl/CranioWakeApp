@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
@@ -28,7 +29,6 @@ import java.util.Random;
  */
 public class DigitalSpanMemoryActivity extends OperationActivity {
 
-    OperationViewModel operationViewModel;
     DigitalSpanMemoryViewModel digitalSpanMemoryViewModel;
 
     @Override
@@ -61,7 +61,7 @@ public class DigitalSpanMemoryActivity extends OperationActivity {
     public void correctAnswer(View view){
         this.digitalSpanMemoryViewModel.answer(true, getCurrentOperationId());
         playSuccessSound();
-    }
+}
 
     public void wrongAnswer(View view){
         this.digitalSpanMemoryViewModel.answer(false, getCurrentOperationId());

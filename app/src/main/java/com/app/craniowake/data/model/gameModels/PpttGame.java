@@ -40,8 +40,8 @@ public class PpttGame extends Game {
         this.fkOperationId = fkOperationId;
     }
 
-    public PpttGame(String pictureName, boolean answer, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public PpttGame(String pictureName, boolean answer, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.pictureName = pictureName;
         this.answer = answer;
         this.fkOperationId = fkOperationId;

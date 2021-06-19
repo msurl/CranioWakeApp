@@ -15,6 +15,7 @@ import android.widget.TextView;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.app.craniowake.R;
+import com.app.craniowake.data.model.gameModels.Game;
 import com.app.craniowake.data.model.gameModels.LineBisectionGame;
 import com.app.craniowake.view.OperationActivity;
 import com.app.craniowake.view.activityHelper.IntentHolder;
@@ -213,7 +214,8 @@ public class LineBisectionActivity extends OperationActivity {
             try {
                 LineBisectionGame lineBisectionGame;
                 if(stimulated)
-                    lineBisectionGame = new LineBisectionGame(distance, miliseconds, stimulation, operation.getOperationId());
+                    // TODO: Nicht vergessen, dies hier anzupassen, nachdem der Typ auswählbar ist!
+                    lineBisectionGame = new LineBisectionGame(distance, miliseconds, stimulation, Game.DEV_STIMULATION, operation.getOperationId());
                 else
                     lineBisectionGame = new LineBisectionGame(distance, miliseconds, operation.getOperationId());
                 lineBisectionViewModel.addLineDissectionGame(lineBisectionGame);

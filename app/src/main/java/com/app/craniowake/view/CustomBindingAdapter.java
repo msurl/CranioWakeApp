@@ -17,6 +17,7 @@ import java.util.Arrays;
 // TODO: Views, die in beiden Tests vorkommen, zu jeweils einem Element zusammenfassen
 public class CustomBindingAdapter {
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @BindingAdapter("verification:motorFunctionStimulationArea")
     public static void setMotorFunctionStimulationAreaRadioButtonId(RadioGroup radioGroup, String area) {
         int id = -1;
@@ -31,6 +32,7 @@ public class CustomBindingAdapter {
         }
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @InverseBindingAdapter(attribute = "verification:motorFunctionStimulationArea", event = "android:checkedButtonAttrChanged")
     public static String getMotorFunctionStimulationAreaFromRadioButtonId(RadioGroup radioGroup) {
         if (radioGroup.getCheckedRadioButtonId() == R.id.cortical_verification)
@@ -41,6 +43,7 @@ public class CustomBindingAdapter {
         return "";
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @BindingAdapter("verification:speechStimulationArea")
     public static void setSpeechStimulationAreaRadioButtonId(RadioGroup radioGroup, String area) {
         int id = -1;
@@ -55,6 +58,7 @@ public class CustomBindingAdapter {
         }
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @InverseBindingAdapter(attribute = "verification:speechStimulationArea", event = "android:checkedButtonAttrChanged")
     public static String getSpeechStimulationAreaFromRadioButtonId(RadioGroup radioGroup) {
         if (radioGroup.getCheckedRadioButtonId() == R.id.cortical_speech)
@@ -65,7 +69,7 @@ public class CustomBindingAdapter {
         return "";
     }
 
-
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @BindingAdapter("verification:motorFunctionStimulationType")
     public static void setStimulationTypeRadioButtonId(RadioGroup radioGroup, String area) {
         int id = -1;
@@ -80,6 +84,7 @@ public class CustomBindingAdapter {
         }
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @InverseBindingAdapter(attribute = "verification:motorFunctionStimulationType", event = "android:checkedButtonAttrChanged")
     public static String getStimulationTypeFromRadioButtonId(RadioGroup radioGroup) {
         if (radioGroup.getCheckedRadioButtonId() == R.id.monopolar)
@@ -90,6 +95,7 @@ public class CustomBindingAdapter {
         return "";
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @BindingAdapter("verification:verResponseType")
     public static void setVerificationResponseRadioButtonId(RadioGroup radioGroup, String area) {
         int id = -1;
@@ -106,6 +112,7 @@ public class CustomBindingAdapter {
         }
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @InverseBindingAdapter(attribute = "verification:verResponseType", event = "android:checkedButtonAttrChanged")
     public static String getVerificationResponseFromRadioButtonId(RadioGroup radioGroup) {
         if (radioGroup.getCheckedRadioButtonId() == R.id.clinical)
@@ -137,6 +144,7 @@ public class CustomBindingAdapter {
         return muscle;
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @BindingAdapter("threshold:stimulationArea")
     public static void setThresholdStimulationAreaRadioButtonId(RadioGroup radioGroup, String area) {
         int id = -1;
@@ -153,6 +161,7 @@ public class CustomBindingAdapter {
         }
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @InverseBindingAdapter(attribute = "threshold:stimulationArea", event = "android:checkedButtonAttrChanged")
     public static String getThresholdStimulationAreaFromRadioButtonId(RadioGroup radioGroup) {
         if (radioGroup.getCheckedRadioButtonId() == R.id.cortical_threshold)
@@ -165,6 +174,7 @@ public class CustomBindingAdapter {
         return "";
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @BindingAdapter("threshold:responseType")
     public static void setResponseRadioButtonId(RadioGroup radioGroup, String area) {
         int id = -1;
@@ -181,6 +191,7 @@ public class CustomBindingAdapter {
         }
     }
 
+    // TODO: Hier wäre es wohlmöglich besser, wenn man innerhalb der Viewmodels getter und setter nutzt. Dann könnte man auch die Strings aus den Ressources beziehen.
     @InverseBindingAdapter(attribute = "threshold:responseType", event = "android:checkedButtonAttrChanged")
     public static String getResponseFromRadioButtonId(RadioGroup radioGroup) {
         if (radioGroup.getCheckedRadioButtonId() == R.id.clinical_treshhold)

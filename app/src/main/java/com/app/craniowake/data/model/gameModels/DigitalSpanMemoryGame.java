@@ -41,8 +41,8 @@ public class DigitalSpanMemoryGame extends Game{
     }
 
     @Ignore
-    public DigitalSpanMemoryGame(boolean answer, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public DigitalSpanMemoryGame(boolean answer, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.answer = answer;
         this.fkOperationId = fkOperationId;
     }

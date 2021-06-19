@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 
 import com.app.craniowake.R;
+import com.app.craniowake.data.model.gameModels.Game;
 import com.app.craniowake.data.model.gameModels.StroopGame;
 import com.app.craniowake.data.repositories.StroopRepository;
 
@@ -93,7 +94,7 @@ public class StroopViewModel extends WithStimulationViewModel {
     }
 
     public void addStroopGame(String ink, String colorText, boolean correct, long fkOperationId) {
-        addStroopGame(new StroopGame(ink, colorText, correct, getStimulationNumeric(),fkOperationId));
+        addStroopGame(new StroopGame(ink, colorText, correct, getStimulationNumeric(), getStimulationType(), fkOperationId));
     }
 
     public void addStroopGame(boolean answer, long fkOperationId) {

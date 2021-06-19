@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.app.craniowake.R;
+import com.app.craniowake.data.model.gameModels.Game;
 import com.app.craniowake.data.model.gameModels.PpttGame;
 import com.app.craniowake.data.repositories.PpttRepository;
 
@@ -78,7 +79,7 @@ public class PpttViewModel extends WithStimulationViewModel {
     }
 
     public void addPpttGame(Long operationId, String pictureName, boolean correct) {
-        PpttGame game = new PpttGame(pictureName, correct, getStimulationNumeric(), operationId);
+        PpttGame game = new PpttGame(pictureName, correct, getStimulationNumeric(), getStimulationType(), operationId);
         ppttRepository.insert(game);
     }
 

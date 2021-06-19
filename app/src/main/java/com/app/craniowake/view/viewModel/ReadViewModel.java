@@ -77,6 +77,7 @@ public class ReadViewModel extends WithStimulationViewModel {
     public void nextText() {
         ReadGame game = currentGame.getValue();
         game.setStimulation(getStimulationNumeric());
+        game.setStimulationType(getStimulationType());
         addReadGame(game);
         totalMistakes += game.getMistakeCounter();
         randomiseText();

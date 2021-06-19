@@ -12,6 +12,7 @@ import androidx.lifecycle.Transformations;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.gameModels.FourSquareGame;
+import com.app.craniowake.data.model.gameModels.Game;
 import com.app.craniowake.data.repositories.FourSquareRepository;
 
 import java.util.Random;
@@ -118,10 +119,9 @@ public class FourSquareViewModel extends WithStimulationViewModel {
         boolean square3 = recognized3.getValue();
         boolean square4 = recognized4.getValue();
 
-
         FourSquareGame game = new FourSquareGame(pictureName, recognized1.getValue(),
                 recognized2.getValue(), recognized3.getValue(),
-                recognized4.getValue(), getStimulationNumeric(), operationId);
+                recognized4.getValue(), getStimulationNumeric(), getStimulationType(), operationId);
 
         addFourSquareGame(game);
 

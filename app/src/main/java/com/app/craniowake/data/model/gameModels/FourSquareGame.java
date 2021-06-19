@@ -50,8 +50,8 @@ public class FourSquareGame extends Game {
     }
 
     @Ignore
-    public FourSquareGame(String pictureName, boolean answerSquare1, boolean answerSquare2, boolean answerSquare3, boolean answerSquare4, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public FourSquareGame(String pictureName, boolean answerSquare1, boolean answerSquare2, boolean answerSquare3, boolean answerSquare4, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.pictureName = pictureName;
         this.answerSquare1 = answerSquare1;
         this.answerSquare2 = answerSquare2;

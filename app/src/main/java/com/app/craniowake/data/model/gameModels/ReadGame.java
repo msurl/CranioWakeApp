@@ -49,8 +49,8 @@ public class ReadGame extends Game {
     }
 
     @Ignore
-    public ReadGame(String text, int mistakeCounter, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public ReadGame(String text, int mistakeCounter, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.text = text;
         this.mistakeCounter = mistakeCounter;
         this.fkOperationId = fkOperationId;

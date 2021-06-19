@@ -11,6 +11,7 @@ import androidx.lifecycle.Transformations;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.gameModels.DigitalSpanMemoryGame;
+import com.app.craniowake.data.model.gameModels.Game;
 import com.app.craniowake.data.repositories.DigitalSpanMemoryRepository;
 
 import java.util.ArrayList;
@@ -101,7 +102,8 @@ public class DigitalSpanMemoryViewModel extends WithStimulationViewModel {
     }
 
     public void addDigitalSpanMemoryGame(boolean answer, Long operationId) {
-        digitalSpanMemoryRepository.insert(new DigitalSpanMemoryGame(answer, getStimulationNumeric(), operationId));
+        // TODO: Nicht vergessen, dies hier anzupassen, nachdem der Typ auswählbar ist!
+        digitalSpanMemoryRepository.insert(new DigitalSpanMemoryGame(answer, getStimulationNumeric(), Game.DEV_STIMULATION, operationId));
     }
 
     public void answer(boolean correct) {

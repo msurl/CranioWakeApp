@@ -40,8 +40,8 @@ public class ReactionGame extends Game {
     }
 
     @Ignore
-    public ReactionGame(long milisec, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public ReactionGame(long milisec, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.milisec = milisec;
         this.fkOperationId = fkOperationId;
     }

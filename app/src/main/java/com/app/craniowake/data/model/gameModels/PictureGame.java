@@ -45,8 +45,8 @@ public class PictureGame extends Game{
     }
 
     @Ignore
-    public PictureGame(String pictureName, boolean face, boolean answer, long fkOperationId, double stimulation) {
-        super(stimulation);
+    public PictureGame(String pictureName, boolean face, boolean answer, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.face = face;
         this.pictureName = pictureName;
         this.answer = answer;

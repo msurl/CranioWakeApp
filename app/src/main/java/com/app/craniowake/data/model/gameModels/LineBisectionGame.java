@@ -45,8 +45,8 @@ public class LineBisectionGame extends Game {
     }
 
     @Ignore
-    public LineBisectionGame(float distanceToMiddleOfTheLine, int milisec, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public LineBisectionGame(float distanceToMiddleOfTheLine, int milisec, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.distanceToMiddleOfTheLine = distanceToMiddleOfTheLine;
         this.milisec = milisec;
         this.fkOperationId = fkOperationId;

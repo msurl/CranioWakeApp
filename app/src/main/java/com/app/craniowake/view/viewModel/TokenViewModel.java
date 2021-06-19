@@ -7,6 +7,7 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.app.craniowake.R;
+import com.app.craniowake.data.model.gameModels.Game;
 import com.app.craniowake.data.model.gameModels.TokenGame;
 import com.app.craniowake.data.repositories.TokenRepository;
 
@@ -57,7 +58,8 @@ public class TokenViewModel extends WithStimulationViewModel {
     }
 
     public void addTokenGame(String correctToken, String selectedToken, boolean correct, long operationId) {
-        this.addTokenGame(new TokenGame(correctToken, selectedToken, correct, getStimulationNumeric(), operationId));
+        // TODO: Nicht vergessen, dies hier anzupassen, nachdem der Typ auswählbar ist!
+        this.addTokenGame(new TokenGame(correctToken, selectedToken, correct, getStimulationNumeric(), getStimulationType(), operationId));
     }
 
     public void answer(String selectedToken) {

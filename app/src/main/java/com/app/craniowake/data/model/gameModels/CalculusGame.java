@@ -22,7 +22,6 @@ public class CalculusGame extends Game {
 
     @PrimaryKey(autoGenerate = true)
     private long calcGameId;
-//    private String equation;
 
     private Equation equation;
 
@@ -46,8 +45,8 @@ public class CalculusGame extends Game {
     }
 
     @Ignore
-    public CalculusGame(double stimulation, int numbScale) {
-        super(stimulation);
+    public CalculusGame(double stimulation, String stimulationType, int numbScale) {
+        super(stimulation, stimulationType);
         randomiseEquation(numbScale);
         this.correct = false;
     }
@@ -61,8 +60,8 @@ public class CalculusGame extends Game {
     }
 
     @Ignore
-    public CalculusGame(Integer answer, Equation equation, double stimulation, long fkOperationId) {
-        super(stimulation);
+    public CalculusGame(Integer answer, Equation equation, double stimulation, String stimulationType, long fkOperationId) {
+        super(stimulation, stimulationType);
         this.correct = (equation.result() == answer);
         this.fkOperationId = fkOperationId;
         this.equation = equation;

@@ -255,7 +255,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:text="cortical"
+                        android:text="@string/cortical"
                         android:textSize="26sp" />
 
                     <RadioButton
@@ -264,7 +264,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
                         android:layout_marginRight="10dp"
-                        android:text="subcortical"
+                        android:text="@string/subcortical"
                         android:textSize="26sp" />
                 </RadioGroup>
 

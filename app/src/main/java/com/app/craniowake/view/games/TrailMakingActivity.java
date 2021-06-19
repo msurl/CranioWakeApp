@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.app.craniowake.R;
+import com.app.craniowake.data.model.gameModels.Game;
 import com.app.craniowake.data.model.gameModels.TrailMakingGame;
 import com.app.craniowake.view.OperationActivity;
 import com.app.craniowake.view.activityHelper.IntentHolder;
@@ -199,7 +200,8 @@ public class TrailMakingActivity extends OperationActivity {
             try {
                 TrailMakingGame trailMakingGame;
                 if(stimulated)
-                    trailMakingGame = new TrailMakingGame(answer, stimulation, operation.getOperationId());
+                    // TODO: Nicht vergessen, dies hier anzupassen, nachdem der Typ auswählbar ist!
+                    trailMakingGame = new TrailMakingGame(answer, stimulation, Game.DEV_STIMULATION, operation.getOperationId());
                 else
                     trailMakingGame = new TrailMakingGame(answer, operation.getOperationId());
 
