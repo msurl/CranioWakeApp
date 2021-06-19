@@ -57,7 +57,7 @@ public class TokenViewModel extends WithStimulationViewModel {
     }
 
     public void addTokenGame(String correctToken, String selectedToken, boolean correct, long operationId) {
-        this.addTokenGame(new TokenGame(correctToken, selectedToken, correct, getStimulation().getValue(), operationId));
+        this.addTokenGame(new TokenGame(correctToken, selectedToken, correct, getStimulationNumeric(), operationId));
     }
 
     public void answer(String selectedToken) {

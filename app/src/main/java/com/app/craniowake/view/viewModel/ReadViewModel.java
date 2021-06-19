@@ -3,7 +3,6 @@ package com.app.craniowake.view.viewModel;
 import android.app.Application;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
 
 import com.app.craniowake.R;
@@ -77,7 +76,7 @@ public class ReadViewModel extends WithStimulationViewModel {
 
     public void nextText() {
         ReadGame game = currentGame.getValue();
-        game.setStimulation(getStimulation().getValue());
+        game.setStimulation(getStimulationNumeric());
         addReadGame(game);
         totalMistakes += game.getMistakeCounter();
         randomiseText();

@@ -78,7 +78,7 @@ public class PpttViewModel extends WithStimulationViewModel {
     }
 
     public void addPpttGame(Long operationId, String pictureName, boolean correct) {
-        PpttGame game = new PpttGame(pictureName, correct, getStimulation().getValue(), operationId);
+        PpttGame game = new PpttGame(pictureName, correct, getStimulationNumeric(), operationId);
         ppttRepository.insert(game);
     }
 

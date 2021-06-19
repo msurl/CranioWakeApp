@@ -68,7 +68,7 @@ public class CalculatingViewModel extends WithStimulationViewModel {
 
         if(isStimulated())
         {
-            currentGame.setStimulation(getStimulation().getValue());
+            currentGame.setStimulation(getStimulationNumeric());
             resetStimulation();
         }
 

@@ -13,7 +13,7 @@ import lombok.Getter;
 public class WithStimulationViewModel extends AndroidViewModel {
 
     @Getter
-    private LiveData<Double> stimulation;
+    private LiveData<String> stimulation;
 
     @Getter
     private MutableLiveData<Integer> stimulationInt;
@@ -24,7 +24,7 @@ public class WithStimulationViewModel extends AndroidViewModel {
         super(application);
         stimulationInt = new MutableLiveData<>(4);
 
-        stimulation = Transformations.map(stimulationInt, s -> s /2.0);
+        stimulation = Transformations.map(stimulationInt, s -> (s /2.0)+"");
 
         stimulated = false;
     }
@@ -35,5 +35,9 @@ public class WithStimulationViewModel extends AndroidViewModel {
 
     public void stimulate() {
         stimulated = true;
+    }
+
+    public Double getStimulationNumeric() {
+        return stimulationInt.getValue() / 2.0;
     }
 }

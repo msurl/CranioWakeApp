@@ -121,7 +121,7 @@ public class FourSquareViewModel extends WithStimulationViewModel {
 
         FourSquareGame game = new FourSquareGame(pictureName, recognized1.getValue(),
                 recognized2.getValue(), recognized3.getValue(),
-                recognized4.getValue(), getStimulation().getValue(), operationId);
+                recognized4.getValue(), getStimulationNumeric(), operationId);
 
         addFourSquareGame(game);
 

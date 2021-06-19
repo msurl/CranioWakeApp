@@ -91,6 +91,6 @@ public class ReactionViewModel extends WithStimulationViewModel {
     }
 
     public void addReactionGame(Long operationId) {
-        addReactionGame(new ReactionGame(stopWatch.getMilliSeconds(), getStimulation().getValue(), operationId));
+        addReactionGame(new ReactionGame(stopWatch.getMilliSeconds(), getStimulationNumeric(), operationId));
     }
 }

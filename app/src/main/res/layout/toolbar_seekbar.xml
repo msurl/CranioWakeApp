@@ -68,7 +68,7 @@
                     android:layout_gravity="center"
                     android:paddingLeft="15dp"
                     android:paddingRight="15dp"
-                    android:text="@string/_0"
+                    android:text="@{viewmodel.stimulation}"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     android:textColor="#FFFFFF" />
 

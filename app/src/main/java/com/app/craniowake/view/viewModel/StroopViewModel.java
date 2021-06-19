@@ -93,7 +93,7 @@ public class StroopViewModel extends WithStimulationViewModel {
     }
 
     public void addStroopGame(String ink, String colorText, boolean correct, long fkOperationId) {
-        addStroopGame(new StroopGame(ink, colorText, correct, getStimulation().getValue(),fkOperationId));
+        addStroopGame(new StroopGame(ink, colorText, correct, getStimulationNumeric(),fkOperationId));
     }
 
     public void addStroopGame(boolean answer, long fkOperationId) {

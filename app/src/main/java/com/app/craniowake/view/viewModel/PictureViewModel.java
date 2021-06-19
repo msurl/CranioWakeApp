@@ -79,7 +79,7 @@ public class PictureViewModel extends WithStimulationViewModel {
     }
 
     public void addPictureGame(String pictureName, boolean face, boolean correctAnswer, long operationId) {
-        addPictureGame(new PictureGame(pictureName, face, correctAnswer, operationId, getStimulation().getValue()));
+        addPictureGame(new PictureGame(pictureName, face, correctAnswer, operationId, getStimulationNumeric()));
     }
 
     public void addPictureGame(boolean correctAnswer) {

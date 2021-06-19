@@ -101,7 +101,7 @@ public class DigitalSpanMemoryViewModel extends WithStimulationViewModel {
     }
 
     public void addDigitalSpanMemoryGame(boolean answer, Long operationId) {
-        digitalSpanMemoryRepository.insert(new DigitalSpanMemoryGame(answer, getStimulation().getValue(), operationId));
+        digitalSpanMemoryRepository.insert(new DigitalSpanMemoryGame(answer, getStimulationNumeric(), operationId));
     }
 
     public void answer(boolean correct) {
