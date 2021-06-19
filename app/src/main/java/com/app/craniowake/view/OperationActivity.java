@@ -216,12 +216,12 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         saveComplication();
-        displayAddedEmergency();
+        displayAddedComplication();
         return super.onOptionsItemSelected(item);
     }
 
-    private void displayAddedEmergency() {
-        Dialog complication = CraniowakeDialogBuilder.of(this, R.layout.dialog_complication, R.id.btn_dialog_emergency);
+    private void displayAddedComplication() {
+        Dialog complication = CraniowakeDialogBuilder.of(this, R.layout.dialog_complication, R.id.btn_dialog_complication);
         complication.show();
     }
 

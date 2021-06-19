@@ -30,7 +30,7 @@
         android:textSize="26sp" />
 
     <Button
-        android:id="@+id/btn_dialog_emergency"
+        android:id="@+id/btn_dialog_complication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_dialog_emergency"
