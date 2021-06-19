@@ -2,6 +2,7 @@ package com.app.craniowake.view.activityHelper;
 
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
@@ -12,8 +13,7 @@ import com.app.craniowake.generated.callback.OnClickListener;
 
 import java.util.function.Function;
 
-// TODO: remove this class and use AlertDialogBuilder instead. Also remove DialogEmergency Class afterwards
-public class DialogBuilder {
+public class CraniowakeDialogBuilder {
 
     public static Dialog of(Context context, int layoutId, int buttonId) {
         Dialog dialog = new Dialog(context) {
@@ -46,6 +46,7 @@ public class DialogBuilder {
         };
         return dialog;
     }
+
 
 //    public static Dialog of(Activity activity, int layoutId, int buttonId, Function<Void, Void> afterDismiss) {
 //        Dialog dialog = new Dialog(activity) {

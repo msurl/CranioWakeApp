@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.app.craniowake.R;
-import com.app.craniowake.view.activityHelper.DialogBuilder;
+import com.app.craniowake.view.activityHelper.CraniowakeDialogBuilder;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -19,7 +19,7 @@ public class SplashScreen extends AppCompatActivity {
     }
 
     private void showDisclaimer() {
-        Dialog dialog = DialogBuilder.of(this, R.layout.disclaimer_dialog, R.id.btn_dialog_disclaimer);
+        Dialog dialog = CraniowakeDialogBuilder.of(this, R.layout.dialog_disclaimer, R.id.btn_dialog_disclaimer);
         dialog.setOnDismissListener(d -> {
             this.startActivity(new Intent(this, MainActivity.class));
         });

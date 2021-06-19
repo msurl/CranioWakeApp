@@ -2,7 +2,6 @@ package com.app.craniowake.view;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -24,10 +22,9 @@ import com.app.craniowake.R;
 import com.app.craniowake.data.db.CraniowakeDatabase;
 import com.app.craniowake.data.model.Operation;
 import com.app.craniowake.databaseExport.SqliteExporter;
-import com.app.craniowake.view.activityHelper.DialogBuilder;
+import com.app.craniowake.view.activityHelper.CraniowakeDialogBuilder;
 import com.app.craniowake.view.activityHelper.IntentHolder;
 import com.app.craniowake.view.activityHelper.customUtils.DialogAddedCSV;
-import com.app.craniowake.view.activityHelper.customUtils.DialogAddedPatient;
 import com.app.craniowake.view.patient.AddPatientActivity;
 import com.app.craniowake.view.patient.PatientListActivity;
 import com.app.craniowake.view.viewModel.OperationViewModel;
@@ -64,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     private void showDisclaimer() {
-        DialogBuilder.of(this, R.layout.disclaimer_dialog, R.id.btn_dialog_disclaimer).show();
+        CraniowakeDialogBuilder.of(this, R.layout.dialog_disclaimer, R.id.btn_dialog_disclaimer).show();
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.app.craniowake.view;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.media.AudioAttributes;
 import android.media.SoundPool;
@@ -20,8 +21,8 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.Complication;
+import com.app.craniowake.view.activityHelper.CraniowakeDialogBuilder;
 import com.app.craniowake.view.activityHelper.IntentHolder;
-import com.app.craniowake.view.activityHelper.customUtils.DialogEmergency;
 import com.app.craniowake.view.games.CalculusActivity;
 import com.app.craniowake.view.games.DigitalSpanMemoryActivity;
 import com.app.craniowake.view.games.FourSquareActivity;
@@ -40,7 +41,6 @@ import com.app.craniowake.view.viewModel.OperationViewModel;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 
@@ -221,8 +221,8 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void displayAddedEmergency() {
-        DialogEmergency alert = new DialogEmergency();
-        alert.showDialog(this);
+        Dialog complication = CraniowakeDialogBuilder.of(this, R.layout.dialog_complication, R.id.btn_dialog_emergency);
+        complication.show();
     }
 
     /**
