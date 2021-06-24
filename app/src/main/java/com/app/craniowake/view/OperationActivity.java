@@ -185,22 +185,6 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         return intent.getStringExtra(IntentHolder.OPERATION_MODE);
     }
 
-    /**
-     * creates object of a Complication and saves it with its operation reference to the database. Object is processed by the ComplicationViewModel
-     */
-    private void saveComplication() {
-        complicationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(ComplicationViewModel.class);
-        operationViewModel = new ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(this.getApplication())).get(OperationViewModel.class);
-        operationViewModel.getOperationByDate((LocalDateTime) getCurrentOperationDate()).observe(this, operation -> {
-            try {
-                Complication complication = new Complication(operation.getOperationId());
-                complicationViewModel.addComplication(complication);
-            } catch (Exception e) {
-                System.out.println("complication has not been added to db");
-            }
-        });
-    }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -215,13 +199,12 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
      */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        saveComplication();
         displayAddedComplication();
         return super.onOptionsItemSelected(item);
     }
 
     private void displayAddedComplication() {
-        Dialog complication = CraniowakeDialogBuilder.of(this, R.layout.dialog_complication, R.id.btn_dialog_complication);
+        Dialog complication = CraniowakeDialogBuilder.complicationDialogWithDataBinding(this, getCurrentOperationId());
         complication.show();
     }
 
