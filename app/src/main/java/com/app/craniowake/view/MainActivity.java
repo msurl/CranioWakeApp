@@ -154,18 +154,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
                 Long id = operationViewModel.addOperation(newOperation).get();
-//                operationViewModel.addOperation(newOperation, oId -> {
-//                    intent.putExtra(IntentHolder.OPERATION_ID, oId);
-//                    intent.putExtra(IntentHolder.PATIENT_ID, getById());
-//                    intent.putExtra(IntentHolder.PATIENT_NAME, patient.getFirstname() + patient.getLastname());
-//                    intent.putExtra(IntentHolder.OPERATION_MODE, selectedGameMode);
-//
-//                    setResult(RESULT_OK, intent);
-//                    startActivity(intent);
-//                });
 
+                // TODO: Dieses Attribut noch entfernen. Nur noch die ID soll genutzt werden.
                 intent.putExtra(IntentHolder.OPERATION_DATE, newOperation.getDateTime());
-                intent.putExtra(IntentHolder.OPERATION_ID, id );
+                intent.putExtra(IntentHolder.OPERATION_ID, id);
                 intent.putExtra(IntentHolder.PATIENT_ID, getById());
                 intent.putExtra(IntentHolder.PATIENT_NAME, patient.getFirstname() + patient.getLastname());
                 intent.putExtra(IntentHolder.OPERATION_MODE, selectedGameMode);
