@@ -14,6 +14,7 @@ import com.app.craniowake.R;
 import com.app.craniowake.data.model.Patient;
 import com.app.craniowake.view.MainActivity;
 import com.app.craniowake.view.OperationActivity;
+import com.app.craniowake.view.activityHelper.CraniowakeDialogBuilder;
 import com.app.craniowake.view.activityHelper.IntentHolder;
 import com.app.craniowake.view.activityHelper.PatientListAdapter;
 import com.app.craniowake.view.viewModel.PatientViewModel;
@@ -66,7 +67,8 @@ public class PatientListActivity extends PatientActivity {
                     startActivity(intent);
                 }
                 else if(direction == ItemTouchHelper.LEFT) {
-                    patientViewModel.deletePatient(patient);
+//                    patientViewModel.deletePatient(patient);
+                    CraniowakeDialogBuilder.deletePatientDialog(PatientListActivity.this, patientViewModel, patient).show();
                 }
             }
         }).attachToRecyclerView(recyclerView);

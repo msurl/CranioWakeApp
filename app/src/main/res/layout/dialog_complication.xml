@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/warning_icon_emergency"
+            android:id="@+id/warning_icon_complication"
             android:layout_width="match_parent"
             android:layout_height="90dp"
             android:background="#DA5F6A"
@@ -23,10 +23,10 @@
             android:src="@android:drawable/stat_sys_warning" />
 
         <TextView
-            android:id="@+id/text_dialog_emergency"
+            android:id="@+id/text_dialog_complication"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/warning_icon_emergency"
+            android:layout_below="@+id/warning_icon_complication"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="4dp"
             android:layout_marginTop="20dp"
@@ -42,7 +42,7 @@
             android:id="@+id/complication_note"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_below="@id/text_dialog_emergency"
+            android:layout_below="@id/text_dialog_complication"
             android:ems="10"
             android:text="@={viewmodel.text}"
             android:hint="@string/complication_note_hint"

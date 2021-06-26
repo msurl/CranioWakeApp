@@ -6,8 +6,11 @@ import android.app.AlertDialog;
 import android.app.Application;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
@@ -19,11 +22,13 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.Complication;
+import com.app.craniowake.data.model.Patient;
 import com.app.craniowake.databinding.DialogComplicationBinding;
 import com.app.craniowake.functional.VoidFunction;
 import com.app.craniowake.generated.callback.OnClickListener;
 import com.app.craniowake.view.OperationActivity;
 import com.app.craniowake.view.viewModel.ComplicationViewModel;
+import com.app.craniowake.view.viewModel.PatientViewModel;
 
 import java.util.function.Function;
 
@@ -77,25 +82,70 @@ public class CraniowakeDialogBuilder {
         return dialog;
     }
 
-    private static class ComplicationDialog extends Dialog{
+//    private static class ComplicationDialog extends Dialog{
+//
+//        VoidFunction executeOnCloseButtonClick;
+//
+//        public ComplicationDialog(@NonNull Context context, VoidFunction function) {
+//            super(context);
+//
+//            executeOnCloseButtonClick = function;
+//        }
+//
+//
+//        @Override
+//        protected void onCreate(Bundle savedInstanceState) {
+//            super.onCreate(savedInstanceState);
+//            Button closeButton = this.findViewById(R.id.btn_dialog_complication);
+//            closeButton.setOnClickListener(v -> {
+//                executeOnCloseButtonClick.execute();
+//                super.dismiss();
+//            });
+//        }
+//    }
 
-        VoidFunction executeOnCloseButtonClick;
+    private static class DialogWithVoidFunction extends Dialog {
 
-        public ComplicationDialog(@NonNull Context context, VoidFunction function) {
+        final VoidFunction executeOnCloseButtonClick;
+        final int closeButtonId;
+
+        public DialogWithVoidFunction(@NonNull Context context, int closeButtonId, VoidFunction function) {
             super(context);
 
-            executeOnCloseButtonClick = function;
+            this.closeButtonId = closeButtonId;
+            this.executeOnCloseButtonClick = function;
         }
-
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            Button closeButton = this.findViewById(R.id.btn_dialog_complication);
+            Button closeButton = this.findViewById(closeButtonId);
             closeButton.setOnClickListener(v -> {
                 executeOnCloseButtonClick.execute();
                 super.dismiss();
             });
         }
+    }
+
+    private static class ComplicationDialog extends DialogWithVoidFunction{
+
+        VoidFunction executeOnCloseButtonClick;
+
+        public ComplicationDialog(@NonNull Context context, VoidFunction function) {
+            super(context, R.id.btn_dialog_complication, function);
+
+            executeOnCloseButtonClick = function;
+        }
+    }
+
+    // TODO: Nachdem ein Patient zum löschen ausgewählt wurde, dann aber auf "Nein" geklickt wurde, muss der ListViewAdapter aktualisiert werden.
+    public static Dialog deletePatientDialog(Context context, PatientViewModel viewModel, Patient patient) {
+        Dialog dialog = new AlertDialog.Builder(context).setCancelable(false).
+                setIcon(android.R.drawable.ic_menu_delete).setMessage(context.getString(R.string.delete_patient) + " " + patient.getName()).
+                setPositiveButton(R.string.yes, (dialog1, which) -> {
+                    viewModel.deletePatient(patient);
+                }).setNegativeButton(R.string.no, (dialog1, which) -> {}).create();
+
+        return dialog;
     }
 }

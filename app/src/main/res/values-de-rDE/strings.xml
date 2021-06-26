@@ -173,4 +173,7 @@
     <string name="stimulate">stimulieren</string>
     <string name="complication_note_hint">Beschreibung der Komplikation</string>
     <string name="university">Universität:</string>
+    <string name="delete_patient">"Folgenden Patienten löschen: "</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
 </resources>

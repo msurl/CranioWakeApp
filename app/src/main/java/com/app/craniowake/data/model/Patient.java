@@ -59,4 +59,8 @@ public class Patient{
     public long getPatientId() {
         return patientId;
     }
+
+    public String getName() {
+        return firstname + " " + lastname;
+    }
 }

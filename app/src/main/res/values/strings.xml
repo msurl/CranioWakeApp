@@ -218,4 +218,5 @@
     <string name="fortuna_read_game_text">Fortuna Düsseldorf\n\nFortuna Düsseldorf (full name: Düsseldorfer Turn- und Sportverein Fortuna 1985 e.V.) is a German sports club from Düsseldorf. After originating in the former working-class district of Flingern, the name the Flingeraner is sometimes used. The main focus of the sports club is football, but there are also departments for handball and running. The greatest successes in the club\'s history were winning the German football championship in 1933, reaching the final of the European Cup Winners\' Cup in 1979 and winning the DFB Cup twice (1879 and 1980).</string>
     <string name="complication_note_hint">Description of the complication</string>
     <string name="university">University:</string>
+    <string name="delete_patient">"Delete patient with name: "</string>
 </resources>
