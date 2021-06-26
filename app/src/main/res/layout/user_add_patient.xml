@@ -69,7 +69,7 @@
 
                         <EditText
                             android:id="@+id/user_input_firstname_id"
-                            android:text="@={viewmodel.firstname}"
+                            android:text="@={viewmodel.patient.firstname}"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginBottom="20dp"
@@ -81,7 +81,7 @@
 
                         <EditText
                             android:id="@+id/user_input_lastname_id"
-                            android:text="@={viewmodel.lastname}"
+                            android:text="@={viewmodel.patient.lastname}"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_marginBottom="20dp"
@@ -93,7 +93,7 @@
 
                         <EditText
                             android:id="@+id/user_birthday_id"
-                            android:text="@={viewmodel.birthdate}"
+                            android:text="@={viewmodel.patient.birthDate}"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
@@ -105,9 +105,30 @@
                             android:inputType="date"
                             android:padding="20dp" />
 
+                        <EditText
+                            android:id="@+id/user_university_name"
+                            android:text="@={viewmodel.patient.university.name}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:background="#FFFFFF"
+                            android:hint="University name"
+                            android:padding="20dp" />
+
+                        <EditText
+                            android:id="@+id/user_university_location"
+                            android:text="@={viewmodel.patient.university.location}"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:background="#FFFFFF"
+                            android:hint="University location"
+                            android:padding="20dp" />
+
+
                         <RadioGroup
                             android:id="@+id/RGroup"
-                            android:checkedButton="@={viewmodel.checkedButtonId}"
+                            android:checkedButton="@={viewmodel.radioButtonId}"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"

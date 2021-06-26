@@ -150,7 +150,9 @@ public abstract class CraniowakeDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            patientDao.addPatient(new Patient(1L, "TRIAL", "USER", "13.12.1994", "w"));
+//            patientDao.addPatient(new Patient(1L, "TRIAL", "USER", "13.12.1994", "w"));
+            patientDao.addPatient(new Patient(1L, "TRIAL", "USER", "13/12/1994", "w", "HHU", "Duesseldorf"));
+
             return null;
         }
     }

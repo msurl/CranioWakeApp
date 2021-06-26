@@ -57,11 +57,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         setContentView(R.layout.menu_start_screen);
         generateUIElements();
         displayNameOfCurrentPatient();
-//        showDisclaimer();
-    }
-
-    private void showDisclaimer() {
-        CraniowakeDialogBuilder.of(this, R.layout.dialog_disclaimer, R.id.btn_dialog_disclaimer).show();
     }
 
     /**

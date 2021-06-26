@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.Patient;
+import com.app.craniowake.data.model.University;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +44,7 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
             holder.textViewPatientName.setText(concatenatePatientName(currentPatient));
             holder.textViewCaseNumber.setText(String.valueOf(currentPatient.getCaseNumber()));
             holder.textViewPatientBirthDate.setText(currentPatient.getBirthDate());
+            holder.textViewPatientUniversity.setText(currentPatient.getUniversity().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -76,12 +78,14 @@ public class PatientListAdapter extends RecyclerView.Adapter<PatientListAdapter.
         private final TextView textViewPatientName;
         private final TextView textViewCaseNumber;
         private final TextView textViewPatientBirthDate;
+        private final TextView textViewPatientUniversity;
 
         public PatientListHolder(View itemView) {
             super(itemView);
             textViewPatientName = itemView.findViewById(R.id.patient_name_list);
             textViewCaseNumber = itemView.findViewById(R.id.patient_casenumber_list);
-            textViewPatientBirthDate = itemView.findViewById(R.id.patient_creation_id);
+            textViewPatientBirthDate = itemView.findViewById(R.id.patient_birthdate_list);
+            textViewPatientUniversity = itemView.findViewById(R.id.patient_university_list);
         }
     }
 }

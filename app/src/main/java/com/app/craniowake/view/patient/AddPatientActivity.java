@@ -25,12 +25,6 @@ public class AddPatientActivity extends PatientActivity {
     BirthdayPicker birthdayPicker;
     private PatientViewModel patientViewModel;
 
-    private Boolean validCasenumber;
-    private Boolean validFirstname;
-    private Boolean validLastname;
-    private Boolean validBirthdate;
-    private String gender;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,18 +35,12 @@ public class AddPatientActivity extends PatientActivity {
         binding.setLifecycleOwner(this);
         binding.setViewmodel(patientViewModel);
 
-        // TODO: There might be a better solution; priority: LOW
-//        patientViewModel.getValidBirthdate().observe(this, validBirthdate -> this.validBirthdate = validBirthdate);
-//        patientViewModel.getValidCasenumber().observe(this, validCasenumber -> this.validCasenumber = validCasenumber);
-//        patientViewModel.getValidFirstname().observe(this, validFirstname -> this.validFirstname = validFirstname);
-//        patientViewModel.getValidLastname().observe(this, validLastname -> this.validLastname = validLastname);
-//        patientViewModel.getGender().observe(this, gender -> this.gender = gender);
-
-        birthdayPicker = new BirthdayPicker(this, R.id.user_birthday_id ,patientViewModel.getBirthdate());
+        birthdayPicker = new BirthdayPicker(this, R.id.user_birthday_id ,patientViewModel.getPatient());
     }
 
     public void addPatient(View view) {
-        if (isValidInput()) {
+//        if (patientViewModel.getValidInput().getValue()) {
+        if (patientViewModel.isValidInput()) {
             savePatientToDb();
             displayNoteOfDbExport();
         }
@@ -66,23 +54,10 @@ public class AddPatientActivity extends PatientActivity {
      * id is given to Intent
      */
     private void savePatientToDb() {
-        // Option 2
-        long caseNumber = Long.parseLong(patientViewModel.getCaseNumber().getValue());
-        String firstName = patientViewModel.getFirstname().getValue();
-        String lastName = patientViewModel.getLastname().getValue();
-        String birthday = patientViewModel.getBirthdate().getValue();
-//        String gender = patientViewModel.getGender().getValue();
-        String gender = getGender();
+        Patient patient = patientViewModel.addCurrentPatient();
 
-        // Option 1
-//        Patient patient = patientViewModel.getPatientFromViewInput();
-
-        // Option 2
-        Patient patient = new Patient(caseNumber, firstName, lastName, birthday, gender);
         addIntent(patient.getPatientId());
         patientViewModel.addPatient(patient);
-
-        // Option 3 wäre es, direkt innehalb des ViewModels den Patienten zu erstellen, abzuspeichern und dann die ID zurüclzugeben.
     }
 
     /**
@@ -109,24 +84,5 @@ public class AddPatientActivity extends PatientActivity {
         builder.setView(v);
         TextView dialog_info = v.findViewById(R.id.text_dialog_information);
         dialog_info.setText(R.string.the_patient_has_been_added);
-    }
-
-    private boolean isValidInput() {
-        return !TextUtils.isEmpty(patientViewModel.getCaseNumber().getValue())
-                && !TextUtils.isEmpty(patientViewModel.getBirthdate().getValue())
-                && !TextUtils.isEmpty(patientViewModel.getFirstname().getValue())
-                && !TextUtils.isEmpty(patientViewModel.getLastname().getValue())
-                && Long.parseLong(patientViewModel.getCaseNumber().getValue()) <= 3999999999L;
-    }
-
-//    private boolean isValidInput() {
-//        return validBirthdate && validFirstname && validLastname && validCasenumber;
-//    }
-
-    private String getGender() {
-        // The wrapping LiveData Object needs to be observed to return a non-Null object on .getValue()-call
-        patientViewModel.getGender().observe(this, g -> {});
-        return patientViewModel.getGender().getValue();
-//        return patientViewModel.getCheckedButtonId().getValue() == R.id.input_user_male ? "male" : "female";
     }
 }

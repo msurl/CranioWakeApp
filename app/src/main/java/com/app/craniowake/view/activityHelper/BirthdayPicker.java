@@ -10,6 +10,8 @@ import android.widget.EditText;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.app.craniowake.data.model.Patient;
+
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -18,11 +20,11 @@ import java.util.TimeZone;
  */
 public class BirthdayPicker implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
     private final Context context;
-    MutableLiveData<String> birthday;
+    MutableLiveData<Patient> patient;
 
-    public BirthdayPicker(Context context, int editTextViewID, MutableLiveData<String> birthday) {
+    public BirthdayPicker(Context context, int editTextViewID, MutableLiveData<Patient> patient) {
         this.context = context;
-        this.birthday = birthday;
+        this.patient = patient;
         Activity act = (Activity) context;
         View editText = act.findViewById(editTextViewID);
         editText.setOnClickListener(this);
@@ -31,7 +33,10 @@ public class BirthdayPicker implements View.OnClickListener, DatePickerDialog.On
     @Override
     public final void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 //        Vielleicht von setValue() auf postValue() ändern
-        birthday.setValue(formatDate(year, monthOfYear, dayOfMonth));
+        Patient p = patient.getValue();
+
+        p.setBirthDate(formatDate(year, monthOfYear, dayOfMonth));
+        patient.setValue(p);
     }
 
     /**

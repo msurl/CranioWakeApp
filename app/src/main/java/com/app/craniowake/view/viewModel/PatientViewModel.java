@@ -1,13 +1,17 @@
 package com.app.craniowake.view.viewModel;
 
 import android.app.Application;
+import android.os.Build;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MediatorLiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Transformations;
 
@@ -15,7 +19,9 @@ import com.app.craniowake.R;
 import com.app.craniowake.data.model.Patient;
 import com.app.craniowake.data.repositories.PatientRepository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import lombok.Getter;
 
@@ -27,63 +33,30 @@ public class PatientViewModel extends AndroidViewModel {
     private final PatientRepository patientRepository;
     private final LiveData<List<Patient>> allPatients;
 
-    @Getter
-    private MutableLiveData<Integer> checkedButtonId;
-    @Getter
-    private MutableLiveData<String> caseNumber;
-    @Getter
-    private MutableLiveData<String> firstname;
-    @Getter
-    private MutableLiveData<String> lastname;
-    @Getter
-    private MutableLiveData<String> birthdate;
+    private static final Map<String, Integer> radioButtonValuesToIds = new HashMap<String, Integer>() {{
+        put("male", R.id.input_user_male);
+        put("female", R.id.input_user_female);
+        put("no_gender", -1);
+}};
 
     @Getter
-    private LiveData<String> gender;
+    private MutableLiveData<Patient> patient;
 
-    //    private LiveData<Boolean> emptyButton;
-    @Getter
-    private LiveData<Boolean> validCasenumber;
-    @Getter
-    private LiveData<Boolean> validFirstname;
-    @Getter
-    private LiveData<Boolean> validLastname;
-    @Getter
-    private LiveData<Boolean> validBirthdate;
-    @Getter
-    private LiveData<Long> numericalCasenumber;
-
-    private static final String EMPTY_STRING = "";
-    private static final Integer NO_SELECTION_ID = -1;
-    private static final Integer MALE_SELECTION_ID = R.id.input_user_male;
+//    @Getter
+    private LiveData<Boolean> validInput;
 
     public PatientViewModel(@NonNull Application application) {
         super(application);
         patientRepository = new PatientRepository(application);
         allPatients = patientRepository.getAllPatients();
-        checkedButtonId = new MutableLiveData<>(MALE_SELECTION_ID);
-        caseNumber = new MutableLiveData<>(EMPTY_STRING);
-        firstname = new MutableLiveData<>(EMPTY_STRING);
-        lastname = new MutableLiveData<>(EMPTY_STRING);
-        birthdate = new MutableLiveData<>(EMPTY_STRING);
-        gender = Transformations.map(checkedButtonId, id -> {
-            if (id == -1)
-                return "no_gender";
-            if (id == MALE_SELECTION_ID)
-                return "male";
-            else
-                return "female";
-        });
 
-        validFirstname = Transformations.map(firstname, PatientViewModel::nonEmptyString);
-        validLastname = Transformations.map(lastname, PatientViewModel::nonEmptyString);
-        validBirthdate = Transformations.map(birthdate, PatientViewModel::nonEmptyString);
-        validCasenumber = Transformations.map(caseNumber, cn -> {
-            return Long.parseLong(cn) > 3999999999L || !PatientViewModel.nonEmptyString(cn);
-        });
-        numericalCasenumber = Transformations.map(caseNumber, cn -> Long.parseLong(cn));
+        Patient pat = new Patient();
+        patient = new MutableLiveData<>(pat);
 
-
+        validInput = Transformations.map(patient, p -> !TextUtils.isEmpty(p.getFirstname()) &&
+                !TextUtils.isEmpty(p.getLastname()) && !TextUtils.isEmpty(p.getBirthDate()) &&
+                p.getCaseNumber() != null && p.getCaseNumber() <= 3999999999L &&
+                !TextUtils.isEmpty(p.getUniversity().getName()) && !TextUtils.isEmpty(p.getUniversity().getLocation()));
     }
 
     /**
@@ -95,9 +68,10 @@ public class PatientViewModel extends AndroidViewModel {
         patientRepository.insert(patient);
     }
 
-    // Option 1
-    public Patient getPatientFromViewInput() {
-        return new Patient(Long.parseLong(caseNumber.getValue()), firstname.getValue(), lastname.getValue(), birthdate.getValue(), gender.getValue());
+    public Patient addCurrentPatient() {
+        Patient p = patient.getValue();
+        addPatient(p);
+        return p;
     }
 
     /**
@@ -116,13 +90,60 @@ public class PatientViewModel extends AndroidViewModel {
         return allPatients;
     }
 
-//    public boolean isValidInput() {
-//        return validCasenumber.getValue() && validFirstname.getValue() && validLastname.getValue() && validBirthdate.getValue();
-//    }
-
     private static boolean nonEmptyString(String string) {
         return !TextUtils.isEmpty(string);
     }
 
+    public Integer getRadioButtonId() {
+        String sex = patient.getValue().getSex();
 
+        int id = radioButtonValuesToIds.entrySet().stream().filter(vId -> vId.getKey().equals(sex)).
+                mapToInt(Map.Entry::getValue).findAny().orElse(-1);
+
+        return id;
+    }
+
+    public void setRadioButtonId(Integer checkedButtonId) {
+        Patient patient = this.patient.getValue();
+
+        String sex = radioButtonValuesToIds.entrySet().stream().
+        filter(e -> e.getValue().equals(checkedButtonId)).
+        map(Map.Entry::getKey).findAny().orElse(null);
+
+        patient.setSex(sex);
+        this.patient.setValue(patient);
+    }
+
+    public String getCaseNumber() {
+        Long caseNumber = patient.getValue().getCaseNumber();
+
+        if(caseNumber != null)
+            return patient.getValue().getCaseNumber().toString();
+        else
+            return "";
+    }
+
+    public void setCaseNumber(String caseNumber) {
+        Patient p = patient.getValue();
+        Long l;
+        try {
+            l = Long.parseLong(caseNumber);
+        }
+        catch (NumberFormatException | NullPointerException e) {
+            l = null;
+        }
+
+        p.setCaseNumber(l);
+        patient.setValue(p);
+    }
+
+    public boolean isValidInput() {
+        Patient p = patient.getValue();
+
+        return !TextUtils.isEmpty(p.getFirstname()) && !TextUtils.isEmpty(p.getLastname()) &&
+                !TextUtils.isEmpty(p.getBirthDate()) && p.getCaseNumber() != null &&
+                p.getCaseNumber() <= 3999999999L && !TextUtils.isEmpty(p.getUniversity().getName()) &&
+                !TextUtils.isEmpty(p.getUniversity().getLocation());
+
+    }
 }
