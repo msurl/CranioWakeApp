@@ -44,6 +44,8 @@ public class PatientRepository {
         new AddPatientAsyncTask(patientDao).execute(patient);
     }
 
+    public void delete(Patient patient) { new DeletePatientAsyncTask(patientDao).execute(patient); }
+
     /**
      * returns LiveData List of all existing patients in the database
      */
@@ -62,6 +64,25 @@ public class PatientRepository {
         protected Void doInBackground(Patient... patients) {
             try {
                 patientDao.addPatient(patients[0]);
+                return null;
+            } catch (Exception e) {
+                System.out.println("error");
+            }
+            return null;
+        }
+    }
+
+    private static class DeletePatientAsyncTask extends AsyncTask<Patient, Void, Void> {
+        private final PatientDao patientDao;
+
+        private DeletePatientAsyncTask(PatientDao patientDao) {
+            this.patientDao = patientDao;
+        }
+
+        @Override
+        protected Void doInBackground(Patient... patients) {
+            try {
+                patientDao.deletePatients(patients);
                 return null;
             } catch (Exception e) {
                 System.out.println("error");

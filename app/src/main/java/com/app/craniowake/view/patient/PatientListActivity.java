@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.solver.state.State;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.Patient;
 import com.app.craniowake.view.MainActivity;
+import com.app.craniowake.view.OperationActivity;
 import com.app.craniowake.view.activityHelper.IntentHolder;
 import com.app.craniowake.view.activityHelper.PatientListAdapter;
 import com.app.craniowake.view.viewModel.PatientViewModel;
@@ -20,6 +22,8 @@ import com.app.craniowake.view.viewModel.PatientViewModel;
  * Activity to display all existing patients in database
  */
 public class PatientListActivity extends PatientActivity {
+
+//    private PatientViewModel patientViewModel;
 
     /**
      * generates and displays the recyclerview which was implemented in the PatientListAdapter.java class
@@ -53,11 +57,17 @@ public class PatientListActivity extends PatientActivity {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 Patient patient = listAdapter.getPatientByPosition(viewHolder.getAdapterPosition());
-                Intent intent = new Intent(PatientListActivity.this, MainActivity.class);
-                intent.putExtra(IntentHolder.PATIENT_ID, patient.getPatientId());
-                intent.putExtra(IntentHolder.PATIENT_NAME, patient.getLastname() + " " + patient.getFirstname());
-                finish();
-                startActivity(intent);
+
+                if(direction == ItemTouchHelper.RIGHT) {
+                    Intent intent = new Intent(PatientListActivity.this, MainActivity.class);
+                    intent.putExtra(IntentHolder.PATIENT_ID, patient.getPatientId());
+                    intent.putExtra(IntentHolder.PATIENT_NAME, patient.getLastname() + " " + patient.getFirstname());
+                    finish();
+                    startActivity(intent);
+                }
+                else if(direction == ItemTouchHelper.LEFT) {
+                    patientViewModel.deletePatient(patient);
+                }
             }
         }).attachToRecyclerView(recyclerView);
     }

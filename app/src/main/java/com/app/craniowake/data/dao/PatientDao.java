@@ -2,6 +2,7 @@ package com.app.craniowake.data.dao;
 
 import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
@@ -38,4 +39,9 @@ public abstract class PatientDao {
     @Query("SELECT * FROM patient_table WHERE patientId = :id")
     public abstract LiveData<Patient> getById(long id);
 
+    @Delete
+    public abstract void deletePatient(Patient patient);
+
+    @Delete
+    public abstract void deletePatients(Patient... patients);
 }

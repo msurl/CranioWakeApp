@@ -90,6 +90,10 @@ public class PatientViewModel extends AndroidViewModel {
         return allPatients;
     }
 
+    public void deletePatient(Patient patient) {
+        patientRepository.delete(patient);
+    }
+
     private static boolean nonEmptyString(String string) {
         return !TextUtils.isEmpty(string);
     }
