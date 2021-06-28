@@ -2,30 +2,23 @@ package com.app.craniowake.data.model;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
-import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-
-import java.time.LocalDateTime;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import static androidx.room.ForeignKey.CASCADE;
 
-/**
- * Model of the Complication
- */
 @Data
-@Entity(tableName = "complication_table")
+@Entity(tableName = "note_table")
 @NoArgsConstructor
-public class Complication {
+public class Note extends ModelWithCreationTimeStamp{
 
     @PrimaryKey(autoGenerate = true)
-    private long complicationId;
+    private long noteId;
 
-    private LocalDateTime dateTime;
     private String text;
-//    private String context;
+    private String activityName;
 
     @ForeignKey
             (entity = Operation.class,
@@ -35,17 +28,9 @@ public class Complication {
             )
     private long fkOperationId;
 
-    @Deprecated
-    @Ignore
-    public Complication(long fkOperationId) {
-        this.fkOperationId = fkOperationId;
-        this.dateTime = LocalDateTime.now();
-    }
-
-    @Ignore
-    public Complication(long fkOperationId, String text) {
-        this.fkOperationId = fkOperationId;
+    public Note(String text, String activityName, long fkOperationId) {
         this.text = text;
-        this.dateTime = LocalDateTime.now();
+        this.activityName = activityName;
+        this.fkOperationId = fkOperationId;
     }
 }

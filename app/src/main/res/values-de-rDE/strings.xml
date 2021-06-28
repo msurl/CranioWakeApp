@@ -176,4 +176,6 @@
     <string name="delete_patient">"Folgenden Patienten löschen: "</string>
     <string name="yes">Ja</string>
     <string name="no">Nein</string>
+    <string name="insert_comment">Fügen Sie Ihren Kommentar hinzu:</string>
+    <string name="comment_hint">Ihr Kommentar</string>
 </resources>

@@ -199,8 +199,16 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
      */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        displayAddedComplication();
+        if(item.getItemId() == R.id.sos_button)
+            displayAddedComplication();
+        else if(item.getItemId() == R.id.note_button)
+            displayNoteDialog();
         return super.onOptionsItemSelected(item);
+    }
+
+    private void displayNoteDialog() {
+        Dialog note = CraniowakeDialogBuilder.noteDialogWithDataBinding(this, this.getClass().getSimpleName(), getCurrentOperationId());
+        note.show();
     }
 
     private void displayAddedComplication() {

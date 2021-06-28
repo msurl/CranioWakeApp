@@ -16,6 +16,7 @@ import com.app.craniowake.data.dao.ComplicationDao;
 import com.app.craniowake.data.dao.DigitalSpanMemoryDao;
 import com.app.craniowake.data.dao.FourSquareDao;
 import com.app.craniowake.data.dao.LineBisectionDao;
+import com.app.craniowake.data.dao.NoteDao;
 import com.app.craniowake.data.dao.OperationDao;
 import com.app.craniowake.data.dao.PatientDao;
 import com.app.craniowake.data.dao.PictureDao;
@@ -28,6 +29,7 @@ import com.app.craniowake.data.dao.TokenDao;
 import com.app.craniowake.data.dao.TrailMakingDao;
 import com.app.craniowake.data.dao.VerificationDao;
 import com.app.craniowake.data.model.Complication;
+import com.app.craniowake.data.model.Note;
 import com.app.craniowake.data.model.Operation;
 import com.app.craniowake.data.model.Patient;
 import com.app.craniowake.data.model.gameModels.CalculusGame;
@@ -67,7 +69,8 @@ import com.app.craniowake.data.model.stimulation.VerificationTest;
         ThresholdTest.class,
         VerificationTest.class,
         VerificationStimulation.class,
-        ThresholdStimulation.class
+        ThresholdStimulation.class,
+        Note.class
 }
         , version = 2
 )
@@ -137,6 +140,8 @@ public abstract class CraniowakeDatabase extends RoomDatabase {
     public abstract ThresholdDao thresholdDao();
 
     public abstract VerificationDao verificationDao();
+
+    public abstract NoteDao noteDao();
 
     /**
      * A default user is added to the database in a background thread via AsyncTask

@@ -18,17 +18,22 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
+import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.app.craniowake.R;
 import com.app.craniowake.data.model.Complication;
 import com.app.craniowake.data.model.Patient;
 import com.app.craniowake.databinding.DialogComplicationBinding;
+import com.app.craniowake.databinding.DialogNoteBinding;
 import com.app.craniowake.functional.VoidFunction;
 import com.app.craniowake.generated.callback.OnClickListener;
 import com.app.craniowake.view.OperationActivity;
 import com.app.craniowake.view.viewModel.ComplicationViewModel;
+import com.app.craniowake.view.viewModel.NoteViewModel;
 import com.app.craniowake.view.viewModel.PatientViewModel;
+import com.app.craniowake.view.viewModel.WithOperationIdViewModel;
 
 import java.util.function.Function;
 
@@ -82,6 +87,22 @@ public class CraniowakeDialogBuilder {
         return dialog;
     }
 
+    public static Dialog noteDialogWithDataBinding(AppCompatActivity activity, String activityName, Long operationId) {
+        final NoteViewModel viewModel = new ViewModelProvider(activity).get(NoteViewModel.class);
+        viewModel.setOperationId(operationId);
+        DialogNoteBinding binding = DataBindingUtil.inflate(LayoutInflater.from(activity), R.layout.dialog_note, null, false);
+        binding.setViewmodel(viewModel);
+
+        NoteDialog dialog = new NoteDialog(activity, () -> viewModel.addNote(activityName));
+
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setCancelable(false);
+        dialog.setContentView(binding.getRoot());
+
+        return dialog;
+    }
+
+
 //    private static class ComplicationDialog extends Dialog{
 //
 //        VoidFunction executeOnCloseButtonClick;
@@ -133,6 +154,17 @@ public class CraniowakeDialogBuilder {
 
         public ComplicationDialog(@NonNull Context context, VoidFunction function) {
             super(context, R.id.btn_dialog_complication, function);
+
+            executeOnCloseButtonClick = function;
+        }
+    }
+
+    private static class NoteDialog extends DialogWithVoidFunction{
+
+        VoidFunction executeOnCloseButtonClick;
+
+        public NoteDialog(@NonNull Context context, VoidFunction function) {
+            super(context, R.id.btn_dialog_note, function);
 
             executeOnCloseButtonClick = function;
         }

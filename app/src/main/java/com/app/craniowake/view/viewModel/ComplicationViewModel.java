@@ -16,15 +16,12 @@ import lombok.Setter;
 /**
  * stores and manages UI-related data of a Complication and is used as an abstraction Layer
  */
-public class ComplicationViewModel extends AndroidViewModel {
+public class ComplicationViewModel extends WithOperationIdViewModel {
 
     private final ComplicationRepository complicationRepository;
 
     @Getter
     private MutableLiveData<String> text;
-
-    @Setter
-    private Long operationId;
 
     public ComplicationViewModel(@NonNull Application application) {
         super(application);

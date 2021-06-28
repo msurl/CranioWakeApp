@@ -219,4 +219,6 @@
     <string name="complication_note_hint">Description of the complication</string>
     <string name="university">University:</string>
     <string name="delete_patient">"Delete patient with name: "</string>
+    <string name="insert_comment" >Add comment:</string>
+    <string name="comment_hint">Your comment</string>
 </resources>
