@@ -34,6 +34,7 @@ import com.app.craniowake.view.games.ReadActivity;
 import com.app.craniowake.view.games.StroopActivity;
 import com.app.craniowake.view.games.TokenActivity;
 import com.app.craniowake.view.games.TrailMakingActivity;
+import com.app.craniowake.view.stimulation.ClinicalTestActivity;
 import com.app.craniowake.view.stimulation.ThreshholdTestActivity;
 import com.app.craniowake.view.stimulation.VerificationTestActivity;
 import com.app.craniowake.view.viewModel.ComplicationViewModel;
@@ -232,6 +233,12 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
         Intent intent = new Intent(this, VerificationTestActivity.class);
         startActivity(intent);
     }
+
+    public void startClinicalTest(View view) {
+        Intent intent = new Intent(this, ClinicalTestActivity.class);
+        startActivity(intent);
+    }
+
 
     protected void initializeToolbar(int id) {
         Toolbar toolbar = findViewById(id);

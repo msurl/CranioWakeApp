@@ -41,6 +41,7 @@ import com.app.craniowake.data.model.gameModels.PpttGame;
 import com.app.craniowake.data.model.gameModels.ReactionGame;
 import com.app.craniowake.data.model.gameModels.ReadGame;
 import com.app.craniowake.data.model.gameModels.StroopGame;
+import com.app.craniowake.data.model.stimulation.ClinicalTest;
 import com.app.craniowake.data.model.stimulation.ThresholdStimulation;
 import com.app.craniowake.data.model.stimulation.ThresholdTest;
 import com.app.craniowake.data.model.gameModels.TokenGame;
@@ -70,6 +71,7 @@ import com.app.craniowake.data.model.stimulation.VerificationTest;
         VerificationTest.class,
         VerificationStimulation.class,
         ThresholdStimulation.class,
+        ClinicalTest.class,
         Note.class
 }
         , version = 2
@@ -140,6 +142,8 @@ public abstract class CraniowakeDatabase extends RoomDatabase {
     public abstract ThresholdDao thresholdDao();
 
     public abstract VerificationDao verificationDao();
+
+    public abstract ClinicalTestDao clinicalTestDao();
 
     public abstract NoteDao noteDao();
 
