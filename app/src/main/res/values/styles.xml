@@ -11,4 +11,22 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="greenSensoryButton" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:background">@drawable/green_checkbox</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="redSensoryButton">
+        <item name="android:background">@drawable/red_checkbox</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="blueSensoryButton">
+        <item name="android:background">@drawable/blue_checkbox</item>
+        <item name="android:button">@null</item>
+    </style>
+    <style name="yellowSensoryButton">
+        <item name="android:background">@drawable/yellow_checkbox</item>
+        <item name="android:button">@null</item>
+    </style>
+
+
 </resources>

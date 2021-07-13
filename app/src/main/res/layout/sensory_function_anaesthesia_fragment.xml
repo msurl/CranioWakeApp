@@ -1,0 +1,1262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.craniowake.view.viewModel.ClinicalTestViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.stimulation.SensoryFunctionAnaesthesiaFragment">
+
+        <ImageView
+            android:id="@+id/imageView_sensory_function_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sensory_function_blank"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_feet_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.82"
+            app:layout_constraintStart_toStartOf="@id/imageView_sensory_function_anaesthesia" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_feet_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.285"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_feet_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.305"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_feet_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_feet_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"/>
+
+        <CheckBox
+            android:id="@+id/front_left_outer_feet_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_feet_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.feetOuter}" />
+
+        <CheckBox
+            android:id="@+id/front_left_inner_feet_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_feet_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.feetInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_outer_feet_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_feet_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.feetOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_inner_feet_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_feet_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.feetInner}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_feet_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.655"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_feet_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.675"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_feet_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_feet_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.72"/>
+
+        <CheckBox
+            android:id="@+id/back_left_outer_feet_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_feet_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.feetOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_inner_feet_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_feet_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.feetInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_outer_feet_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_feet_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.feetOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_inner_feet_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_feet_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.feetInner}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7"
+            app:layout_constraintStart_toStartOf="@id/imageView_sensory_function_anaesthesia" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_lowerLeg_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.31"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_lowerLeg_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_lowerLeg_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.295"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_lowerLeg_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.345"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_lowerLeg_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.28"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_lowerLeg_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.36"/>
+
+        <CheckBox
+            android:id="@+id/front_right_lowerLeg_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_lowerLeg_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.lowerLegInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_lowerLeg_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_lowerLeg_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.lowerLegInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_lowerLeg_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_lowerLeg_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.lowerLegMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_lowerLeg_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_lowerLeg_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.lowerLegMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_lowerLeg_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_lowerLeg_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.lowerLegOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_lowerLeg_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_lowerLeg_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.lowerLegOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_lowerLeg_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.675" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_lowerLeg_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.70" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_lowerLeg_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_lowerLeg_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.715" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_lowerLeg_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.645" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_lowerLeg_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.73" />
+
+        <CheckBox
+            android:id="@+id/back_right_lowerLeg_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_lowerLeg_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.lowerLegInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_lowerLeg_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_lowerLeg_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.lowerLegInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_lowerLeg_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_lowerLeg_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.lowerLegMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_lowerLeg_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_lowerLeg_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.lowerLegMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_lowerLeg_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_lowerLeg_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.lowerLegOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_lowerLeg_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_lowerLeg_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.lowerLegOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_thigh_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintStart_toStartOf="@id/imageView_sensory_function_anaesthesia" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_thigh_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.305"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_thigh_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.335"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_thigh_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.285"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_thigh_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.355"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_thigh_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.265"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_thigh_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.375"/>
+
+        <CheckBox
+            android:id="@+id/front_right_thigh_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_thigh_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.thighInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_thigh_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_thigh_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.thighInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_thigh_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_thigh_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.thighMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_thigh_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_thigh_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.thighMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_thigh_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_thigh_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.thighOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_thigh_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_thigh_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.thighOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_thigh_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.675"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_thigh_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_thigh_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.655"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_thigh_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.72"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_thigh_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.635"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_thigh_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.74"/>
+
+        <CheckBox
+            android:id="@+id/back_right_thigh_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_thigh_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.thighInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_thigh_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_thigh_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.thighInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_thigh_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_thigh_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.thighMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_thigh_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_thigh_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.thighMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_thigh_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_thigh_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.thighOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_thigh_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_thigh_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.thighOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_hand_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.525"
+            app:layout_constraintStart_toStartOf="@id/imageView_sensory_function_anaesthesia" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_hand_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.21"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_hand_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.235"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_hand_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.41"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_hand_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.435"/>
+
+        <CheckBox
+            android:id="@+id/front_left_outer_hand_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_hand_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.handOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_inner_hand_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_hand_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.handInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_outer_hand_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_hand_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.handOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_inner_hand_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_hand_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.handInner}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_hand_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.575"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_hand_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_hand_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.77"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_hand_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.795"/>
+
+        <CheckBox
+            android:id="@+id/back_left_outer_hand_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_hand_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.handOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_inner_hand_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_hand_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.handInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_outer_hand_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_hand_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.handOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_inner_hand_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_hand_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.handInner}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_forearm_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4"
+            app:layout_constraintStart_toStartOf="@id/imageView_sensory_function_anaesthesia" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_forearm_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.26"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_forearm_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.39"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_forearm_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.245"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_forearm_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.405"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_forearm_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.23"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_forearm_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.42"/>
+
+        <CheckBox
+            android:id="@+id/front_right_forearm_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_forearm_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.forearmInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_forearm_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_forearm_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.forearmInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_forearm_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_forearm_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.forearmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_forearm_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_forearm_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.forearmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_forearm_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_forearm_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.forearmOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_forearm_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_forearm_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.forearmOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_forearm_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.63"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_forearm_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.755"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_forearm_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.615"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_forearm_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.77"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_forearm_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_forearm_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.785"/>
+
+        <CheckBox
+            android:id="@+id/back_right_forearm_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_forearm_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.forearmInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_forearm_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_forearm_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.forearmInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_forearm_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_forearm_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.forearmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_forearm_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_forearm_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.forearmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_forearm_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_forearm_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.forearmOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_forearm_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_forearm_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.forearmOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_upperArm_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.26"
+            app:layout_constraintStart_toStartOf="@id/imageView_sensory_function_anaesthesia" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_upperArm_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.275"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_upperArm_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.375"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_upperArm_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.255"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_upperArm_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.395"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_upperArm_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.235"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_upperArm_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.415"/>
+
+        <CheckBox
+            android:id="@+id/front_right_upperArm_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_upperArm_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.upperArmInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_upperArm_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_upperArm_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.upperArmInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_upperArm_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_upperArm_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.upperArmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_upperArm_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_upperArm_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.upperArmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_upperArm_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_upperArm_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaRight.upperArmOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_upperArm_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_upperArm_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontAnaesthesiaLeft.upperArmOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_upperArm_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_upperArm_inner_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.73"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_upperArm_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.63"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_upperArm_middle_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_upperArm_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.61"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_upperArm_outer_anaesthesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.77"/>
+
+        <CheckBox
+            android:id="@+id/back_right_upperArm_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_upperArm_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.upperArmInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_upperArm_inner_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_upperArm_inner_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.upperArmInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_upperArm_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_upperArm_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.upperArmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_upperArm_middle_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_upperArm_middle_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.upperArmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_upperArm_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_upperArm_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaRight.upperArmOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_upperArm_outer_anaesthesia"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_upperArm_outer_anaesthesia"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm_anaesthesia"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backAnaesthesiaLeft.upperArmOuter}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,442 +1,453 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.stimulation.MotorFunctionFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.craniowake.view.viewModel.ClinicalTestViewModel" />
+    </data>
 
-    <RadioGroup
-        android:id="@+id/radioGroup_latent_arm_palsy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup_latent_leg_palsy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/latent_arm_palsy_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/latent_arm_palsy" />
-
-        <RadioButton
-            android:id="@+id/latent_arm_palsy_yes_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/yes" />
-
-        <RadioButton
-            android:id="@+id/latent_arm_palsy_no_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/no" />
-
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/radioGroup_latent_leg_palsy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/upper_extremity_right"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup_latent_arm_palsy">
-
-        <TextView
-            android:id="@+id/latent_leg_palsy_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/latent_leg_palsy" />
-
-        <RadioButton
-            android:id="@+id/latent_leg_palsy_yes_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/yes" />
-
-        <RadioButton
-            android:id="@+id/latent_leg_palsy_no_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/no" />
-
-    </RadioGroup>
-
-    <View
-        android:id="@+id/divider"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_weight="1"
-        android:background="?android:attr/listDivider"
-        android:padding="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/radioGroup_latent_leg_palsy" />
+        android:layout_height="match_parent"
+        tools:context=".view.stimulation.MotorFunctionFragment">
 
-    <LinearLayout
-        android:id="@+id/upper_extremity_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/lower_extremity_right"
-        app:layout_constraintEnd_toStartOf="@id/upper_extremity_left"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider">
 
-        <TextView
-            android:id="@+id/upper_extremity_right_text"
-            android:layout_width="match_parent"
+        <RadioGroup
+            android:id="@+id/radioGroup_latent_arm_palsy"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/upper_extremity_right"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:orientation="horizontal"
+            android:checkedButton="@={viewmodel.motorFunctionLatentArmPalsyRadioButtonId}"
+            app:layout_constraintBottom_toTopOf="@+id/radioGroup_latent_leg_palsy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/shoulder_abduction_right_text"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/latent_arm_palsy_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/latent_arm_palsy" />
+
+            <RadioButton
+                android:id="@+id/latent_arm_palsy_yes_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/latent_arm_palsy_no_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroup_latent_leg_palsy"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/shoulder_abduction" />
+            android:orientation="horizontal"
+            android:checkedButton="@={viewmodel.motorFunctionLatentLegPalsyRadioButtonId}"
+            app:layout_constraintBottom_toTopOf="@+id/upper_extremity_right"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup_latent_arm_palsy">
 
-        <RatingBar
-            android:id="@+id/shoulder_abduction_right_rating_bar"
+            <TextView
+                android:id="@+id/latent_leg_palsy_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/latent_leg_palsy" />
+
+            <RadioButton
+                android:id="@+id/latent_leg_palsy_yes_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/yes" />
+
+            <RadioButton
+                android:id="@+id/latent_leg_palsy_no_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/no" />
+
+        </RadioGroup>
+
+        <View
+            android:id="@+id/divider"
             android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            android:background="?android:attr/listDivider"
+            android:padding="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup_latent_leg_palsy" />
+
+        <LinearLayout
+            android:id="@+id/upper_extremity_right"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/lower_extremity_right"
+            app:layout_constraintEnd_toStartOf="@id/upper_extremity_left"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider">
 
-        <TextView
-            android:id="@+id/elbow_flexion_right"
-            android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/upper_extremity_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/upper_extremity_right"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/shoulder_abduction_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shoulder_abduction" />
+
+            <RatingBar
+                android:id="@+id/shoulder_abduction_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityRightShoulderAbduction}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/elbow_flexion_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/elbow_flexion" />
+
+            <RatingBar
+                android:id="@+id/elbow_flexion_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityRightElbowFlexion}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/elbow_extension_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/elbow_extension" />
+
+            <RatingBar
+                android:id="@+id/elbow_extension_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityRightElbowExtension}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/finger_extension_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finger_extension" />
+
+            <RatingBar
+                android:id="@+id/finger_extension_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityRightFingerExtension}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/finger_flexion_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finger_flexion" />
+
+            <RatingBar
+                android:id="@+id/finger_flexion_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityRightFingerFlexion}"
+                android:stepSize="1.0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/upper_extremity_left"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/elbow_flexion" />
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/lower_extremity_left"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/upper_extremity_right"
+            app:layout_constraintTop_toBottomOf="@+id/divider">
 
-        <RatingBar
-            android:id="@+id/elbow_flexion_right_rating_bar"
-            android:layout_width="match_parent"
+
+            <TextView
+                android:id="@+id/upper_extremity_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/upper_extremity_left"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/shoulder_abduction_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/shoulder_abduction" />
+
+            <RatingBar
+                android:id="@+id/shoulder_abduction_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityLeftShoulderAbduction}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/elbow_flexion_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/elbow_flexion" />
+
+            <RatingBar
+                android:id="@+id/elbow_flexion_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityLeftElbowFlexion}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/elbow_extension_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/elbow_extension" />
+
+            <RatingBar
+                android:id="@+id/elbow_extension_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityLeftElbowExtension}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/finger_extension_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finger_extension" />
+
+            <RatingBar
+                android:id="@+id/finger_extension_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityLeftFingerExtension}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/finger_flexion_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/finger_flexion" />
+
+            <RatingBar
+                android:id="@+id/finger_flexion_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.upperExtremityLeftFingerFlexion}"
+                android:stepSize="1.0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lower_extremity_right"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/lower_extremity_left"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/upper_extremity_right">
 
-        <TextView
-            android:id="@+id/elbow_extension_right_text"
-            android:layout_width="match_parent"
+
+            <TextView
+                android:id="@+id/lower_extremity_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lower_extremity_right"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+            <TextView
+                android:id="@+id/hip_flexion_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hip_flexion" />
+
+            <RatingBar
+                android:id="@+id/hip_flexion_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityRightHipFlexion}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/knee_flexion_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/knee_flexion" />
+
+            <RatingBar
+                android:id="@+id/knee_flexion_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityRightKneeFlexion}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/knee_extension_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/knee_extension" />
+
+            <RatingBar
+                android:id="@+id/knee_extension_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityRightKneeExtension}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/ankle_dorsiflexion_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ankle_dorsiflexion" />
+
+            <RatingBar
+                android:id="@+id/ankle_dorsiflexion_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityRightAnkleDorsiflexion}"
+                android:stepSize="1.0" />
+
+            <TextView
+                android:id="@+id/ankle_plantarflexion_right_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ankle_plantarflexion" />
+
+            <RatingBar
+                android:id="@+id/ankle_plantarflexion_right_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityRightAnklePlantarflexion}"
+                android:stepSize="1.0" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lower_extremity_left"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/elbow_extension" />
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@id/lower_extremity_right"
+            app:layout_constraintTop_toBottomOf="@+id/upper_extremity_left">
 
-        <RatingBar
-            android:id="@+id/elbow_extension_right_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
+            <TextView
+                android:id="@+id/lower_extremity_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/lower_extremity_left"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
-        <TextView
-            android:id="@+id/finger_extension_right_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/finger_extension" />
+            <TextView
+                android:id="@+id/hip_flexion_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hip_flexion" />
 
-        <RatingBar
-            android:id="@+id/finger_extension_right_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
+            <RatingBar
+                android:id="@+id/hip_flexion_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityLeftHipFlexion}"
+                android:stepSize="1.0" />
 
-        <TextView
-            android:id="@+id/finger_flexion_right_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/finger_flexion" />
+            <TextView
+                android:id="@+id/knee_flexion_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/knee_flexion" />
 
-        <RatingBar
-            android:id="@+id/finger_flexion_right_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-    </LinearLayout>
+            <RatingBar
+                android:id="@+id/knee_flexion_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityLeftKneeFlexion}"
+                android:stepSize="1.0" />
 
-    <LinearLayout
-        android:id="@+id/upper_extremity_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/lower_extremity_left"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/upper_extremity_right"
-        app:layout_constraintTop_toBottomOf="@+id/divider">
+            <TextView
+                android:id="@+id/knee_extension_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/knee_extension" />
 
+            <RatingBar
+                android:id="@+id/knee_extension_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityLeftKneeExtension}"
+                android:stepSize="1.0" />
 
-        <TextView
-            android:id="@+id/upper_extremity_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/upper_extremity_left"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            <TextView
+                android:id="@+id/ankle_dorsiflexion_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ankle_dorsiflexion" />
 
-        <TextView
-            android:id="@+id/shoulder_abduction_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/shoulder_abduction" />
+            <RatingBar
+                android:id="@+id/ankle_dorsiflexion_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityLeftAnkleDorsiflexion}"
+                android:stepSize="1.0" />
 
-        <RatingBar
-            android:id="@+id/shoulder_abduction_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
+            <TextView
+                android:id="@+id/ankle_plantarflexion_left_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ankle_plantarflexion" />
 
-        <TextView
-            android:id="@+id/elbow_flexion_left"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/elbow_flexion" />
-
-        <RatingBar
-            android:id="@+id/elbow_flexion_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/elbow_extension_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/elbow_extension" />
-
-        <RatingBar
-            android:id="@+id/elbow_extension_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/finger_extension_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/finger_extension" />
-
-        <RatingBar
-            android:id="@+id/finger_extension_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/finger_flexion_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/finger_flexion" />
-
-        <RatingBar
-            android:id="@+id/finger_flexion_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lower_extremity_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/lower_extremity_left"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/upper_extremity_right">
-
-
-        <TextView
-            android:id="@+id/lower_extremity_right_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lower_extremity_right"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:id="@+id/hip_flexion_right_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/hip_flexion" />
-
-        <RatingBar
-            android:id="@+id/hip_flexion_right_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/knee_flexion_right"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/knee_flexion" />
-
-        <RatingBar
-            android:id="@+id/knee_flexion_right_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/knee_extension_right_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/knee_extension" />
-
-        <RatingBar
-            android:id="@+id/knee_extension_right_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/ankle_dorsiflexion_right_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ankle_dorsiflexion" />
-
-        <RatingBar
-            android:id="@+id/ankle_dorsiflexion_right_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/ankle_plantarflexion_right_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ankle_plantarflexion" />
-
-        <RatingBar
-            android:id="@+id/ankle_plantarflexion_right_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/lower_extremity_left"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@id/lower_extremity_right"
-        app:layout_constraintTop_toBottomOf="@+id/upper_extremity_left">
-
-        <TextView
-            android:id="@+id/lower_extremity_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/lower_extremity_left"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
-
-        <TextView
-            android:id="@+id/hip_flexion_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/hip_flexion" />
-
-        <RatingBar
-            android:id="@+id/hip_flexion_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/knee_flexion_left"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/knee_flexion" />
-
-        <RatingBar
-            android:id="@+id/knee_flexion_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/knee_extension_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/knee_extension" />
-
-        <RatingBar
-            android:id="@+id/knee_extension_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/ankle_dorsiflexion_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ankle_dorsiflexion" />
-
-        <RatingBar
-            android:id="@+id/ankle_dorsiflexion_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-
-        <TextView
-            android:id="@+id/ankle_plantarflexion_left_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ankle_plantarflexion" />
-
-        <RatingBar
-            android:id="@+id/ankle_plantarflexion_left_rating_bar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="0.0"
-            android:stepSize="1.0" />
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <RatingBar
+                android:id="@+id/ankle_plantarflexion_left_rating_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="@={viewmodel.clinicalTest.motorFunction.lowerExtremityLeftAnklePlantarflexion}"
+                android:stepSize="1.0" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,1262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.app.craniowake.view.viewModel.ClinicalTestViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.stimulation.SensoryFunctionFragment">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sensory_function_blank"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_feet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.82"
+            app:layout_constraintStart_toStartOf="@id/imageView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_feet_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.285"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_feet_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.305"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_feet_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_feet_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35"/>
+
+        <CheckBox
+            android:id="@+id/front_left_outer_feet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_feet_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.feetOuter}" />
+
+        <CheckBox
+            android:id="@+id/front_left_inner_feet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_feet_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.feetInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_outer_feet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_feet_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.feetOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_inner_feet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_feet_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.feetInner}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_feet_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.655"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_feet_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.675"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_feet_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_feet_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.72"/>
+
+        <CheckBox
+            android:id="@+id/back_left_outer_feet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_feet_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.feetOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_inner_feet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_feet_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.feetInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_outer_feet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_feet_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.feetOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_inner_feet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_feet_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_feet"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.feetInner}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_lowerLeg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.7"
+            app:layout_constraintStart_toStartOf="@id/imageView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_lowerLeg_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.31"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_lowerLeg_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_lowerLeg_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.295"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_lowerLeg_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.345"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_lowerLeg_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.28"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_lowerLeg_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.36"/>
+
+        <CheckBox
+            android:id="@+id/front_right_lowerLeg_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_lowerLeg_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.lowerLegInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_lowerLeg_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_lowerLeg_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.lowerLegInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_lowerLeg_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_lowerLeg_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.lowerLegMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_lowerLeg_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_lowerLeg_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.lowerLegMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_lowerLeg_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_lowerLeg_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.lowerLegOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_lowerLeg_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_lowerLeg_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.lowerLegOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_lowerLeg_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.675" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_lowerLeg_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.70" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_lowerLeg_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.66" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_lowerLeg_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.715" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_lowerLeg_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.645" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_lowerLeg_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.73" />
+
+        <CheckBox
+            android:id="@+id/back_right_lowerLeg_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_lowerLeg_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.lowerLegInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_lowerLeg_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_lowerLeg_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.lowerLegInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_lowerLeg_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_lowerLeg_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.lowerLegMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_lowerLeg_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_lowerLeg_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.lowerLegMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_lowerLeg_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_lowerLeg_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.lowerLegOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_lowerLeg_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_lowerLeg_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_lowerLeg"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.lowerLegOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_thigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5"
+            app:layout_constraintStart_toStartOf="@id/imageView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_thigh_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.305"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_thigh_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.335"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_thigh_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.285"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_thigh_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.355"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_thigh_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.265"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_thigh_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.375"/>
+
+        <CheckBox
+            android:id="@+id/front_right_thigh_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_thigh_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.thighInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_thigh_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_thigh_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.thighInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_thigh_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_thigh_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.thighMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_thigh_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_thigh_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.thighMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_thigh_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_thigh_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.thighOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_thigh_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_thigh_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.thighOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_thigh_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.675"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_thigh_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_thigh_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.655"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_thigh_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.72"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_thigh_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.635"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_thigh_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.74"/>
+
+        <CheckBox
+            android:id="@+id/back_right_thigh_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_thigh_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.thighInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_thigh_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_thigh_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.thighInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_thigh_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_thigh_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.thighMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_thigh_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_thigh_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.thighMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_thigh_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_thigh_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.thighOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_thigh_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.15"
+            app:layout_constraintWidth_percent="0.02"
+            android:rotation="-5"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_thigh_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_thigh"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.thighOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_hand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.525"
+            app:layout_constraintStart_toStartOf="@id/imageView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_hand_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.21"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_hand_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.235"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_hand_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.41"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_hand_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.435"/>
+
+        <CheckBox
+            android:id="@+id/front_left_outer_hand"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_hand_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.handOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_inner_hand"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_hand_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.handInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_outer_hand"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_hand_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.handOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_inner_hand"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_hand_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.handInner}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_hand_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.575"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_hand_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_hand_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.77"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_hand_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.795"/>
+
+        <CheckBox
+            android:id="@+id/back_left_outer_hand"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_hand_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.handOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_inner_hand"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_hand_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.handInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_outer_hand"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_hand_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.handOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_inner_hand"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.055"
+            app:layout_constraintWidth_percent="0.025"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_hand_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_hand"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.handInner}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_forearm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.4"
+            app:layout_constraintStart_toStartOf="@id/imageView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_forearm_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.26"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_forearm_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.39"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_forearm_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.245"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_forearm_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.405"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_forearm_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.23"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_forearm_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.42"/>
+
+        <CheckBox
+            android:id="@+id/front_right_forearm_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_forearm_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.forearmInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_forearm_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_forearm_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.forearmInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_forearm_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_forearm_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.forearmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_forearm_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_forearm_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.forearmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_forearm_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_forearm_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.forearmOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_forearm_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_forearm_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.forearmOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_forearm_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.63"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_forearm_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.755"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_forearm_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.615"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_forearm_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.77"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_forearm_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.6"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_forearm_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.785"/>
+
+        <CheckBox
+            android:id="@+id/back_right_forearm_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_forearm_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.forearmInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_forearm_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_forearm_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.forearmInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_forearm_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_forearm_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.forearmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_forearm_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_forearm_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.forearmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_forearm_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="-15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_forearm_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.forearmOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_forearm_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintWidth_percent="0.015"
+            android:rotation="15"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_forearm_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_forearm"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.forearmOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_horizontal_upperArm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.26"
+            app:layout_constraintStart_toStartOf="@id/imageView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_upperArm_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.275"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_upperArm_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.375"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_upperArm_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.255"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_upperArm_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.395"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_left_upperArm_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.235"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_front_right_upperArm_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.415"/>
+
+        <CheckBox
+            android:id="@+id/front_right_upperArm_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_upperArm_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.upperArmInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_upperArm_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_upperArm_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.upperArmInner}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_upperArm_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_upperArm_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.upperArmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_upperArm_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_upperArm_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/yellowSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.upperArmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/front_right_upperArm_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_right_upperArm_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainRight.upperArmOuter}"/>
+
+        <CheckBox
+            android:id="@+id/front_left_upperArm_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_front_left_upperArm_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.frontPainLeft.upperArmOuter}"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_upperArm_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_upperArm_inner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.73"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_upperArm_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.63"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_upperArm_middle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_left_upperArm_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.61"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_back_right_upperArm_outer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.77"/>
+
+        <CheckBox
+            android:id="@+id/back_right_upperArm_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_upperArm_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.upperArmInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_upperArm_inner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_upperArm_inner"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/redSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.upperArmInner}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_upperArm_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_upperArm_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.upperArmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_upperArm_middle"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_upperArm_middle"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/blueSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.upperArmMiddle}"/>
+
+        <CheckBox
+            android:id="@+id/back_right_upperArm_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_right_upperArm_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainRight.upperArmOuter}"/>
+
+        <CheckBox
+            android:id="@+id/back_left_upperArm_outer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.125"
+            app:layout_constraintWidth_percent="0.02"
+            app:layout_constraintStart_toStartOf="@+id/guideline_vertical_back_left_upperArm_outer"
+            app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_upperArm"
+            style="@style/greenSensoryButton"
+            android:checked="@={viewmodel.clinicalTest.backPainLeft.upperArmOuter}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

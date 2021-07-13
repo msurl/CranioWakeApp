@@ -12,33 +12,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.app.craniowake.R;
-import com.app.craniowake.databinding.MotorFunctionFragmentBinding;
+import com.app.craniowake.databinding.SensoryFunctionParaesthesiaFragmentBinding;
 import com.app.craniowake.view.viewModel.ClinicalTestViewModel;
-import com.app.craniowake.view.viewModel.MotorFunctionViewModel;
 
-public class MotorFunctionFragment extends Fragment {
+public class SensoryFunctionParaesthesiaFragment extends Fragment {
 
     private ClinicalTestViewModel viewModel;
 
-    public static MotorFunctionFragment newInstance() {
-        return new MotorFunctionFragment();
+    public static SensoryFunctionParaesthesiaFragment newInstance() {
+        return new SensoryFunctionParaesthesiaFragment();
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        MotorFunctionFragmentBinding binding = MotorFunctionFragmentBinding.inflate(inflater, container, false);
+        SensoryFunctionParaesthesiaFragmentBinding binding = SensoryFunctionParaesthesiaFragmentBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(requireActivity()).get(ClinicalTestViewModel.class);
         binding.setViewmodel(viewModel);
 
         return binding.getRoot();
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        // TODO: Use the ViewModel
-    }
-
 }

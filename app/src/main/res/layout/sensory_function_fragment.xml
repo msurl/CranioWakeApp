@@ -1,45 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".view.stimulation.SensoryFunctionFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <RadioGroup
-        android:id="@+id/sensory_function_radio_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="viewmodel"-->
+<!--            type="com.app.craniowake.view.viewModel.ClinicalTestViewModel" />-->
+<!--    </data>-->
 
-        <RadioButton
-            android:id="@+id/pain"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".view.stimulation.SensoryFunctionFragment">
+
+        <RadioGroup
+            android:id="@+id/sensory_function_radio_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/pain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pain" />
+
+            <RadioButton
+                android:id="@+id/paraesthesia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/paraesthesia" />
+
+            <RadioButton
+                android:id="@+id/anaesthesia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/anaesthesia" />
+
+        </RadioGroup>
+
+        <FrameLayout
+            android:id="@+id/sensory_function_inner_fragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pain" />
+            app:layout_constraintTop_toBottomOf="@id/sensory_function_radio_group"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></FrameLayout>
 
-        <RadioButton
-            android:id="@+id/paraesthesia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/paraesthesia" />
-
-        <RadioButton
-            android:id="@+id/anaesthesia"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/anaesthesia" />
-    </RadioGroup>
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/sensory_function"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

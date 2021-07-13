@@ -87,6 +87,24 @@
                 android:textSize="28sp"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/clinical_test"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="#D64F4C"
+                android:gravity="center"
+                android:onClick="startClinicalTest"
+                android:text="@string/clinical_test"
+                android:textColor="#FFFFFF"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+
         </LinearLayout>
 
         <LinearLayout

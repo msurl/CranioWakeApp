@@ -108,6 +108,10 @@
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
         <activity
+            android:name=".view.stimulation.ClinicalTestActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="landscape" />
+        <activity
             android:name=".view.stimulation.StimulationActivity"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="landscape" />
