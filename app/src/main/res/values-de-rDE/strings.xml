@@ -156,7 +156,7 @@
     <string name="file_export">Datei wurde erfolgreich exportiert</string>
 
 
-    <string name="select_brain_area">SELECT BRAIN AREA:</string>
+    <string name="select_brain_area">HIRNAREAL AUSWÄHLEN:</string>
     <string name="motor_function">Motor Function</string>
     <string name="monopolar">monopolar</string>
     <string name="bipolar">bipolar</string>
@@ -164,8 +164,8 @@
     <string name="cortical">cortical</string>
     <string name="subcortical">subcortical</string> -->
     <string name="stimulation">stimulation</string>
-    <string name="export_csv">export csv</string>
-    <string name="patient_list">patient list</string>
+    <string name="export_csv">Exportiere CSV</string>
+    <string name="patient_list">Patientenliste</string>
     <string name="user_management">User management</string>
     <string name="export">Export</string>
     <string name="duesseldorf_read_game_text">"Düsseldorf\n\nDüsseldorf ist die Hauptstadt des Landes Nordrhein-Westfalen. Die Messestadt ist Sitz einer Vielzahl börsennotierter Unternehmen, darunter die Henkel AG. Düsseldorf ist der umsatzstärkste deutsche Standort für Wirtschaftsprüfung, Unternehmens- und Rechtsberatung, Werbung und Kleidermode sowie ein wichtiger Banken- (und Industriestandort). Der Der Düsseldorfer Flughafen ist das interkontinentale Drehkreuz Nordrhein-Westfalens. "</string>

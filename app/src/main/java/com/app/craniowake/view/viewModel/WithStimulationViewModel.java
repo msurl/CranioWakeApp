@@ -29,13 +29,13 @@ public class WithStimulationViewModel extends AndroidViewModel {
     private boolean stimulated;
 
     private final String cortical;
-    private final String epidural;
+    private final String subcortical;
 
     public WithStimulationViewModel(@NonNull Application application) {
         super(application);
 
         cortical = application.getString(R.string.cortical);
-        epidural = application.getString(R.string.epidural);
+        subcortical = application.getString(R.string.subcortical);
 
         stimulationInt = new MutableLiveData<>(0);
         stimulationString = Transformations.map(stimulationInt, s -> (s /2.0)+"");
@@ -61,8 +61,8 @@ public class WithStimulationViewModel extends AndroidViewModel {
 
         if (id == R.id.radioButton_stimulation_type_cortical)
             return cortical;
-        else if(id == R.id.radioButton_stimulation_type_epidural)
-            return epidural;
+        else if(id == R.id.radioButton_stimulation_type_subcortical)
+            return subcortical;
         else
             return Game.NO_STIMULATION;
     }

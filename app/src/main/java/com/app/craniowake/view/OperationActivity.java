@@ -275,12 +275,14 @@ public class OperationActivity extends AppCompatActivity implements View.OnClick
 
     public void playSuccessSound() {
         if(soundsLoaded.contains(successSoundId))
-            soundPool.play(successSoundId, 1, 1, 1, 0, 1);
+//            soundPool.play(successSoundId, 1, 1, 1, 0, 1);
+            soundPool.play(beepSoundId, 1, 1, 1, 0, 1);
     }
 
     public void playWrongSound() {
         if(soundsLoaded.contains(wrongSoundId))
-            soundPool.play(wrongSoundId, 1, 1, 1, 0, 1);
+//            soundPool.play(wrongSoundId, 1, 1, 1, 0, 1);
+            soundPool.play(beepSoundId, 1, 1, 1, 1, 2);
     }
 
     public void playFailSound() {

@@ -79,10 +79,10 @@
                     android:layout_height="wrap_content">
 
                     <RadioButton
-                        android:id="@+id/radioButton_stimulation_type_epidural"
+                        android:id="@+id/radioButton_stimulation_type_subcortical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/epidural" />
+                        android:text="@string/subcortical" />
 
                     <RadioButton
                         android:id="@+id/radioButton_stimulation_type_cortical"
